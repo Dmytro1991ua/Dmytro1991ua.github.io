@@ -1325,7 +1325,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   padding: 0 2rem;
-  background-image: url(../../img/hero.jpg);
+  background-image: url(../img/hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
