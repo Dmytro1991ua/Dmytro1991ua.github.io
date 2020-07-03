@@ -507,13 +507,29 @@ main {
 }
 
 .heading-2 {
-  font-size: calc(22px + 6 * ((100vw - 320px) / 820));
+  font-size: calc(20px + 28 * ((100vw - 320px) / 820));
+  font-family: "Lato-Thin", sans-serif;
+  color: #ffffff;
+}
+
+.heading-2 span {
+  color: #4c76ff;
 }
 
 .heading-3 {
-  font-size: calc(19px + 2 * ((100vw - 320px) / 820));
+  font-size: calc(22px + -1 * ((100vw - 320px) / 820));
   font-family: "Lato - Black";
   color: #ffffff;
+}
+
+.heading-3--big {
+  font-size: calc(50px + 12 * ((100vw - 320px) / 820));
+  font-weight: 900;
+  margin: 0;
+}
+
+.heading-3--big span {
+  color: #4c76ff;
 }
 
 /*.accordion {
@@ -732,6 +748,8 @@ main {
   width: 100%;
   height: 2.7rem;
   max-height: 3rem;
+  font-size: calc(13px + 1 * ((100vw - 320px) / 820));
+  color: #ffffff;
 }
 
 .form-header__search.placeholder {
@@ -904,6 +922,7 @@ main {
   overflow: hidden;
   position: relative;
   text-decoration: none;
+  z-index: 3;
 }
 
 .logo span {
@@ -1069,7 +1088,6 @@ main {
 .navigation__link:link:hover,
 .navigation__link:visited:hover {
   background-color: #000000;
-  font-weight: 600;
   -webkit-box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
           box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
 }
@@ -1264,7 +1282,7 @@ main {
   right: 0px;
   width: 100%;
   z-index: 3;
-  padding: 2.5rem 2rem 1.8rem 2rem;
+  padding: 1.3rem 2rem 1.4rem 2rem;
   -webkit-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   transition: all .3s ease-in;
@@ -1307,7 +1325,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   padding: 0 2rem;
-  background-image: url(../../img/2/bg-review-small.png);
+  background-image: url(../../img/hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1335,10 +1353,38 @@ main {
           justify-content: center;
 }
 
+.hero__title {
+  margin-bottom: 1.4rem;
+}
+
 .hero__subtitle {
-  max-width: 75rem;
-  text-align: center;
-  font-size: calc(16px + 4 * ((100vw - 320px) / 820));
+  margin-bottom: 2.6rem;
+}
+
+.hero__info {
+  font-size: calc(16px + 2 * ((100vw - 320px) / 820));
+  font-family: "Lato-Thin", sans-serif;
+  color: #ffffff;
+  position: relative;
+  opacity: 0.9;
+}
+
+.hero__info::before,
+.hero__info::after {
+  content: "";
+  position: absolute;
+  width: 2.8rem;
+  height: 1px;
+  background-color: #4c76ff;
+  top: 50%;
+}
+
+.hero__info::before {
+  left: -4rem;
+}
+
+.hero__info::after {
+  right: -4rem;
 }
 
 .container {
@@ -1430,11 +1476,11 @@ main {
 
   .navigation {
     position: fixed;
-    top: 5.3rem;
+    top: 0rem;
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: #4d6277;
+    background-color: rgba(77, 98, 119, 0.7);
     overflow: auto;
     opacity: 0;
     visibility: hidden;
@@ -1480,7 +1526,11 @@ main {
 
   .header__logo {
     margin-right: 0rem;
-    margin-bottom: 3.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .header__toogle {
+    margin-bottom: 1.2rem;
   }
 
   .container {
