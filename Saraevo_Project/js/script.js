@@ -120,9 +120,9 @@ runCounter();;
 
 runModal(); */;
 // tabs buttons to open a specific card on click
-/*function runTabsFilter() {
+function runTabsFilter() {
    const tabsFilter = document.querySelector(".tabs-filter").children;
-   const galleryItems = document.querySelector(".gallery__row").children;
+   const galleryItems = document.querySelector(".gallery__body").children;
    //loop through each tab (filter) btn
    for (let i = 0; i < tabsFilter.length; i++) {
       tabsFilter[i].addEventListener("click", function () {
@@ -133,7 +133,7 @@ runModal(); */;
          //add active class to a clicked btn
          this.classList.add("active");
          const target = this.getAttribute("data-target"); // get a certain value from data-target attribute
-         //loop through children elements of gallery_row
+         //loop through children elements of gallery_body
          for (let k = 0; k < galleryItems.length; k++) {
             //galleryItems[k].style.display = "none";
 
@@ -154,7 +154,7 @@ runModal(); */;
    }
 }
 
-runTabsFilter(); */;
+runTabsFilter(); ;
 //open and close toggle btn on click
 function runToggleBtn() {
    //open  and close (toggle) on click

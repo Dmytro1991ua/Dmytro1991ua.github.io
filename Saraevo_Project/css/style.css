@@ -754,7 +754,7 @@ main {
   font-style: italic;
   letter-spacing: 0.94px;
   color: #ffffff;
-  opacity: .3;
+  opacity: .6;
 }
 
 .form-header__search:-moz-placeholder {
@@ -763,7 +763,7 @@ main {
   font-style: italic;
   letter-spacing: 0.94px;
   color: #ffffff;
-  opacity: .3;
+  opacity: .6;
 }
 
 .form-header__search::-moz-placeholder {
@@ -772,7 +772,7 @@ main {
   font-style: italic;
   letter-spacing: 0.94px;
   color: #ffffff;
-  opacity: .3;
+  opacity: .6;
 }
 
 .form-header__search:-ms-input-placeholder {
@@ -781,7 +781,7 @@ main {
   font-style: italic;
   letter-spacing: 0.94px;
   color: #ffffff;
-  opacity: .3;
+  opacity: .6;
 }
 
 .form-header__search::-webkit-input-placeholder {
@@ -790,112 +790,149 @@ main {
   font-style: italic;
   letter-spacing: 0.94px;
   color: #ffffff;
-  opacity: .3;
+  opacity: .6;
 }
 
-/*.gallery {
-    &__row {
-        //используем отрицательные марджины для того чтобы сделать отступ между каточками (раздвигаем flex container)
-        margin: 0rem -1.5rem; // на половину отступа по макету (если отступ 30px  то margin-left и margin-right будут -15px)
+.gallery__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 
-        @include respond(tab-port) {
-            justify-content: center;
-        }
-    }
+.gallery__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+}
 
-    &__item {
-        flex: 0 1 33.3333%;
-        max-width: 33.333%;
-        display: flex;
-        padding: 0rem 1.5rem; //сами колонки (флекс элементы ) сдвигаем при помощи padding на половину отспута по макету
-        margin-bottom: 3rem;
+.gallery__img {
+  width: 100%;
+  overflow: hidden;
+}
 
-        @include respond(tab-port) {
-            flex: 0 1 50%;
-            max-width: 50%;
-        }
+.gallery__item.hide {
+  display: none;
+}
 
+.gallery__item.show {
+  display: block;
+  -webkit-animation: showItem .5s ease;
+          animation: showItem .5s ease;
+}
 
-        @include respond(tiny-phone) {
-            flex: 0 1 100%;
-            max-width: 100%;
-            justify-content: center;
-        }
-    }
+.gallery__item-inner {
+  cursor: pointer;
+  position: relative;
+}
 
-    &__item.hide {
-        display: none;
-    } 
+.gallery__item-inner:hover .gallery__overlay {
+  opacity: 1;
+  visibility: visible;
+}
 
-    &__item.show {
-         display: block;
-         animation: showItem .5s ease;
-     } 
+.gallery__img {
+  overflow: hidden;
+}
 
-    &__item-inner {
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
+.gallery__pic {
+  max-height: 100%;
+  min-width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
-        @include flex(column, stretch, flex-start);
-    }
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(76, 118, 255, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    &__item-inner:hover &__overlay {
-        opacity: 1;
-        visibility: visible;
-    }
+.gallery__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    &__img {
-        overflow: hidden;
-    }
+.gallery__feature {
+  width: 3.3rem;
+  height: 3.3rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2.1rem;
+}
 
-    &__pic {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+.gallery__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #ffffff;
+}
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba($color-tomato, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        transition: all .3s ease-in;
+.gallery__text {
+  max-width: 40rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+  padding-bottom: .9rem;
+  font-size: calc(16px + -1 * ((100vw - 320px) / 820));
+}
 
-        @include flex(column, center, center);
+.gallery__title {
+  font-size: calc(14px + -1 * ((100vw - 320px) / 820));
+  color: #ffffff;
+}
 
-        @include respond(tab-port) {
-            opacity: 1;
-            visibility: visible;
-            box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.6);
-        }
-    }
-
-    &__info {
-        @include flex(column, center, center);
-
-        //flex: 1 1 auto;
-   
-    }
-
-    &__text {
-        max-width: 40rem;
-        text-align: center;
-        line-height: 2rem;
-
-        @include adaptiv-font(16, 14);
-    }
-
-    &__btn {
-        text-decoration: none;
-
-        @include adaptiv-font(18, 16);
-    }
-} */
+.gallery__btn {
+  text-decoration: none;
+  font-size: calc(16px + 2 * ((100vw - 320px) / 820));
+}
 
 /*.ibg {
     background-position: center;
@@ -1142,33 +1179,37 @@ main {
     opacity: 0;
 } */
 
-/*.tabs-filter {
-    flex: 0 1 100%;
-    max-width: 100%;
-    text-align: center;
+.tabs-filter {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: calc(16px + -2 * ((100vw - 320px) / 820));
+}
 
-    &__link {
-        display: inline-block;
-        border: none;
+.tabs-filter__link {
+  display: inline-block;
+  border: none;
+  font-family: "Lato-Black", sans-serif;
+  background-color: transparent;
+  margin-right: 1.2rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
 
-        @include adaptiv-font(18, 15);
+.tabs-filter__link:last-child {
+  margin-right: 0rem;
+}
 
-        background-color: transparent;
-        margin-right: 1.2rem;
-        cursor: pointer;
-        padding-bottom: .6rem;
-        transition: all .4s ease;
-
-        &:last-child {
-            margin-right: 0rem;
-        }
-    }
-
-    &__link.active {
-        color: $color-white;
-        border-bottom: 2px solid $color-white;
-    }
-} */
+.tabs-filter__link.active {
+  color: #ffffff;
+  background-color: #4c76ff;
+  border-radius: 5px;
+}
 
 .toggle {
   display: none;
@@ -1369,7 +1410,7 @@ main {
 }
 
 .about__row {
-  margin: 0 -6.5rem;
+  margin: 0 -3.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1384,7 +1425,6 @@ main {
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
   max-width: 100%;
-  padding: 0 6.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1405,6 +1445,7 @@ main {
       -ms-flex: 0 1 33.3333%;
           flex: 0 1 33.3333%;
   max-width: 33.3333%;
+  padding: 0 3.5rem;
 }
 
 .about__item {
@@ -1421,6 +1462,11 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-bottom: 7.3rem;
+}
+
+.about__item:last-child {
+  margin-bottom: 0rem;
 }
 
 .about__icon {
@@ -1445,7 +1491,8 @@ main {
 }
 
 .about__img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 30rem;
   display: block;
   height: auto;
 }
@@ -1461,7 +1508,7 @@ main {
 }
 
 .features__row {
-  margin: 0 -3.7rem;
+  margin: 0 -1.4rem;
 }
 
 .features__body {
@@ -1469,7 +1516,6 @@ main {
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
   max-width: 100%;
-  padding: 0 3.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1492,6 +1538,7 @@ main {
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
   max-width: 33.3333%;
+  padding: 0 1.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1621,6 +1668,7 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @supports (-webkit-appearance: none) {
@@ -1692,6 +1740,14 @@ main {
   padding: 0 1.6rem;
 }
 
+.works {
+  padding-bottom: 10.8rem;
+}
+
+.works__filter-tabs {
+  margin-bottom: 8.5rem;
+}
+
 @font-face {
   font-family: "Lato-Black";
   font-display: swap;
@@ -1749,6 +1805,18 @@ main {
     font-size: 60.5%;
   }
 
+  .gallery__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .gallery__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.3333%;
+            flex: 0 1 33.3333%;
+  }
+
   .container {
     max-width: 97rem;
   }
@@ -1773,12 +1841,27 @@ main {
   }
 }
 
+@media only screen and (max-width: 56em) {
+  .gallery__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+}
+
 @media only screen and (max-width: 48em) {
   .form-header {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
     max-width: 100%;
+  }
+
+  .gallery__overlay {
+    opacity: 1;
+    visibility: visible;
+    -webkit-box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.6);
   }
 
   .navigation {
@@ -1855,8 +1938,29 @@ main {
     margin-bottom: 1.2rem;
   }
 
+  .hero {
+    background-attachment: scroll;
+  }
+
   .container {
     max-width: none;
+  }
+
+  .works {
+    padding-bottom: 4.8rem;
+  }
+
+  .works__filter-tabs {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 37em) {
+  .gallery__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-bottom: 1rem;
   }
 }
 
