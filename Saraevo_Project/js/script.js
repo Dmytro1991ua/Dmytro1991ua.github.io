@@ -60,7 +60,7 @@ function runCounter() {
          const increment = counterValue / speed;
          if (count < counterValue) {
             counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1);
+            setTimeout(updateCount, 10);
          } else {
             count.innerText = counterValue;
          }
@@ -72,9 +72,10 @@ function runCounter() {
 
 runCounter();;
 //run modal (pop-up)
-/*function runModal() {
+function runModal() {
    const openModalButtons = document.querySelectorAll("[data-modal-target]");
    const closeModalButtons = document.querySelectorAll("[data-close-button]");
+   const modalBtns = document.querySelectorAll(".modal__btn");
    const overlay = document.querySelector(".modal__overlay");
 
    //open modal
@@ -88,13 +89,13 @@ runCounter();;
    //close modal 
    function closeModal(modal) {
       if (modal === null) return;
-      modal.classList.remove("active"); 
+      modal.classList.remove("active");
       overlay.classList.remove("active");
       document.querySelector("body").classList.remove("lock");
    }
 
    openModalButtons.forEach(btn => {
-      btn.addEventListener("click", (event) =>{
+      btn.addEventListener("click", (event) => {
          event.preventDefault();
          const modal = document.querySelector(btn.dataset.modalTarget);
          openModal(modal);
@@ -116,9 +117,16 @@ runCounter();;
          closeModal(modal);
       });
    });
+
+   //prevent default behaviour on all links in modal window
+   modalBtns.forEach(modalBtn => {
+      modalBtn.addEventListener("click", event => {
+         event.preventDefault();
+      })
+   })
 }
 
-runModal(); */;
+runModal(); ;
 // tabs buttons to open a specific card on click
 function runTabsFilter() {
    const tabsFilter = document.querySelector(".tabs-filter").children;
