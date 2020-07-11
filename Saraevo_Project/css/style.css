@@ -431,65 +431,67 @@ template {
 }
 
 @-webkit-keyframes sideBg {
-  0%, 25% {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero.jpg);
-  }
-
-  50% {
+  40% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-2.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-2.jpg);
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
 
-  75% {
+  60% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-3.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-3.jpg);
+    -webkit-transition: 13s ease-in-out;
+    -o-transition: 13s ease-in-out;
+    transition: 13s ease-in-out;
   }
 
   100% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-4.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-4.jpg);
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
 }
 
 @keyframes sideBg {
-  0%, 25% {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero.jpg);
-    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero.jpg);
-  }
-
-  50% {
+  40% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-2.jpg);
     background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-2.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-2.jpg);
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
 
-  75% {
+  60% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-3.jpg);
     background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-3.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-3.jpg);
+    -webkit-transition: 13s ease-in-out;
+    -o-transition: 13s ease-in-out;
+    transition: 13s ease-in-out;
   }
 
   100% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61))), url(../img/hero-4.jpg);
     background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-4.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.61)), url(../img/hero-4.jpg);
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
 }
 
 @-webkit-keyframes sideBgDiff {
-  0%, 25% {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts.jpg);
-    background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts.jpg);
-  }
-
-  50% {
+  40% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts-2.jpg);
     background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-2.jpg);
   }
 
-  75% {
+  60% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts-3.jpg);
     background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-3.jpg);
   }
@@ -501,19 +503,13 @@ template {
 }
 
 @keyframes sideBgDiff {
-  0%, 25% {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts.jpg);
-    background-image: -o-linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts.jpg);
-    background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts.jpg);
-  }
-
-  50% {
+  40% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts-2.jpg);
     background-image: -o-linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-2.jpg);
     background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-2.jpg);
   }
 
-  75% {
+  60% {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 32, 51, 0.8)), to(rgba(6, 32, 51, 0.8))), url(../img/fun-facts-3.jpg);
     background-image: -o-linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-3.jpg);
     background-image: linear-gradient(rgba(6, 32, 51, 0.8), rgba(6, 32, 51, 0.8)), url(../img/fun-facts-3.jpg);
@@ -2091,12 +2087,15 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-animation: sideBgDiff 15s linear infinite 0s;
-          animation: sideBgDiff 15s linear infinite 0s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  -webkit-animation: sideBgDiff 8s ease-in-out infinite 0s;
+          animation: sideBgDiff 8s ease-in-out infinite 0s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+          animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 @supports (-webkit-appearance: none) {
@@ -2477,6 +2476,8 @@ main {
           animation: sideBg 15s linear infinite 0s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 @supports (-webkit-appearance: none) {
@@ -3005,6 +3006,10 @@ main {
   }
 
   .facts {
+    background-attachment: scroll;
+  }
+
+  .facts {
     padding-top: 4.3rem;
     padding-bottom: 5.6rem;
   }
@@ -3309,7 +3314,7 @@ main {
   }
 
   .footer__body {
-    padding: 2.5rem 1.2rem;
+    padding: 2.5rem 1.2rem 5rem;
   }
 
   .works__tabs-container {

@@ -1,43 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-   //swipe js
-   var swiper = new Swiper('.swiper-container', {
-      autoplay: {
-         delay: 4000,
-         disableOnInteraction: false
-      },
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-         el: '.swiper-pagination',
-         clickable: true,
-      },
-      breakpoints: {
-        
-         768: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-         },
-
-         992: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-         },
-
-         1200: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-         },
-
-         1600: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-         }
-
-      }
-   });
-   
+  
    //run a counter
    function runCounter() {
       const counters = document.querySelectorAll("#counter");
