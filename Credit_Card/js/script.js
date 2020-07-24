@@ -72,7 +72,7 @@ function runCounter() {
 
 runCounter();;
 //run modal (pop-up)
-function runModal() {
+/*function runModal() {
    const openModalButtons = document.querySelectorAll("[data-modal-target]");
    const closeModalButtons = document.querySelectorAll("[data-close-button]");
    const overlay = document.querySelector(".modal__overlay");
@@ -118,9 +118,9 @@ function runModal() {
    });
 }
 
-runModal();;
+runModal(); */;
 // tabs buttons to open a specific card on click
-function runTabsFilter() {
+/*function runTabsFilter() {
    const tabsFilter = document.querySelector(".tabs-filter").children;
    const galleryItems = document.querySelector(".gallery__row").children;
    //loop through each tab (filter) btn
@@ -154,7 +154,7 @@ function runTabsFilter() {
    }
 }
 
-runTabsFilter();;
+runTabsFilter(); */;
 //open and close toggle btn on click
 function runToggleBtn() {
    //open  and close (toggle) on click
@@ -178,7 +178,7 @@ function runToggleBtn() {
 };
 
 //call function
-runToggleBtn();;
+runToggleBtn(); ;
 //Run preloader
 function runPreloader() {
    const preloader = document.querySelector(".preloader-container");
@@ -194,7 +194,7 @@ runPreloader();;
 function fixedHeader() {
    window.onscroll = function () {
       const scrollTop = document.documentElement.scrollTop;
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 790) {
          if (scrollTop > 70) {
             document.querySelector(".header").classList.add("sticky");
          } else {
