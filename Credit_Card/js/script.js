@@ -206,6 +206,40 @@ function fixedHeader() {
 
 //call function
 fixedHeader(); 
+
+
 ;
 
 
+//parallax effect on mousemove
+
+/*function parallax(event) {
+   this.querySelectorAll(".hero__icon").forEach(icon => {
+      const speed = icon.getAttribute("data-speed");
+
+      const horizontal = (window.innerWidth - event.pageX * speed) / 100;
+      const vertical = (window.innerHeight - event.pageY * speed) / 100;
+
+      icon.style.transform = `translateX(${horizontal}px) translateY(${vertical}px))`;
+   });
+}
+
+document.addEventListener("mousemove", parallax); */
+function runParallaxEfect() {
+
+   function parallax(e) {
+      this.querySelectorAll("#icon").forEach(icon => {
+         const speed = icon.getAttribute("data-speed");
+
+         const horizontal = (window.innerWidth - e.pageX * speed) / 100;
+         const vertical = (window.innerHeight - e.pageY * speed) / 100;
+
+         icon.style.transform = `translateX(${horizontal}px) translateY(${vertical}px)`;
+      });
+   }
+
+
+   document.addEventListener("mousemove", parallax);
+}
+
+runParallaxEfect();
