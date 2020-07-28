@@ -211,20 +211,43 @@ fixedHeader();
 ;
 
 
-//parallax effect on mousemove
+//Slider for Service section
+var swiper = new Swiper('.slider-1', {
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+   },
+   loop: true,
+   speed: 600,
+   grabCursor: true,
+   slidesPerView: 1,
+   spaceBetween: 10,
+   //init: false,
+   navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
+   },
+   breakpoints: {
+      550: {
+         slidesPerView: 1,
+         spaceBetween: 10,
+      },
+      768: {
+         slidesPerView: 2,
+         spaceBetween: 20,
+      },
+      992: {
+         slidesPerView: 3,
+         spaceBetween: 30,
+      },
+      1024: {
+         slidesPerView: 4,
+         spaceBetween: 30,
+      },
+   }
+});
 
-/*function parallax(event) {
-   this.querySelectorAll(".hero__icon").forEach(icon => {
-      const speed = icon.getAttribute("data-speed");
 
-      const horizontal = (window.innerWidth - event.pageX * speed) / 100;
-      const vertical = (window.innerHeight - event.pageY * speed) / 100;
-
-      icon.style.transform = `translateX(${horizontal}px) translateY(${vertical}px))`;
-   });
-}
-
-document.addEventListener("mousemove", parallax); */
 function runParallaxEfect() {
 
    function parallax(e) {
