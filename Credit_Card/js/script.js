@@ -258,6 +258,8 @@ function runParallaxEfect() {
          const vertical = (window.innerHeight - e.pageY * speed) / 100;
 
          icon.style.transform = `translateX(${horizontal}px) translateY(${vertical}px)`;
+         icon.style.webkitTransform = `translateX(${horizontal}px) translateY(${vertical}px)`;
+         
       });
    }
 
