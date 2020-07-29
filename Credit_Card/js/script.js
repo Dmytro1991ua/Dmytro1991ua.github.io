@@ -247,6 +247,81 @@ var swiper = new Swiper('.slider-1', {
    }
 });
 
+//Slider for a types of Credit Cards Section
+/*var swiper2 = new Swiper('.slider-2', {
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+   },
+   loop: true,
+   speed: 600,
+   grabCursor: true,
+   slidesPerView: 1,
+   spaceBetween: 10,
+   centeredSlides: true,
+   slidesPerView: 'auto',
+   breakpoints: {
+      550: {
+         slidesPerView: 1,
+         spaceBetween: 10,
+      },
+      768: {
+         slidesPerView: 2,
+         spaceBetween: 20,
+      },
+      992: {
+         slidesPerView: 3,
+         spaceBetween: 30,
+      },
+      1024: {
+         slidesPerView: 4,
+         spaceBetween: 70,
+      },
+   },
+   navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
+   },
+}); */
+var swiper = new Swiper('.slider-2', {
+   autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+   },
+   loop: true,
+   speed: 600,
+   grabCursor: true,
+   slidesPerView: 1,
+   spaceBetween: 20,
+   //init: false,
+   navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
+   },
+   breakpoints: {
+      550: {
+         slidesPerView: 1,
+         spaceBetween: 20,
+      },
+      768: {
+         slidesPerView: 2,
+         spaceBetween: 15,
+      },
+      992: {
+         slidesPerView: 3,
+         spaceBetween: 40,
+      },
+      1600: {
+         slidesPerView: 4,
+         spaceBetween: 50,
+      },
+
+      1920: {
+         spaceBetween: 70,
+      },
+   }
+});
+
 
 function runParallaxEfect() {
 
@@ -259,7 +334,7 @@ function runParallaxEfect() {
 
          icon.style.transform = `translateX(${horizontal}px) translateY(${vertical}px)`;
          icon.style.webkitTransform = `translateX(${horizontal}px) translateY(${vertical}px)`;
-         
+
       });
    }
 
