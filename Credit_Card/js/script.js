@@ -154,7 +154,7 @@ runModal(); */;
    }
 }
 
-runTabsFilter(); */;
+runTabsFilter(); ;
 //open and close toggle btn on click
 function runToggleBtn() {
    //open  and close (toggle) on click
@@ -295,8 +295,8 @@ var swiper = new Swiper('.slider-2', {
    spaceBetween: 20,
    //init: false,
    navigation: {
-      nextEl: '.swiper-button-next-custom',
-      prevEl: '.swiper-button-prev-custom',
+      nextEl: '.swiper-button-next-custom-2',
+      prevEl: '.swiper-button-prev-custom-2',
    },
    breakpoints: {
       550: {
