@@ -1,76 +1,4 @@
-// run accordion
-function runAccordion() {
-   const accordions = document.querySelectorAll(".accordion__button");
-   const accordionContents = document.querySelectorAll(".accordion__content");
 
-   //iterate through each accordion btn
-   accordions.forEach(button => {
-      button.addEventListener("click", (event) => { //listen on click of each accordion btn
-         event.preventDefault();
-         const content = button.nextElementSibling; //get elements (text) right after a button element
-
-         if (content.style.maxHeight) {
-            content.style.maxHeight = "";
-            button.classList.remove("is-open");
-         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            button.classList.add("is-open");
-         }
-
-         //if two accordions are opened at the same time, one of them should actually opened (only one should be active)
-         accordionContents.forEach(accordionContent => {
-            if (accordionContent !== content) {
-               accordionContent.style.maxHeight = null;
-            }
-
-            //iterate through each accordion btn in order to return back an icon (plus sign) when accordion is closing
-            accordions.forEach(buttonAccordion => {
-               if (buttonAccordion !== button) {
-                  buttonAccordion.classList.remove("is-open");
-               }
-            });
-         });
-      });
-   });
-}
-
-runAccordion();;
-;
-//ibg function allows to set some certain styles(as if it was inserted as a background) for an img which is inserted via <img> tag
-/*function ibg() {
-
-   let ibg = document.querySelectorAll(".ibg");
-   for (var i = 0; i < ibg.length; i++) {
-      if (ibg[i].querySelector('img')) {
-         ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-      }
-   }
-}
-
-ibg(); */;
-//run a counter
-function runCounter() {
-   const counters = document.querySelectorAll("#counter");
-   const speed = 800;
-
-   counters.forEach(counter => {
-      const updateCount = function () {
-         const counterValue = +counter.getAttribute("data-target");
-         const count = +counter.innerText;
-         const increment = counterValue / speed;
-         if (count < counterValue) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1);
-         } else {
-            count.innerText = counterValue;
-         }
-      }
-
-      updateCount();
-   });
-}
-
-runCounter();;
 //run modal (pop-up)
 /*function runModal() {
    const openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -155,32 +83,8 @@ runModal(); */;
 }
 
 runTabsFilter(); ;
-//open and close toggle btn on click
-function runToggleBtn() {
-   //open  and close (toggle) on click
-   const toggleBtn = document.querySelector(".toggle__btn");
-   toggleBtn.addEventListener("click", () => {
-      document.querySelector(".navigation").classList.toggle("show");
-      document.querySelector(".toggle__btn").classList.toggle("active");
-      document.querySelector("body").classList.toggle("lock");
-
-   });
-   //close a navigation on specific link
-   const links = document.querySelectorAll(".navigation__link");
-
-   links.forEach(link => {
-      link.addEventListener("click", () => {
-         document.querySelector(".navigation").classList.remove("show");
-         document.querySelector(".toggle__btn").classList.toggle("active");
-         document.querySelector("body").classList.remove("lock");
-      });
-   });
-};
-
-//call function
-runToggleBtn(); ;
 //Run preloader
-function runPreloader() {
+/*function runPreloader() {
    const preloader = document.querySelector(".preloader-container");
    preloader.classList.add("opacity-0");
    setTimeout(function () {
@@ -189,26 +93,7 @@ function runPreloader() {
 
 }
 window.addEventListener("load", runPreloader);
-runPreloader();;
-//Sticky header section on scroll down
-function fixedHeader() {
-   window.onscroll = function () {
-      const scrollTop = document.documentElement.scrollTop;
-      if (window.innerWidth > 790) {
-         if (scrollTop > 70) {
-            document.querySelector(".header").classList.add("sticky");
-         } else {
-            document.querySelector(".header").classList.remove("sticky");
-         }
-      }
-   }
-}
-
-//call function
-fixedHeader(); 
-
-
-;
+runPreloader();*/;
 
 
 //Slider for Service section
@@ -248,41 +133,6 @@ var swiper = new Swiper('.slider-1', {
 });
 
 //Slider for a types of Credit Cards Section
-/*var swiper2 = new Swiper('.slider-2', {
-   autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-   },
-   loop: true,
-   speed: 600,
-   grabCursor: true,
-   slidesPerView: 1,
-   spaceBetween: 10,
-   centeredSlides: true,
-   slidesPerView: 'auto',
-   breakpoints: {
-      550: {
-         slidesPerView: 1,
-         spaceBetween: 10,
-      },
-      768: {
-         slidesPerView: 2,
-         spaceBetween: 20,
-      },
-      992: {
-         slidesPerView: 3,
-         spaceBetween: 30,
-      },
-      1024: {
-         slidesPerView: 4,
-         spaceBetween: 70,
-      },
-   },
-   navigation: {
-      nextEl: '.swiper-button-next-custom',
-      prevEl: '.swiper-button-prev-custom',
-   },
-}); */
 var swiper = new Swiper('.slider-2', {
    autoplay: {
       delay: 4000,
@@ -322,6 +172,101 @@ var swiper = new Swiper('.slider-2', {
    }
 });
 
+//Sticky header section on scroll down
+function fixedHeader() {
+   window.onscroll = function () {
+      const scrollTop = document.documentElement.scrollTop;
+      if (window.innerWidth > 790) {
+         if (scrollTop > 70) {
+            document.querySelector(".header").classList.add("sticky");
+         } else {
+            document.querySelector(".header").classList.remove("sticky");
+         }
+      }
+   }
+}
+
+//open and close toggle btn on click
+function runToggleBtn() {
+   //open  and close (toggle) on click
+   const toggleBtn = document.querySelector(".toggle__btn");
+   toggleBtn.addEventListener("click", () => {
+      document.querySelector(".navigation").classList.toggle("show");
+      document.querySelector(".toggle__btn").classList.toggle("active");
+      document.querySelector("body").classList.toggle("lock");
+
+   });
+   //close a navigation on specific link
+   const links = document.querySelectorAll(".navigation__link");
+
+   links.forEach(link => {
+      link.addEventListener("click", () => {
+         document.querySelector(".navigation").classList.remove("show");
+         document.querySelector(".toggle__btn").classList.toggle("active");
+         document.querySelector("body").classList.remove("lock");
+      });
+   });
+};
+
+
+// run accordion
+function runAccordion() {
+   const accordions = document.querySelectorAll(".accordion__button");
+   const accordionContents = document.querySelectorAll(".accordion__content");
+
+   //iterate through each accordion btn
+   accordions.forEach(button => {
+      button.addEventListener("click", (event) => { //listen on click of each accordion btn
+         event.preventDefault();
+         const content = button.nextElementSibling; //get elements (text) right after a button element
+
+         if (content.style.maxHeight) {
+            content.style.maxHeight = "";
+            button.classList.remove("is-open");
+         } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            button.classList.add("is-open");
+         }
+
+         //if two accordions are opened at the same time, one of them should actually opened (only one should be active)
+         accordionContents.forEach(accordionContent => {
+            if (accordionContent !== content) {
+               accordionContent.style.maxHeight = null;
+            }
+
+            //iterate through each accordion btn in order to return back an icon (plus sign) when accordion is closing
+            accordions.forEach(buttonAccordion => {
+               if (buttonAccordion !== button) {
+                  buttonAccordion.classList.remove("is-open");
+               }
+            });
+         });
+      });
+   });
+}
+
+//run a counter
+function runCounter() {
+   const counters = document.querySelectorAll("#counter");
+   const speed = 800;
+
+   counters.forEach(counter => {
+      const updateCount = function () {
+         const counterValue = +counter.getAttribute("data-target");
+         const count = +counter.innerText;
+         const increment = counterValue / speed;
+         if (count < counterValue) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+         } else {
+            count.innerText = counterValue;
+         }
+      }
+
+      updateCount();
+   });
+}
+
 
 function runParallaxEfect() {
 
@@ -342,4 +287,10 @@ function runParallaxEfect() {
    document.addEventListener("mousemove", parallax);
 }
 
+
+//call functions
+runAccordion();
 runParallaxEfect();
+runCounter();
+fixedHeader();
+runToggleBtn(); 
