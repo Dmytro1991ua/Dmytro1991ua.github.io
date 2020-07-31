@@ -640,9 +640,59 @@
    </section>
 
    <!--Section FAG ends-->
-
-   </main>
-   <!--Main ends-->
+   <!--Message Section starts-->
+   <section class="message" id="create-account">
+      <div class="container">
+         <div class="row">
+            <!--Section title starts-->
+            <div class="section-title message__secton-title">
+               <h3 class="section-title__subtitle message__section-subtitle">Your Message</h3>
+            </div>
+            <!--Section title ends-->
+         </div>
+         <!--Form starts-->
+         <form action="#" class="form">
+            <div class="row">
+               <div class="form__body">
+                  <!-- Form column starts-->
+                  <div class="form__column">
+                     <div class="form__column-item">
+                        <input class="form__input" type="name" placeholder="Your Name" id="name" required>
+                        <label for="name" class="form__label">Your Name</label>
+                     </div>
+                     <div class="form__column-item">
+                        <input class="form__input" type="email" placeholder="Your Email"
+                           pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                           id="email" required>
+                        <label for="name" class="form__label">Your Email</label>
+                     </div>
+                     <div class="form__column-item">
+                        <input class="form__input" type="name" placeholder="Subject" id="name" required>
+                        <label for="name" class="form__label">Subject</label>
+                     </div>
+                  </div>
+                  <!--Form Column ends-->
+                  <!-- Form column starts-->
+                  <div class="form__column">
+                     <div class="form__column-item">
+                        <textarea class="form__comment" placeholder="Message" id="textarea" required></textarea>
+                        <label class="form__label" for="textarea">Message</label>
+                     </div>
+                     <div class="btn message__form-btn">
+                        <button type="submit">Submit</button>
+                     </div>
+                  </div>
+                  <!--Form Column ends-->
+               </div>
+            </div>
+         </form>
+         <!--Form ends-->
+      </div>
+   </section>
+   <!--Message Section sends->
+			
+		</main>
+		<!--Main ends-->
 
    </div>
    <script src="https://use.fontawesome.com/c2aa5ed41c.js"></script>
