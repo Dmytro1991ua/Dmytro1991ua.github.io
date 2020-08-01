@@ -49,7 +49,6 @@
          </div>
       </header>
       <!-- Header ends-->
-
       <!--Main Starts-->
       <main class="main">
          <!--Hero section starts-->
@@ -547,7 +546,7 @@
                      <!--Accordion starts-->
                      <div class="row fag__accordion-row">
                         <!--Accordion starts-->
-                        <div class="accordion">
+                        <div class="accordion" data-category="banking-service">
                            <!--Accordion #1 starts-->
                            <div class="accordion__item">
                               <button class="accordion__button">Why use a credit card ?</button>
@@ -631,69 +630,159 @@
                         </div>
                         <!--Accordion ends-->
                      </div>
-
                      <!--Accordion ends-->
                   </div>
                </div>
             </div>
-   </div>
-   </section>
+         </section>
 
-   <!--Section FAG ends-->
-   <!--Message Section starts-->
-   <section class="message" id="create-account">
-      <div class="container">
-         <div class="row">
-            <!--Section title starts-->
-            <div class="section-title message__secton-title">
-               <h3 class="section-title__subtitle message__section-subtitle">Your Message</h3>
-            </div>
-            <!--Section title ends-->
-         </div>
-         <!--Form starts-->
-         <form action="#" class="form">
-            <div class="row">
-               <div class="form__body">
-                  <!-- Form column starts-->
-                  <div class="form__column">
-                     <div class="form__column-item">
-                        <input class="form__input" type="name" placeholder="Your Name" id="name" required>
-                        <label for="name" class="form__label">Your Name</label>
-                     </div>
-                     <div class="form__column-item">
-                        <input class="form__input" type="email" placeholder="Your Email"
-                           pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
-                           id="email" required>
-                        <label for="name" class="form__label">Your Email</label>
-                     </div>
-                     <div class="form__column-item">
-                        <input class="form__input" type="name" placeholder="Subject" id="name" required>
-                        <label for="name" class="form__label">Subject</label>
-                     </div>
+         <!--Section FAG ends-->
+         <!--Message Section starts-->
+         <section class="message" id="create-account">
+            <div class="container">
+               <div class="row">
+                  <!--Section title starts-->
+                  <div class="section-title message__secton-title">
+                     <h3 class="section-title__subtitle message__section-subtitle">Your Message</h3>
                   </div>
-                  <!--Form Column ends-->
-                  <!-- Form column starts-->
-                  <div class="form__column">
-                     <div class="form__column-item">
-                        <textarea class="form__comment" placeholder="Message" id="textarea" required></textarea>
-                        <label class="form__label" for="textarea">Message</label>
-                     </div>
-                     <div class="btn message__form-btn">
-                        <button type="submit">Submit</button>
-                     </div>
-                  </div>
-                  <!--Form Column ends-->
+                  <!--Section title ends-->
                </div>
+               <!--Form starts-->
+               <form action="#" class="form">
+                  <div class="row">
+                     <div class="form__body">
+                        <!-- Form column starts-->
+                        <div class="form__column">
+                           <div class="form__column-item">
+                              <input class="form__input" type="name" placeholder="Your Name" id="name" required>
+                              <label for="name" class="form__label">Your Name</label>
+                           </div>
+                           <div class="form__column-item">
+                              <input class="form__input" type="email" placeholder="Your Email"
+                                 pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                                 id="email" required>
+                              <label for="name" class="form__label">Your Email</label>
+                           </div>
+                           <div class="form__column-item">
+                              <input class="form__input" type="name" placeholder="Subject" id="name" required>
+                              <label for="name" class="form__label">Subject</label>
+                           </div>
+                        </div>
+                        <!--Form Column ends-->
+                        <!-- Form column starts-->
+                        <div class="form__column">
+                           <div class="form__column-item">
+                              <textarea class="form__comment" placeholder="Message" id="textarea" required></textarea>
+                              <label class="form__label" for="textarea">Message</label>
+                           </div>
+                           <div class="btn message__form-btn">
+                              <button type="submit">Submit</button>
+                           </div>
+                        </div>
+                        <!--Form Column ends-->
+                     </div>
+                  </div>
+               </form>
+               <!--Form ends-->
             </div>
-         </form>
-         <!--Form ends-->
-      </div>
-   </section>
-   <!--Message Section sends->
+         </section>
+         <!--Message Section sends->
 			
 		</main>
 		<!--Main ends-->
-
+         <!-- Footer starts-->
+         <footer class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="footer__top">
+                     <div class="footer__column">
+                        <!--Logo starts-->
+                        <a class=" footer__logo logo" href="">
+                           <picture>
+                              <source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png"
+                                 alt="Logo of a Bank"></picture>
+                        </a>
+                        <!--Logo ends-->
+                        <p class="footer__bank-info">
+                           I will give you a complete account of the system, and expound the actual teachings of the
+                           great
+                           explorer of the truth,
+                           the master-builder connection society.
+                        </p>
+                        <div class="footer__contacts">
+                           <a href="tel:+69857458423" target="_blank">P: +6985 7458 423</a>
+                           <a href="mailto:bankingsave@gmail.com" target="_blank">E: bankingsave@gmail.com</a>
+                           <a href="https://goo.gl/maps/yK2JSrErj569rApc9" target="_blank">486 Wilson Street, Irvine, CA
+                              92614</a>
+                        </div>
+                     </div>
+                     <div class="footer__column">
+                        <div class="footer__link-set-1">
+                           <h2 class="footer__links-title">Comminute</h2>
+                           <ul class="footer__media-links">
+                              <a href="https://www.facebook.com/">facebook</a>
+                              <a href="https://www.instagram.com/">instagram</a>
+                              <a href="https://twitter.com/?lang=en">twitter</a>
+                              <a href="https://www.pinterest.com/">pinterest</a>
+                              <a href="https://www.linkedin.com/">linkedin</a>
+                              <a href="https://www.youtube.com/?hl=en">youtube</a>
+                           </ul>
+                        </div>
+                        <div class="footer__link-set-1">
+                           <h2 class="footer__links-title">Useful Link</h2>
+                           <ul class="footer__media-links">
+                              <a href="#cards">Cards</a>
+                              <a href="#service">Service</a>
+                              <a href="#banking">Banking</a>
+                              <a href="#fag">FAQ</a>
+                              <a href="#">Blog</a>
+                              <a href="#contact">Contact</a>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="footer__column">
+                        <h2 class="footer__links-title">Subscribe NewsLetter</h2>
+                        <form action="#" class="footer__form">
+                           <input class="footer__input" type="email" placeholder="Enter Email To Get Notification"
+                              pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                              id="email" id="email" required>
+                           <!--<label class="footer-top__label" for="email">Enter Email To Get Notification</label>-->
+                           <button class="footer__btn" type="submit">
+                              <picture>
+                                 <source srcset="img/footer/btn.svg" type="image/webp"><img src="img/footer/btn.svg"
+                                    alt="button"></picture>
+                           </button>
+                        </form>
+                        <div class="footer__instargam-images">
+                           <picture>
+                              <source srcset="img/footer/1.webp" type="image/webp"><img src="img/footer/1.jpg"
+                                 alt="Image first"></picture>
+                           <picture>
+                              <source srcset="img/footer/2.webp" type="image/webp"><img src="img/footer/2.jpg"
+                                 alt="Image second"></picture>
+                           <picture>
+                              <source srcset="img/footer/3.webp" type="image/webp"><img src="img/footer/3.jpg"
+                                 alt="Image third"></picture>
+                           <picture>
+                              <source srcset="img/footer/4.webp" type="image/webp"><img src="img/footer/4.jpg"
+                                 alt="Image fourth"></picture>
+                           <picture>
+                              <source srcset="img/footer/5.webp" type="image/webp"><img src="img/footer/5.jpg"
+                                 alt="Image fifth"></picture>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="footer__bottom">
+                     <p class="footer__bottom-info">
+                        Copyright @ Digital Marketing. AllRight Reseverd
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- Footer ends-->
    </div>
    <script src="https://use.fontawesome.com/c2aa5ed41c.js"></script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

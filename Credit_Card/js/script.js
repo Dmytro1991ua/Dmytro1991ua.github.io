@@ -246,6 +246,41 @@ function runAccordion() {
    });
 }
 
+// tabs buttons to open a specific card on click
+function runTabsFilter() {
+   const tabsFilter = document.querySelector(".tabs-filter").children;
+   const accordionItems = document.querySelector(".fag__accordion-row").children;
+   
+   //loop through each tab (filter) btn
+   for (let i = 0; i < tabsFilter.length; i++) {
+      tabsFilter[i].addEventListener("click", function () {
+         //remove active class from other btn which are not clicked at the moment
+         for (let j = 0; j < tabsFilter.length; j++) {
+            tabsFilter[j].classList.remove("active");
+         }
+         //add active class to a clicked btn
+         this.classList.add("active");
+         const target = this.getAttribute("data-target"); // get a certain value from data-target attribute
+         //loop through children elements of fag__accordion-row (all accrodions elements)
+         for (let k = 0; k < accordionItems.length; k++) {
+            
+            if (target === accordionItems[k].getAttribute("data-category")) {
+               accordionItems[k].classList.remove("hide");
+               accordionItems[k].classList.add("show");
+            } else {
+               accordionItems[k].classList.add("hide");
+               accordionItems[k].classList.remove("show");
+            }
+
+            /*if (target === "all") {
+               accordionItems[k].classList.remove("hide");
+               accordionItems[k].classList.add("show");
+            } */
+         }
+      });
+   }
+}
+
 //run a counter
 function runCounter() {
    const counters = document.querySelectorAll("#counter");
@@ -294,4 +329,5 @@ runAccordion();
 runParallaxEfect();
 runCounter();
 fixedHeader();
-runToggleBtn(); 
+runToggleBtn();
+runTabsFilter();  

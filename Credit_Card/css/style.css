@@ -610,16 +610,12 @@ main {
 
 .accordion p {
   margin-bottom: 1.6rem;
-  padding: 2rem 7.7rem 2rem 3rem;
+  padding: 2.2rem 7.7rem 2.2rem 3rem;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-family: 'Raleway', sans-serif;
   line-height: 2.8rem;
   font-size: calc(15px + -1 * ((100vw - 320px) / 1600));
-}
-
-.accordion p:last-of-type {
-  margin-bottom: 0rem;
 }
 
 .accordion__button {
@@ -628,7 +624,7 @@ main {
   font-family: 'Raleway', sans-serif;
   border-radius: 10px;
   padding: 1.8rem 0 1.8rem 3rem;
-  margin-bottom: 1.3rem;
+  margin-bottom: 2.15rem;
   width: 100%;
   cursor: pointer;
   outline: none;
@@ -705,6 +701,16 @@ main {
   -webkit-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+
+.accordion.hide {
+  display: none;
+}
+
+.accordion.show {
+  display: block;
+  -webkit-animation: showItem .5s ease;
+          animation: showItem .5s ease;
 }
 
 .btn button {
@@ -1086,7 +1092,7 @@ main {
 }
 
 .form__comment {
-  padding: 2rem 0 11.6rem 1.5rem;
+  padding: 2rem 0 11.88rem 1.5rem;
   min-height: 14.8rem;
   resize: vertical;
 }
@@ -1971,6 +1977,14 @@ main {
   color: #808080;
   font-family: 'Raleway', sans-serif;
   line-height: 2.8rem;
+}
+
+.footer {
+  background-image: -o-linear-gradient(108deg, rgba(7, 29, 104, 0.9) 0%, rgba(11, 75, 236, 0.9) 100%), url(../img/footer/bg-footer.jpg);
+  background-image: linear-gradient(-18deg, rgba(7, 29, 104, 0.9) 0%, rgba(11, 75, 236, 0.9) 100%), url(../img/footer/bg-footer.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header {
