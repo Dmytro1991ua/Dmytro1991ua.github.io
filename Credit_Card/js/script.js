@@ -283,7 +283,7 @@ function runTabsFilter() {
 
 //run a counter
 function runCounter() {
-   const counters = document.querySelectorAll("#counter");
+   const counters = document.querySelectorAll(".counter");
    const speed = 800;
 
    counters.forEach(counter => {
@@ -307,7 +307,7 @@ function runCounter() {
 function runParallaxEfect() {
 
    function parallax(e) {
-      this.querySelectorAll("#icon").forEach(icon => {
+      this.querySelectorAll(".icon").forEach(icon => {
          const speed = icon.getAttribute("data-speed");
 
          const horizontal = (window.innerWidth - e.pageX * speed) / 100;
