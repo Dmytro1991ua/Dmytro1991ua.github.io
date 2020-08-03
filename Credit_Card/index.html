@@ -65,7 +65,7 @@
                      even
                      slightly believable.
                   </p>
-                  <a href="#about" class="hero__btn">Apply Now</a>
+                  <a href="#about" class="hero__btn" data-modal-target="#modal-1">Apply Now</a>
                </div>
                <div class="hero__img">
                   <picture>
@@ -249,7 +249,7 @@
                               </p>
                            </div>
                            <!--Benefits info item starts-->
-                           <div class="btn benefits__info-btn">
+                           <div class="btn benefits__info-btn" data-modal-target="#modal-2">
                               <button>Read More</button>
                            </div>
                         </div>
@@ -355,7 +355,7 @@
                               </ul>
                            </div>
                         </div>
-                        <div class="btn slider-2__info-btn">
+                        <div class="btn slider-2__info-btn" data-modal-target="#modal-1">
                            <button>Apply Now</button>
                         </div>
 
@@ -386,7 +386,7 @@
                               </ul>
                            </div>
                         </div>
-                        <div class="btn slider-2__info-btn">
+                        <div class="btn slider-2__info-btn" data-modal-target="#modal-1">
                            <button>Apply Now</button>
                         </div>
                      </div>
@@ -405,7 +405,7 @@
                                  problems.
                               </p>
                            </div>
-                           <div class="slider-2__info-bottom">
+                           <div class="slider-2__info-bottom" data-modal-target="#modal-1">
                               <h2 class="slider-2__title">
                                  Usage
                               </h2>
@@ -416,7 +416,7 @@
                               </ul>
                            </div>
                         </div>
-                        <div class="btn slider-2__info-btn">
+                        <div class="btn slider-2__info-btn" data-modal-target="#modal-1">
                            <button>Apply Now</button>
                         </div>
                      </div>
@@ -446,7 +446,7 @@
                               </ul>
                            </div>
                         </div>
-                        <div class="btn slider-2__info-btn">
+                        <div class="btn slider-2__info-btn" data-modal-target="#modal-1">
                            <button>Apply Now</button>
                         </div>
                      </div>
@@ -696,7 +696,7 @@
       <footer class="footer">
          <div class="container">
             <div class="footer__body">
-               <div class="row footer__top-row" id="contact">
+               <div class="row footer__top-row">
                   <div class="footer__top">
                      <div class="footer__column footer__column--1">
                         <!--Logo starts-->
@@ -713,10 +713,12 @@
                            the master-builder connection society.
                         </p>
                         <div class="footer__contacts">
-                           <a href="tel:+69857458423" target="_blank">P: +6985 7458 423</a>
-                           <a href="mailto:bankingsave@gmail.com" target="_blank">E: bankingsave@gmail.com</a>
-                           <a href="https://goo.gl/maps/yK2JSrErj569rApc9" target="_blank">Adress: 486 Wilson Street,
-                              Irvine,
+                           <a href="tel:+69857458423" target="_blank" rel="noopener" `>P: +6985 7458 423</a>
+                           <a href="mailto:bankingsave@gmail.com" target="_blank" rel="noopener" `>E:
+                              bankingsave@gmail.com</a>
+                           <a href="https://goo.gl/maps/yK2JSrErj569rApc9" target="_blank" rel="noopener" `>Adress: 486
+                              Wilson
+                              Street, Irvine,
                               CA
                               92614</a>
                         </div>
@@ -813,7 +815,6 @@
                            <input class="footer__input" type="email" placeholder="Enter Email To Get Notification"
                               pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
                               id="email" required>
-                           <!--<label class="footer-top__label" for="email">Enter Email To Get Notification</label>-->
                            <button class="footer__btn" type="submit">
                               <picture>
                                  <source srcset="img/footer/btn.svg" type="image/webp"><img src="img/footer/btn.svg"
@@ -855,6 +856,53 @@
          </div>
       </footer>
       <!-- Footer ends-->
+      <!--Modal starts-->
+      <div class="modal">
+         <!--Modal window starts-->
+         <div class="modal__body" id="modal-1">
+            <a class="modal__close" href="#" data-close-button>&times;</a>
+            <form class="modal__content">
+               <div class="modal__item">
+                  <input type="text" class="modal__input" id="text" placeholder="Enter Your Name...">
+                  <label for="text" class="modal__label">Enter Your Name...</label>
+               </div>
+               <div class="modal__item">
+                  <input type="email" class="modal__input" id="email" placeholder="Enter Your Email..."
+                     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                     required>
+                  <label for="email" class="modal__label">Enter Your Email...</label>
+               </div>
+               <div class="modal__item">
+                  <input type="tel" class="modal__input" id="phone" placeholder="Enter Your Phone Number..."
+                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                  <label for="phone" class="modal__label">Enter Your Phone Number...</label>
+               </div>
+               <button type="submit" class="modal__btn">Submit</button>
+            </form>
+         </div>
+         <!--Modal window ends-->
+
+         <!--Modal window starts-->
+         <div class="modal__body modal__body--diff" id="modal-2">
+            <a class="modal__close" href="#" data-close-button>&times;</a>
+            <div class="modal__img">
+               <picture>
+                  <source srcset="./img/card-2.webp" type="image/webp"><img src="./img/card-2.png" alt="Card"></picture>
+            </div>
+            <div class="modal__content">
+               <h3 class="modal__title">Credit Card</h3>
+               <p class="modal__info">I will give you a complete account of the system, and expound the actual teachings
+                  of the great explorer of the truth,
+                  the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it
+                  is pleasure, but
+                  because those who do not know painful.</p>
+               <a href="#" class="modal__btn">Check this Out</a>
+            </div>
+         </div> -->
+         <!--Modal window ends-->
+         <div class="modal__overlay"></div>
+      </div>
+      <!--Modal ends-->-
    </div>
    <script src="https://use.fontawesome.com/c2aa5ed41c.js"></script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
