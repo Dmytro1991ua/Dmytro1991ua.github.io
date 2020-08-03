@@ -35,22 +35,22 @@
    }
 }
 
-runTabsFilter(); ;
-//Run preloader
-/*function runPreloader() {
-   const preloader = document.querySelector(".preloader-container");
-   preloader.classList.add("opacity-0");
-   setTimeout(function () {
-      preloader.style.display = "none";
-   }, 1000)
-
-}
-window.addEventListener("load", runPreloader); */
-;
+runTabsFilter(); */;
 
 
 document.addEventListener("DOMContentLoaded", () => {
+   //run  Preloader
+   function runPreloader() {
+      const preloader = document.querySelector(".preloader-container");
+      preloader.classList.add("opacity-0");
+      setTimeout(function () {
+         preloader.style.display = "none";
+      }, 1000)
+
+   }
    
+   window.addEventListener("load", runPreloader);
+
    //Slider for Service section
    var swiper = new Swiper('.slider-1', {
       autoplay: {
@@ -323,16 +323,46 @@ document.addEventListener("DOMContentLoaded", () => {
       document.addEventListener("mousemove", parallax);
    }
 
-   //run  Preloader
-   function runPreloader() {
-      const preloader = document.querySelector(".preloader-container");
-      preloader.classList.add("opacity-0");
-      setTimeout(function () {
-         preloader.style.display = "none";
-      }, 1000)
+   function runScrollToTopBtn() {
+      const offset = 100; //indecator after which a button will be shown or be hidden
+      const scrollUpBtn = document.querySelector(".scroll-up-btn");
+      const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
+      const pathLength = scrollUpSvgPath.getTotalLength();
 
+      //styles for SVG icon
+      scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
+
+      //function return a value of element while window is scrollung
+      const getTop = () => {
+         return window.pageYOffset || document.documentElement.sccollTop;
+      };
+
+      //function is in charge of pressing and running a scroll up btn
+      const updateDashoffset = () => {
+         const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
+         const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
+         scrollUpSvgPath.style.strokeDashoffset = dashoffset;
+      };
+
+      // toggle active class
+      window.addEventListener("scroll", (e) => {
+         updateDashoffset();
+         if (getTop() > offset) {
+            scrollUpBtn.classList.add("active");
+         } else {
+            scrollUpBtn.classList.remove("active");
+         }
+      });
+
+      scrollUpBtn.addEventListener("click", () => {
+         window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+         });
+      });
    }
-   window.addEventListener("load", runPreloader); 
+
 
    //call functions
    runAccordion();
@@ -341,5 +371,6 @@ document.addEventListener("DOMContentLoaded", () => {
    fixedHeader();
    runToggleBtn();
    runTabsFilter();
-   runModal();  
+   runModal();
+   runScrollToTopBtn(); 
 });

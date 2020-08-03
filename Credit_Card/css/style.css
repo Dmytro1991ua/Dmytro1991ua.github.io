@@ -729,6 +729,72 @@ main {
   cursor: pointer;
 }
 
+.scroll-up-btn {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 3.8rem;
+  cursor: pointer;
+  opacity: 0;
+  color: #000000;
+  width: 5rem;
+  height: 5rem;
+  visibility: hidden;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-transform: translateY(25px);
+      -ms-transform: translateY(25px);
+          transform: translateY(25px);
+  z-index: 100;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-animation: pulse 1s ease-out 1s infinite;
+          animation: pulse 1s ease-out 1s infinite;
+}
+
+.scroll-up-btn::before {
+  content: "↑";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.scroll-up-btn:hover {
+  color: #0b4bec;
+}
+
+.scroll-up-btn__svg-path {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  fill: none;
+  stroke: #0b4bec;
+  stroke-width: 4px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.scroll-up-btn.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .cards__row {
   margin: 0 -1.5rem;
 }
