@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000)
 
    }
-   
+
    window.addEventListener("load", runPreloader);
 
    //Slider for Service section
@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
          },
       }
    });
+
 
    //Sticky header section on scroll down
    function fixedHeader() {
@@ -372,5 +373,5 @@ document.addEventListener("DOMContentLoaded", () => {
    runToggleBtn();
    runTabsFilter();
    runModal();
-   runScrollToTopBtn(); 
+   runScrollToTopBtn();
 });
