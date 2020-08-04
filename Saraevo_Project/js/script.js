@@ -161,7 +161,46 @@ document.addEventListener("DOMContentLoaded", () => {
    }
    window.addEventListener("load", runPreloader);
   
-  
+   function runScrollToTopBtn() {
+      const offset = 100; //indecator after which a button will be shown or be hidden
+      const scrollUpBtn = document.querySelector(".scroll-up-btn");
+      const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
+      const pathLength = scrollUpSvgPath.getTotalLength();
+
+      //styles for SVG icon
+      scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
+
+      //function return a value of element while window is scrollung
+      const getTop = () => {
+         return window.pageYOffset || document.documentElement.sccollTop;
+      };
+
+      //function is in charge of pressing and running a scroll up btn
+      const updateDashoffset = () => {
+         const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
+         const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
+         scrollUpSvgPath.style.strokeDashoffset = dashoffset;
+      };
+
+      // toggle active class
+      window.addEventListener("scroll", (e) => {
+         updateDashoffset();
+         if (getTop() > offset) {
+            scrollUpBtn.classList.add("active");
+         } else {
+            scrollUpBtn.classList.remove("active");
+         }
+      });
+
+      scrollUpBtn.addEventListener("click", () => {
+         window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+         });
+      });
+   }
+
    //call functions
    runCounter();
    runModal(); 
@@ -169,5 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
    runTabsFilter(); 
    runToggleBtn();
    fixedHeader(); 
+   runScrollToTopBtn();
 
 });
