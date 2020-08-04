@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
    window.addEventListener("load", runPreloader);
 
    //Slider for Service section
-   var swiper = new Swiper('.slider-1', {
+   var swiper = new Swiper('.swiper-container.slider-1', {
       autoplay: {
          delay: 4000,
          disableOnInteraction: false
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       speed: 600,
       grabCursor: true,
       slidesPerView: 1,
+      lazyLoading: true,
       spaceBetween: 10,
       //init: false,
       navigation: {
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    //Slider for a types of Credit Cards Section
-   var swiper = new Swiper('.slider-2', {
+   var swiper = new Swiper('.swiper-container.slider-2', {
       autoplay: {
          delay: 4000,
          disableOnInteraction: false
@@ -98,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       grabCursor: true,
       slidesPerView: 1,
       spaceBetween: 20,
+      lazyLoading: true,
       //init: false,
       navigation: {
          nextEl: '.swiper-button-next-custom-2',

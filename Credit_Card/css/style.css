@@ -735,7 +735,7 @@ main {
   bottom: 3.8rem;
   cursor: pointer;
   opacity: 0;
-  color: #000000;
+  color: rgba(255, 119, 48, 0.8);
   width: 5rem;
   height: 5rem;
   visibility: hidden;
