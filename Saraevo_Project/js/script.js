@@ -1,6 +1,16 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   
+   //Swiper for Hero section
+   let swiper = new Swiper('.slider-1', {
+      spaceBetween: 30,
+      effect: 'fade',
+      autoplay: {
+         delay: 4000,
+         disableOnInteraction: false
+      },
+   });
+
    //run a counter
    function runCounter() {
       const counters = document.querySelectorAll("#counter");

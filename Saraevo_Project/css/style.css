@@ -2566,20 +2566,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 2rem;
   background-image: url(../img/hero.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-animation: sideBg 15s linear infinite 0s;
-          animation: sideBg 15s linear infinite 0s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
 }
 
 @supports (-webkit-appearance: none) {
@@ -2643,6 +2630,47 @@ main {
 
 .hero__info::after {
   right: -4rem;
+}
+
+.hero--1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61)), to(rgba(0, 0, 0, 0.61))), url(../img/hero-3.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-3.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-3.jpg);
+}
+
+@supports (-webkit-appearance: none) {
+  .hero--1 {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61)), to(rgba(0, 0, 0, 0.61))), url(../img/hero-3.webp);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-3.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-3.webp);
+  }
+}
+
+.hero--2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61)), to(rgba(0, 0, 0, 0.61))), url(../img/hero-4.jpg);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-4.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-4.jpg);
+}
+
+@supports (-webkit-appearance: none) {
+  .hero--2 {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61)), to(rgba(0, 0, 0, 0.61))), url(../img/hero-4.webp);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-4.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url(../img/hero-4.webp);
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .map {
@@ -3151,10 +3179,6 @@ main {
 
   .header__toogle {
     margin-bottom: 1.2rem;
-  }
-
-  .hero {
-    background-attachment: scroll;
   }
 
   .container {
