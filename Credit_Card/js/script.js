@@ -169,38 +169,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // run accordion
    function runAccordion() {
-      const accordions = document.querySelectorAll(".accordion__button");
-      const accordionContents = document.querySelectorAll(".accordion__content");
+      const accordions = document.querySelector(".accordion").children;
 
-      //iterate through each accordion btn
-      accordions.forEach(button => {
-         button.addEventListener("click", (event) => { //listen on click of each accordion btn
-            event.preventDefault();
-            const content = button.nextElementSibling; //get elements (text) right after a button element
+      // iterate over each accodrion item
+      for (let item of accordions) {
+         const btn = item.querySelector(".accordion__button");
 
-            if (content.style.maxHeight) {
-               content.style.maxHeight = "";
-               button.classList.remove("is-open");
-            } else {
-               content.style.maxHeight = content.scrollHeight + "px";
-               button.classList.add("is-open");
+         //open one of accordion items by default
+         if (item.classList.contains("active")) {
+            item.querySelector(".accordion__content").style.maxHeight = item.querySelector(".accordion__content").scrollHeight + "px"; //get a height of a content of accordion
+            item.querySelector(".accordion__button").classList.add("is-open"); //change an icon when class is active
+         }
+
+         //changes on click to a btn in each accordion item
+         btn.addEventListener("click", () => {
+            for (let item of accordions) {
+               item.querySelector(".accordion__content").style.maxHeight = "0px";
+               item.querySelector(".accordion__button").classList.remove("is-open");
             }
-
-            //if two accordions are opened at the same time, one of them should actually opened (only one should be active)
-            accordionContents.forEach(accordionContent => {
-               if (accordionContent !== content) {
-                  accordionContent.style.maxHeight = null;
-               }
-
-               //iterate through each accordion btn in order to return back an icon (plus sign) when accordion is closing
-               accordions.forEach(buttonAccordion => {
-                  if (buttonAccordion !== button) {
-                     buttonAccordion.classList.remove("is-open");
-                  }
-               });
-            });
+            item.querySelector(".accordion__content").style.maxHeight = item.querySelector(".accordion__content").scrollHeight + "px"; //get a height of a content of accordion
+            item.querySelector(".accordion__button").classList.add("is-open"); //change an icon when class is active
          });
-      });
+      }
+
    }
 
    // tabs buttons to open a specific card on click
@@ -245,7 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       counters.forEach(counter => {
          const updateCount = function () {
-            const counterValue = +counter.getAttribute("data-target");
+            const counterValue = +counter.getAttribute("data-target"); //const counterValue = parseInt(counter.getAttribute("data-target"));
+            console.log(counterValue);
             const count = +counter.innerText;
             const increment = counterValue / speed;
             if (count < counterValue) {
