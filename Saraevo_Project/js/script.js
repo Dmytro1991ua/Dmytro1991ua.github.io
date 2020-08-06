@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    //run a counter
    function runCounter() {
-      const counters = document.querySelectorAll("#counter");
+      const counters = document.querySelectorAll(".counter");
       const speed = 800;
 
       counters.forEach(counter => {
