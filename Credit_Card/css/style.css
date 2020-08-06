@@ -1731,6 +1731,9 @@ main {
 .tabs-filter__link.active::after {
   opacity: 1;
   visibility: visible;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 .toggle {

@@ -230,28 +230,30 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    //run a counter
-   function runCounter() {
+   runCounter = () => {
       const counters = document.querySelectorAll(".counter");
-      const speed = 800;
 
-      counters.forEach(counter => {
-         const updateCount = function () {
-            const counterValue = +counter.getAttribute("data-target"); //const counterValue = parseInt(counter.getAttribute("data-target"));
-            console.log(counterValue);
-            const count = +counter.innerText;
-            const increment = counterValue / speed;
-            if (count < counterValue) {
-               counter.innerText = Math.ceil(count + increment);
-               setTimeout(updateCount, 1);
-            } else {
-               count.innerText = counterValue;
+      counters.forEach((item) => {
+         let count = 0;
+         const value = Number(item.dataset.target);
+         const speed = 15; //0.1
+
+         const updateCounter = () => {
+            item.querySelector(".counter__value").innerText = count;
+            count++;
+            if (count > value) {
+               clearInterval(counter);
             }
-         }
+         };
 
-         updateCount();
+         const counter = setInterval(() => updateCounter(), speed);
       });
-   }
+   };
 
+   runCounter();
+
+
+  
    //run modal (pop-up)
    function runModal() {
       const openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -362,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
    //call functions
    runAccordion();
    runParallaxEfect();
-   runCounter();
+   //runCounter();
    fixedHeader();
    runToggleBtn();
    runTabsFilter();
