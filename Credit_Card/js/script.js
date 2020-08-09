@@ -1,43 +1,5 @@
 
 
-// tabs buttons to open a specific card on click
-/*function runTabsFilter() {
-   const tabsFilter = document.querySelector(".tabs-filter").children;
-   const galleryItems = document.querySelector(".gallery__row").children;
-   //loop through each tab (filter) btn
-   for (let i = 0; i < tabsFilter.length; i++) {
-      tabsFilter[i].addEventListener("click", function () {
-         //remove active class from other btn which are not clicked at the moment
-         for (let j = 0; j < tabsFilter.length; j++) {
-            tabsFilter[j].classList.remove("active");
-         }
-         //add active class to a clicked btn
-         this.classList.add("active");
-         const target = this.getAttribute("data-target"); // get a certain value from data-target attribute
-         //loop through children elements of gallery_row
-         for (let k = 0; k < galleryItems.length; k++) {
-            //galleryItems[k].style.display = "none";
-
-            if (target === galleryItems[k].getAttribute("data-category")) {
-               galleryItems[k].classList.remove("hide");
-               galleryItems[k].classList.add("show");
-            } else {
-               galleryItems[k].classList.add("hide");
-               galleryItems[k].classList.remove("show");
-            }
-
-            if (target === "all") {
-               galleryItems[k].classList.remove("hide");
-               galleryItems[k].classList.add("show");
-            }
-         }
-      });
-   }
-}
-
-runTabsFilter(); */;
-
-
 document.addEventListener("DOMContentLoaded", () => {
    //run  Preloader
    function runPreloader() {
@@ -250,10 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    };
 
-   runCounter();
 
-
-  
    //run modal (pop-up)
    function runModal() {
       const openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -343,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       // toggle active class
-      window.addEventListener("scroll", (e) => {
+      window.addEventListener("scroll", () => {
          updateDashoffset();
          if (getTop() > offset) {
             scrollUpBtn.classList.add("active");
@@ -360,14 +319,46 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   //function resets values from inputs and textarea after submitting form
+   function resetFormItems() {
+      const form = document.querySelector(".form-reset");
+
+      form.addEventListener("submit", (event) => {
+         event.preventDefault();
+         form.reset();
+      });
+   }
+
+   //function which changes an active class of a vavigation while scrolling to a specific section
+   function changeActiveClassOnScroll() {
+      const navLinks = document.querySelectorAll(".navigation__link");
+      const sections = document.querySelectorAll(".section");
+      console.log(sections);
+      const scrollPosition = window.pageYOffset || document.documentElement.sccollTop; // window.pageYOffset + 160 - получает значения в 160px от вверха страницы
+
+      navLinks.forEach((link, index) => {
+         const activeSection = sections[index];
+         const compare = activeSection.offsetTop <= scrollPosition && (activeSection.offsetTop + activeSection.offsetHeight > scrollPosition);
+
+         if (scrollPosition > 50) {
+            compare ? link.classList.add("active") : link.classList.remove("active");
+         } else {
+            link.classList.remove("active");
+         }
+      });
+   }
+
+   window.addEventListener("scroll", changeActiveClassOnScroll);
+
 
    //call functions
    runAccordion();
    runParallaxEfect();
-   //runCounter();
+   runCounter();
    fixedHeader();
    runToggleBtn();
    runTabsFilter();
    runModal();
    runScrollToTopBtn();
+   resetFormItems();
 });
