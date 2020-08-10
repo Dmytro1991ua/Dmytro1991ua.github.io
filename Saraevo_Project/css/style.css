@@ -1407,6 +1407,7 @@ main {
   padding: .8rem 1.2rem;
   border-radius: 5px;
   letter-spacing: 0.81px;
+  position: relative;
 }
 
 .navigation__link:link:hover,
@@ -1414,6 +1415,25 @@ main {
   background-color: #000000;
   -webkit-box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
           box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
+}
+
+.navigation__link:link::after,
+.navigation__link:visited::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 4px;
+  width: 0rem;
+  height: 3px;
+  background-color: #ffff;
+  display: block;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.navigation__link.active::after {
+  width: 100%;
 }
 
 .navigation.show {

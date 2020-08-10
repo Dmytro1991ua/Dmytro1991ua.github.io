@@ -211,6 +211,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   //function resets values from inputs and textarea after submitting form
+   function resetForm() {
+      const forms = document.querySelector(".form-reset");
+      
+      forms.addEventListener("submit", (event) => {
+         event.preventDefault();
+         forms.reset();
+      });
+   }
+
+   //function which changes an active class of a vavigation while scrolling to a specific section
+   function changeActiveClassOnScroll() {
+      const navLinks = document.querySelectorAll(".navigation__link");
+      const sections = document.querySelectorAll(".section");
+      const scrollPosition = window.pageYOffset || document.documentElement.sccollTop; // window.pageYOffset + 160 - получает значения в 160px от вверха страницы
+
+      navLinks.forEach((link, index) => {
+         const activeSection = sections[index];
+         const compare = activeSection.offsetTop <= scrollPosition && (activeSection.offsetTop + activeSection.offsetHeight > scrollPosition);
+
+         if (scrollPosition > 50) {
+            compare ? link.classList.add("active") : link.classList.remove("active");
+         } else {
+            link.classList.remove("active");
+         }
+      });
+   }
+
+   window.addEventListener("scroll", changeActiveClassOnScroll);
+
    //call functions
    runCounter();
    runModal(); 
@@ -219,5 +249,5 @@ document.addEventListener("DOMContentLoaded", () => {
    runToggleBtn();
    fixedHeader(); 
    runScrollToTopBtn();
-
+   resetForm();
 });
