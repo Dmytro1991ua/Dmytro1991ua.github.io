@@ -333,7 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
    function changeActiveClassOnScroll() {
       const navLinks = document.querySelectorAll(".navigation__link");
       const sections = document.querySelectorAll(".section");
-      console.log(sections);
       const scrollPosition = window.pageYOffset || document.documentElement.sccollTop; // window.pageYOffset + 160 - получает значения в 160px от вверха страницы
 
       navLinks.forEach((link, index) => {
