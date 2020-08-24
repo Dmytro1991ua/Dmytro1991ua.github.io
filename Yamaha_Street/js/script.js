@@ -1,8 +1,55 @@
 
-/*document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+   //Sticky header section on scroll down
+   function fixedHeader() {
+      window.onscroll = function () {
+         const scrollTop = document.documentElement.scrollTop;
+         if (window.innerWidth > 768) {
+            if (scrollTop > 70) {
+               document.querySelector(".header").classList.add("sticky");
+            } else {
+               document.querySelector(".header").classList.remove("sticky");
+            }
+         }
+      }
+   }
+
+    //open and close toggle btn on click
+   function runToggleBtn() {
+      //open  and close (toggle) on click
+      const toggleBtn = document.querySelector(".toggle__btn");
+      toggleBtn.addEventListener("click", () => {
+         document.querySelector(".navigation").classList.toggle("show");
+         document.querySelector(".header__info").classList.toggle("show");
+         document.querySelector(".toggle__btn").classList.toggle("active");
+         document.querySelector("body").classList.toggle("lock");
+
+      });
+      //close a navigation on specific link
+      const links = document.querySelectorAll(".navigation__link");
+
+      links.forEach(link => {
+         link.addEventListener("click", () => {
+            document.querySelector(".navigation").classList.remove("show");
+            document.querySelector(".header__info").classList.remove("show");
+            document.querySelector(".toggle__btn").classList.toggle("active");
+            document.querySelector("body").classList.remove("lock");
+         });
+      });
+   };
+
+   //function which shows input filed on click to a an icon
+   function showInputSearch() {
+      const inputIcon = document.querySelector(".header__search-icon");
+      const inputField = document.querySelector(".header__search-input");
+
+      inputIcon.addEventListener("click", () => {
+         inputField.classList.toggle("active");
+      });
+   }
 
    // run accordion
-   function runAccordion() {
+  /* function runAccordion() {
       const accordions = document.querySelectorAll(".accordion__button");
       const accordionContents = document.querySelectorAll(".accordion__content");
 
@@ -129,19 +176,7 @@
       });
    }
 
-   //Sticky header section on scroll down
-   function fixedHeader() {
-      window.onscroll = function () {
-         const scrollTop = document.documentElement.scrollTop;
-         if (window.innerWidth > 768) {
-            if (scrollTop > 70) {
-               document.querySelector(".header").classList.add("sticky");
-            } else {
-               document.querySelector(".header").classList.remove("sticky");
-            }
-         }
-      }
-   }
+   
 
    // tabs buttons to open a specific card on click
    function runTabsFilter() {
@@ -178,27 +213,7 @@
       }
    }
 
-   //open and close toggle btn on click
-   function runToggleBtn() {
-      //open  and close (toggle) on click
-      const toggleBtn = document.querySelector(".toggle__btn");
-      toggleBtn.addEventListener("click", () => {
-         document.querySelector(".navigation").classList.toggle("show");
-         document.querySelector(".toggle__btn").classList.toggle("active");
-         document.querySelector("body").classList.toggle("lock");
-
-      });
-      //close a navigation on specific link
-      const links = document.querySelectorAll(".navigation__link");
-
-      links.forEach(link => {
-         link.addEventListener("click", () => {
-            document.querySelector(".navigation").classList.remove("show");
-            document.querySelector(".toggle__btn").classList.toggle("active");
-            document.querySelector("body").classList.remove("lock");
-         });
-      });
-   };
+  
   
    //Run preloader
    function runPreloader() {
@@ -212,7 +227,7 @@
    window.addEventListener("load", runPreloader);
    
    //ibg function allows to set some certain styles(as if it was inserted as a background) for an img which is inserted via <img> tag
-   /*function ibg() {
+   function ibg() {
 
       let ibg = document.querySelectorAll(".ibg");
       for (var i = 0; i < ibg.length; i++) {
@@ -281,19 +296,43 @@ function changeActiveClassOnScroll() {
    });
 }
 
-window.addEventListener("scroll", changeActiveClassOnScroll);
+window.addEventListener("scroll", changeActiveClassOnScroll); */
 
    
  //call functions
-   /*runAccordion();
-   runCounter();
-   runModal();
-   runPreloader();
+   //runAccordion();
+   //runCounter();
+  // runModal();
+  // runPreloader();
    fixedHeader(); 
-   runTabsFilter();
+  // runTabsFilter();
    runToggleBtn();
-   runScrollToTopBtn();
-   ibg();
-   resetForm();
-}); */
+   showInputSearch();
+  // runScrollToTopBtn();
+  // ibg();
+   //resetForm();
+}); 
 
+/*var mySwiper = new Swiper('.slider-1', {
+   autoplay: {
+         delay: 4000,
+         disableOnInteraction: false
+      },
+   loop: true,
+   slidesPerView: 1,
+   spaceBetween: 10,
+     breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+      }
+}) */
