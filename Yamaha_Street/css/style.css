@@ -1203,7 +1203,6 @@ main {
   -webkit-transition: all .4s linear;
   -o-transition: all .4s linear;
   transition: all .4s linear;
-  padding: 0 0 0 3.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1258,6 +1257,7 @@ main {
   padding: .8rem 1.2rem;
   border-radius: 5px;
   position: relative;
+  margin-right: 1.1rem;
 }
 
 .navigation__link:link:hover,
@@ -1268,23 +1268,24 @@ main {
           box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
 }
 
-.navigation__link:link::after,
-.navigation__link:visited::after {
+.navigation__link:link::before,
+.navigation__link:visited::before {
   content: "";
   position: absolute;
-  bottom: -12px;
-  left: 4px;
-  width: 0rem;
-  height: 4px;
-  background-color: #000000;
+  bottom: -101%;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ee3b33;
   display: block;
   -webkit-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
 
-.navigation__link.active::after {
+.navigation__link.active::before {
   width: 100%;
+  left: 0;
 }
 
 .navigation.show {
@@ -1600,12 +1601,16 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.24px;
   margin-right: .5rem;
-  padding: 0.2rem;
+  border-radius: 5px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .header__info-link:link:hover,
 .header__info-link:visited:hover {
   background-color: #000000;
+  color: #ffffff;
   -webkit-box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
           box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
 }
@@ -1777,18 +1782,25 @@ main {
   }
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 65em) {
   .logo {
+    height: 11rem;
     z-index: 2;
     padding: 2.3rem 2.2rem;
     background-color: #ee3b33;
   }
 
   .navigation {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
     position: initial;
+    width: 88%;
     opacity: 1;
     visibility: visible;
-    width: 86%;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
   }
 
   .navigation__items {
@@ -1822,6 +1834,11 @@ main {
     display: none;
   }
 
+  .header {
+    background: transparent;
+    padding: 0;
+  }
+
   .header__top-row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1836,6 +1853,7 @@ main {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    height: 11rem;
   }
 
   .header__navigation-body {
@@ -1870,22 +1888,20 @@ main {
   .header__info-link:visited {
     font-size: 1.1rem;
     color: #212327;
+    padding: 0.8rem;
   }
 
   .header__search {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    padding-right: 1rem;
+  }
+
+  .header__search-input {
+    color: #ffffff;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .header__search-input.placeholder {
@@ -1917,22 +1933,49 @@ main {
     fill: #212327;
     width: 1.8rem;
     height: 1.8rem;
-    margin-right: 0rem;
-    margin-bottom: .5rem;
   }
-}
 
-@media only screen and (min-width: 48em) and (min-width: 48em) {
-  .header {
-    background: transparent;
-    padding: 0;
+  .header__search-icon:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
   }
-}
 
-@media only screen and (min-width: 64em) {
   .container {
     max-width: 114rem;
     margin: 0 auto;
     padding: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .navigation__link:link::before,
+  .navigation__link:visited::before {
+    bottom: -84%;
+  }
+
+  .navigation__link:link,
+  .navigation__link:visited {
+    font-size: calc(20px + -4 * ((100vw - 320px) / 1600));
+    bottom: -96%;
+  }
+
+  .header__info-link:link,
+  .header__info-link:visited {
+    font-size: calc(12px + 0 * ((100vw - 320px) / 1600));
+    margin-right: 1rem;
+  }
+
+  .header__info-link:link,
+  .header__info-link:visited {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 1350px) {
+  .navigation__link:link::before,
+  .navigation__link:visited::before {
+    bottom: -89%;
   }
 }
