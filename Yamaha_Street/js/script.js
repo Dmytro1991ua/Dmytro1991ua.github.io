@@ -48,6 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   //function which changes an active class of a vavigation while scrolling to a specific section
+   function changeActiveClassOnScroll() {
+      const navigation = document.querySelectorAll(".navigation__link");
+      const sections = document.querySelectorAll(".section");
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop; // window.pageYOffset + 160 - получает значения в 160px от вверха страницы
+
+      navigation.forEach((link, index) => {
+         const activeSection = sections[index];
+         const compare = activeSection.offsetTop <= scrollPosition && (activeSection.offsetTop + activeSection.offsetHeight > scrollPosition);
+
+         if (scrollPosition > 70) {
+            compare ? link.classList.add("active") : link.classList.remove("active");
+         }
+      });
+   }
+
+   window.addEventListener("scroll", changeActiveClassOnScroll); 
+   
    // run accordion
   /* function runAccordion() {
       const accordions = document.querySelectorAll(".accordion__button");
