@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
    function fixedHeader() {
       window.onscroll = function () {
          const scrollTop = document.documentElement.scrollTop;
-         if (window.innerWidth > 768) {
+         if (window.innerWidth > 1040) {
             if (scrollTop > 70) {
                document.querySelector(".header").classList.add("sticky");
             } else {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    //function which changes an active class of a vavigation while scrolling to a specific section
-   function changeActiveClassOnScroll() {
+  /* function changeActiveClassOnScroll() {
       const navigation = document.querySelectorAll(".navigation__link");
       const sections = document.querySelectorAll(".section");
       const scrollPosition = window.pageYOffset || document.documentElement.scrollTop; // window.pageYOffset + 160 - получает значения в 160px от вверха страницы
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
-   window.addEventListener("scroll", changeActiveClassOnScroll); 
+   window.addEventListener("scroll", changeActiveClassOnScroll); */
    
    // run accordion
   /* function runAccordion() {

@@ -1409,6 +1409,72 @@ main {
     }
 } */
 
+.timeline {
+  position: relative;
+}
+
+.timeline__body {
+  text-align: center;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 1.6rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0rem;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 10.1rem;
+  top: 0;
+  background-color: #c8c8c8;
+  opacity: .5;
+}
+
+.timeline__item.active .timeline__circle-dot {
+  background-color: #ee3b33;
+}
+
+.timeline__item.active .timeline__icon {
+  fill: #ee3b33;
+  opacity: 1;
+}
+
+.timeline__item:last-of-type::before {
+  background-color: transparent;
+}
+
+.timeline__circle-dot {
+  position: absolute;
+  top: 0;
+  left: 9.4rem;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #c8c8c8;
+}
+
+.timeline__icon {
+  width: 2.3rem;
+  height: 2.8rem;
+  margin-bottom: 1.2rem;
+  fill: #c8c8c8;
+  opacity: .5;
+}
+
+.timeline__title {
+  font-size: calc(13px + 0 * ((100vw - 320px) / 1600));
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #c8c8c8;
+}
+
 .toggle {
   display: none;
   position: relative;
@@ -1582,6 +1648,7 @@ main {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .about__motorcycle-icon-box {
@@ -2044,6 +2111,61 @@ main {
   padding: 0 2rem;
 }
 
+.specification {
+  padding-bottom: 5rem;
+}
+
+.specification__container {
+  padding: 0 1.6rem;
+}
+
+.specification__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  max-width: 100%;
+}
+
+.specification__timeline {
+  margin-bottom: 6rem;
+}
+
+.specification__details-image {
+  margin-bottom: 3rem;
+}
+
+.specification__details-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.specification__product-characteristics {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.specification__product-characteristics:last-of-type {
+  margin-bottom: 0rem;
+}
+
+.specification__product-characteristics-title {
+  font-size: calc(17px + -1 * ((100vw - 320px) / 1600));
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #212327;
+  margin-bottom: 2.1rem;
+}
+
+.specification__product-characteristics-info {
+  font-size: calc(15px + 0 * ((100vw - 320px) / 1600));
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  color: #212327;
+  line-height: 2.5rem;
+}
+
 @font-face {
   font-family: "ag_foreigner_italicmedium";
   font-display: swap;
@@ -2085,6 +2207,22 @@ main {
 }
 
 @media only screen and (min-width: 38.75em) {
+  .timeline__body {
+    text-align: left;
+  }
+
+  .timeline__item {
+    padding-bottom: 8.6rem;
+  }
+
+  .timeline__item::before {
+    left: -1.9rem;
+  }
+
+  .timeline__circle-dot {
+    left: -2.6rem;
+  }
+
   .header-bottom__row {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2108,21 +2246,42 @@ main {
   .container {
     padding: 0 4rem;
   }
+
+  .specification__body {
+    padding-top: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .specification__details {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 77%;
+            flex: 0 1 77%;
+  }
+
+  .specification__details-image img {
+    max-width: 67%;
+    margin: 0 auto;
+  }
+
+  .specification__product-characteristics-info {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 90.6em) {
-  .about__container {
-    width: 100%;
-    max-width: -webkit-fit-content;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    padding: 0 16rem;
-  }
-
-  .about__motorcycle::before {
-    top: 5%;
-  }
-
   .container {
     max-width: 132rem;
     margin: 0 auto;
@@ -2146,6 +2305,22 @@ main {
             flex: 0 1 31%;
     max-width: 31%;
   }
+
+  .specification__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 @media (min-width: 830px) {
@@ -2153,10 +2328,6 @@ main {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
-  }
-
-  .about__motorcycle-img img {
-    width: 100%;
   }
 }
 
@@ -2430,6 +2601,56 @@ main {
     bottom: -96%;
   }
 
+  .timeline__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .timeline__item {
+    padding-right: 17rem;
+    padding-bottom: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .timeline__item:last-child {
+    padding-right: 0rem;
+  }
+
+  .timeline__item::before {
+    width: 93%;
+    height: 1px;
+    top: 137%;
+    left: 2.5rem;
+  }
+
+  .timeline__circle-dot {
+    left: 1rem;
+    top: 122%;
+  }
+
   .about__row {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -2449,6 +2670,7 @@ main {
 
   .about__motorcycle-img img {
     margin-top: 10rem;
+    width: 100%;
   }
 
   .about__motorcycle-icon-box--1 {
@@ -2540,6 +2762,64 @@ main {
     font-size: 1.2rem;
     margin-right: 1rem;
   }
+
+  .specification__container {
+    padding: 0 10rem;
+  }
+
+  .specification__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .specification__timeline {
+    margin-bottom: 9rem;
+  }
+
+  .specification__details {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .specification__details-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .specification__details-image img {
+    width: 86%;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin-right: 10rem;
+  }
+
+  .specification__product-characteristics-info {
+    max-width: 44rem;
+  }
 }
 
 @media (min-width: 1250px) {
@@ -2559,7 +2839,36 @@ main {
   }
 }
 
+@media (min-width: 1340px) {
+  .about__motorcycle::before {
+    top: 4%;
+  }
+}
+
+@media (min-width: 1450px) {
+  .about__container {
+    width: 100%;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding: 0 16rem;
+  }
+
+  .about__motorcycle::before {
+    top: -6%;
+    font-size: 19rem;
+  }
+
+  .specification__container {
+    padding: 0 20rem;
+  }
+}
+
 @media (min-width: 1650px) {
+  .about__motorcycle::before {
+    top: 2%;
+  }
+
   .header-bottom__item::after {
     bottom: -25%;
   }
@@ -2570,6 +2879,10 @@ main {
 }
 
 @media (min-width: 2000px) {
+  .about__motorcycle::before {
+    top: 2%;
+  }
+
   .header-bottom__item::after {
     height: 4px;
     bottom: -21%;
