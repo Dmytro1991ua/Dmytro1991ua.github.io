@@ -718,6 +718,7 @@ main {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  border: 3px solid transparent;
   font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
   font-weight: 500;
   text-transform: uppercase;
@@ -743,6 +744,7 @@ main {
   background-color: #ee3b33;
   border: none;
   color: #ffffff;
+  border: 3px solid transparent;
 }
 
 /*.cards {
@@ -1420,6 +1422,7 @@ main {
 .timeline__item {
   position: relative;
   padding-bottom: 1.6rem;
+  cursor: pointer;
 }
 
 .timeline__item:last-child {
@@ -1429,6 +1432,7 @@ main {
 .timeline__item::before {
   content: "";
   position: absolute;
+  display: block;
   width: 1px;
   height: 100%;
   left: 10.1rem;
@@ -1444,6 +1448,10 @@ main {
 .timeline__item.active .timeline__icon {
   fill: #ee3b33;
   opacity: 1;
+}
+
+.timeline__item.active .timeline__title {
+  color: #212327;
 }
 
 .timeline__item:last-of-type::before {
@@ -1644,6 +1652,10 @@ main {
   margin-bottom: 4rem;
 }
 
+.about__motorcycle-img {
+  display: block;
+}
+
 .about__motorcycle-img img {
   max-width: 100%;
   height: auto;
@@ -1652,11 +1664,15 @@ main {
 }
 
 .about__motorcycle-icon-box {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background-color: #ee3b33;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1690,10 +1706,38 @@ main {
   right: 8%;
 }
 
+.about__motorcycle-icon-box::before {
+  content: "";
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid #ee3b33;
+  opacity: .39;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.about__motorcycle-icon-box:hover::before {
+  border: 1px solid #545351;
+}
+
+.about__motorcycle-icon-box:hover {
+  background-color: #212327;
+}
+
+.about__motorcycle-icon-box:hover .about__motorcycle-icon {
+  fill: #ee3b33;
+}
+
 .about__motorcycle-icon {
-  width: 12px;
-  height: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
   fill: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .about__model-description {
@@ -1729,6 +1773,7 @@ main {
   color: #81848a;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .about__modal-years span {
@@ -1776,36 +1821,48 @@ main {
 }
 
 .about__modal-colors {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
-  border: 1px solid #ee3b33;
+  border: 1px solid #adacaa;
   margin-bottom: 4.1rem;
   margin-right: 1.6rem;
+  position: relative;
+}
+
+.about__modal-colors.active {
+  border: 1px solid #ee3b33;
 }
 
 .about__modal-color {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .about__modal-color--1 {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, red), color-stop(50%, green));
-  background: -o-linear-gradient(top, red 50%, green 50%);
-  background: linear-gradient(to bottom, red 50%, green 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #5c68b5), color-stop(50%, #adacaa));
+  background: -o-linear-gradient(top, #5c68b5 50%, #adacaa 50%);
+  background: linear-gradient(to bottom, #5c68b5 50%, #adacaa 50%);
 }
 
 .about__modal-color--2 {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, red), color-stop(50%, green));
-  background: -o-linear-gradient(top, red 50%, green 50%);
-  background: linear-gradient(to bottom, red 50%, green 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #545351), color-stop(50%, #adacaa));
+  background: -o-linear-gradient(top, #545351 50%, #adacaa 50%);
+  background: linear-gradient(to bottom, #545351 50%, #adacaa 50%);
 }
 
 .about__modal-color--3 {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, red), color-stop(50%, green));
-  background: -o-linear-gradient(top, red 50%, green 50%);
-  background: linear-gradient(to bottom, red 50%, green 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f5cc22), color-stop(50%, #383735));
+  background: -o-linear-gradient(top, #f5cc22 50%, #383735 50%);
+  background: linear-gradient(to bottom, #f5cc22 50%, #383735 50%);
 }
 
 .about__model-info-text {
@@ -1995,7 +2052,7 @@ main {
   width: 100%;
   margin-top: 8rem;
   padding-top: 2.3rem;
-  padding-bottom: 2.9rem;
+  padding-bottom: 2.1rem;
   border-bottom: 1px solid #dadfe6;
 }
 
@@ -2006,7 +2063,6 @@ main {
           flex: 0 1 100%;
   max-width: 100%;
   text-align: center;
-  margin-bottom: 1.5rem;
   cursor: pointer;
 }
 
@@ -2130,7 +2186,18 @@ main {
   margin-bottom: 6rem;
 }
 
+.specification__details.hide {
+  display: none;
+}
+
+.specification__details.show {
+  display: block;
+  -webkit-animation: showItem .5s ease;
+          animation: showItem .5s ease;
+}
+
 .specification__details-image {
+  display: block;
   margin-bottom: 3rem;
 }
 
@@ -2221,6 +2288,22 @@ main {
 
   .timeline__circle-dot {
     left: -2.6rem;
+  }
+
+  .about__model-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .header-bottom__row {
@@ -2329,6 +2412,21 @@ main {
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
   }
+
+  .about__motorcycle-icon-box--1 {
+    top: 42%;
+    left: 7%;
+  }
+
+  .about__motorcycle-icon-box--2 {
+    top: 3%;
+    left: 46%;
+  }
+
+  .about__motorcycle-icon-box--3 {
+    top: 43%;
+    right: 12%;
+  }
 }
 
 @media only screen and (min-width: 65em) {
@@ -2418,6 +2516,19 @@ main {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 35%;
             flex: 0 1 35%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .about__model-info-text {
@@ -2551,7 +2662,7 @@ main {
     content: "";
     position: absolute;
     left: 0%;
-    bottom: -33%;
+    bottom: -16%;
     height: 3px;
     width: 0%;
     background-color: #ee3b33;
@@ -2561,8 +2672,8 @@ main {
   }
 
   .header-bottom__item:hover::after {
-    width: 50%;
-    left: 25%;
+    width: 83%;
+    left: 13%;
   }
 
   .header-bottom__img {
@@ -2815,6 +2926,10 @@ main {
     max-width: -moz-fit-content;
     max-width: fit-content;
     margin-right: 10rem;
+  }
+
+  .specification__product-characteristics {
+    text-align: left;
   }
 
   .specification__product-characteristics-info {

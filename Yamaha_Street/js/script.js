@@ -48,6 +48,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   // tabs buttons to open a specific card on click
+   function runTabsFilter() {
+      const tabsFilter = document.querySelector(".timeline__body").children;
+      const tabsContent = document.querySelectorAll(".specification__details");
+      //loop through each tab (filter) btn
+      for (let i = 0; i < tabsFilter.length; i++) {
+         tabsFilter[i].addEventListener("click", function () {
+            //remove active class from other btn which are not clicked at the moment
+            for (let j = 0; j < tabsFilter.length; j++) {
+               tabsFilter[j].classList.remove("active");
+            }
+            //add active class to a clicked btn
+            this.classList.add("active");
+            const target = this.getAttribute("data-target"); // get a certain value from data-target attribute
+            //loop through children elements of gallery_row
+            for (let k = 0; k < tabsContent.length; k++) {
+               //galleryItems[k].style.display = "none";
+
+               if (target === tabsContent[k].getAttribute("data-category")) {
+                  tabsContent[k].classList.remove("hide");
+                  tabsContent[k].classList.add("show");
+               } else {
+                  tabsContent[k].classList.add("hide");
+                  tabsContent[k].classList.remove("show");
+               }
+            }
+         });
+      }
+   }
+
    //function which changes an active class of a vavigation while scrolling to a specific section
   /* function changeActiveClassOnScroll() {
       const navigation = document.querySelectorAll(".navigation__link");
@@ -323,7 +353,7 @@ window.addEventListener("scroll", changeActiveClassOnScroll); */
   // runModal();
   // runPreloader();
    fixedHeader(); 
-  // runTabsFilter();
+   runTabsFilter();
    runToggleBtn();
    showInputSearch();
   // runScrollToTopBtn();
