@@ -987,109 +987,121 @@ main {
     }
 } */
 
-/*.gallery {
-    &__row {
-        //используем отрицательные марджины для того чтобы сделать отступ между каточками (раздвигаем flex container)
-        margin: 0rem -1.5rem; // на половину отступа по макету (если отступ 30px  то margin-left и margin-right будут -15px)
+.gallery__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .3rem;
+}
 
-        @include respond(tab-port) {
-            justify-content: center;
-        }
-    }
+.gallery__item {
+  margin-right: .3rem;
+}
 
-    &__item {
-        flex: 0 1 33.3333%;
-        max-width: 33.333%;
-        display: flex;
-        padding: 0rem 1.5rem; //сами колонки (флекс элементы ) сдвигаем при помощи padding на половину отспута по макету
-        margin-bottom: 3rem;
+.gallery__item-inner {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 
-        @include respond(tab-port) {
-            flex: 0 1 50%;
-            max-width: 50%;
-        }
+.gallery__item-inner:hover .gallery__overlay {
+  opacity: 1;
+  visibility: visible;
+}
 
+.gallery__img {
+  overflow: hidden;
+}
 
-        @include respond(tiny-phone) {
-            flex: 0 1 100%;
-            max-width: 100%;
-            justify-content: center;
-        }
-    }
+.gallery__pic {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    &__item.hide {
-        display: none;
-    } 
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(238, 59, 51, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    &__item.show {
-         display: block;
-         animation: showItem .5s ease;
-     } 
+.gallery__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    &__item-inner {
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
+.gallery__overlay-title {
+  font-size: calc(20px + 5 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+}
 
-        @include flex(column, stretch, flex-start);
-    }
+.gallery__overlay-icon {
+  width: 4rem;
+  height: 4rem;
+  fill: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
 
-    &__item-inner:hover &__overlay {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    &__img {
-        overflow: hidden;
-    }
-
-    &__pic {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba($color-tomato, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        transition: all .3s ease-in;
-
-        @include flex(column, center, center);
-
-        @include respond(tab-port) {
-            opacity: 1;
-            visibility: visible;
-            box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.6);
-        }
-    }
-
-    &__info {
-        @include flex(column, center, center);
-
-        //flex: 1 1 auto;
-   
-    }
-
-    &__text {
-        max-width: 40rem;
-        text-align: center;
-        line-height: 2rem;
-
-        @include adaptiv-font(16, 14);
-    }
-
-    &__btn {
-        text-decoration: none;
-
-        @include adaptiv-font(18, 16);
-    }
-} */
+.gallery__overlay-icon:hover {
+  fill: #212327;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
 
 /*.ibg {
     background-position: center;
@@ -2167,6 +2179,59 @@ main {
   padding: 0 2rem;
 }
 
+.overview {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.overview__container {
+  padding: 0 1.6rem;
+}
+
+.overview__row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overview__img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.overview__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overview__icon {
+  width: 2.3rem;
+  height: 1.9rem;
+  margin-right: 1rem;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+
+.overview__info-title {
+  font-size: calc(17px + -1 * ((100vw - 320px) / 1600));
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #212327;
+}
+
 .specification {
   padding-bottom: 5rem;
 }
@@ -2364,6 +2429,75 @@ main {
   }
 }
 
+@media (min-width: 43.8em) {
+  .gallery__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: center;
+            flex-direction: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .gallery__column--1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .gallery__column--3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .gallery__column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    padding: 0rem;
+  }
+
+  .gallery__item {
+    margin-right: 0rem;
+  }
+
+  .gallery__overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media only screen and (min-width: 90.6em) {
   .container {
     max-width: 132rem;
@@ -2430,6 +2564,10 @@ main {
 }
 
 @media only screen and (min-width: 65em) {
+  .gallery {
+    padding-top: 5rem;
+  }
+
   .logo {
     height: 11rem;
     z-index: 2;
@@ -2685,6 +2823,11 @@ main {
     margin: 0 auto;
     padding: 1.6rem;
   }
+
+  .overview {
+    padding-top: 4rem;
+    padding-bottom: 9.3rem;
+  }
 }
 
 @media only screen and (min-width: 75em) {
@@ -2874,6 +3017,10 @@ main {
     margin-right: 1rem;
   }
 
+  .overview__container {
+    padding: 0 10rem;
+  }
+
   .specification__container {
     padding: 0 10rem;
   }
@@ -2972,6 +3119,10 @@ main {
   .about__motorcycle::before {
     top: -6%;
     font-size: 19rem;
+  }
+
+  .overview__container {
+    padding: 0 20rem;
   }
 
   .specification__container {
