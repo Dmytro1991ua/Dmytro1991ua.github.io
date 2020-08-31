@@ -50,8 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // tabs buttons to open a specific card on click
    function runTabsFilter() {
-      const tabsFilter = document.querySelector(".tabs").children;
+      const tabsFilter = document.querySelectorAll(".tabs");
       const tabsContent = document.querySelectorAll(".tabs-content");
+      console.log(tabsContent);
+
+      console.log(tabsFilter);
       //loop through each tab (filter) btn
       for (let i = 0; i < tabsFilter.length; i++) {
          tabsFilter[i].addEventListener("click", function () {
