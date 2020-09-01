@@ -988,10 +988,6 @@ main {
 } */
 
 .gallery__column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 100%;
-          flex: 0 1 100%;
-  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1031,7 +1027,7 @@ main {
 }
 
 .gallery__pic {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -2455,6 +2451,66 @@ main {
   line-height: 2.5rem;
 }
 
+.useful-links {
+  padding: 2rem 0;
+  background-color: #212327;
+}
+
+.useful-links__container {
+  padding: 0 1.6rem;
+}
+
+.useful-links__item {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.useful-links__item:last-child {
+  margin-bottom: 0;
+}
+
+.useful-links__item-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.useful-links__link:link,
+.useful-links__link:visited {
+  font-size: calc(14px + -2 * ((100vw - 320px) / 1600));
+  font-weight: 400;
+  line-height: 3rem;
+  text-transform: uppercase;
+  color: #81848a;
+  margin-right: 1.2rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.useful-links__link:link:last-child,
+.useful-links__link:visited:last-child {
+  margin-right: 0rem;
+}
+
+.useful-links__link:link:hover,
+.useful-links__link:visited:hover {
+  color: #ffffff;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 @font-face {
   font-family: "ag_foreigner_italicmedium";
   font-display: swap;
@@ -2607,10 +2663,10 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: center;
-            flex-direction: center;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2633,6 +2689,12 @@ main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+
+  .gallery__column--2 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 
   .gallery__column--3 {
@@ -2668,6 +2730,51 @@ main {
   .gallery__overlay {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@media (min-width: 56.25em) {
+  .useful-links__container {
+    padding: 0 3rem;
+  }
+
+  .useful-links__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .useful-links__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 24%;
+            flex: 0 1 24%;
+    max-width: 23%;
+    margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -3294,6 +3401,23 @@ main {
   .specification__product-characteristics-info {
     max-width: 44rem;
   }
+
+  .useful-links__container {
+    padding: 0 6rem;
+  }
+
+  .useful-links__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 17%;
+            flex: 0 1 17%;
+    max-width: 23%;
+    margin-bottom: 0rem;
+    margin-right: 2.5rem;
+  }
+
+  .useful-links__item:last-child {
+    margin-right: 0;
+  }
 }
 
 @media (min-width: 1250px) {
@@ -3346,6 +3470,22 @@ main {
   }
 }
 
+@media (min-width: 92em) {
+  .useful-links__container {
+    padding: 0 0rem;
+    padding-right: 15rem;
+    padding-left: 15rem;
+  }
+
+  .useful-links__item {
+    margin-right: 2.5rem;
+  }
+
+  .useful-links__item:last-child {
+    margin-right: 0;
+  }
+}
+
 @media (min-width: 1650px) {
   .about__motorcycle::before {
     top: 2%;
@@ -3362,11 +3502,21 @@ main {
 
 @media (min-width: 2000px) {
   .about__motorcycle::before {
-    top: 2%;
+    top: 5%;
+    font-size: 23rem;
   }
 
   .header-bottom__item::after {
     height: 4px;
     bottom: -21%;
+  }
+}
+
+@media (min-width: 125em) {
+  .useful-links__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 15%;
+            flex: 0 1 15%;
+    max-width: 14%;
   }
 }
