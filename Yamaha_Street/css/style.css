@@ -1941,6 +1941,7 @@ main {
   opacity: 0.53;
   color: #212327;
   margin-right: 1.2rem;
+  margin-bottom: 1.2rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -1953,6 +1954,7 @@ main {
 
 .features__link:last-child {
   margin-right: 0;
+  margin-bottom: 0;
 }
 
 .features__link:hover {
@@ -3060,6 +3062,7 @@ main {
   }
 
   .features__link {
+    margin-bottom: 0;
     margin-right: 3rem;
   }
 
