@@ -67,7 +67,8 @@
                   <!--Header info starts-->
                   <ul class="header__info">
                      <li class="header__info-item"><a href="#" class="header__info-link">FIND A DEALER</a></li>
-                     <li class="header__info-item"><a href="#" class="header__info-link">MY YAMAHA LOGIN/SIGNUP</a></li>
+                     <li class="header__info-item"><a href="#" class="header__info-link" data-modal-target="#modal-1">MY
+                           YAMAHA LOGIN/SIGNUP</a></li>
                      <li class="header__info-item"><a href="#" class="header__info-link">EVENTS & DEMOS</a></li>
                   </ul>
                   <form action="#" class="header__search">
@@ -865,6 +866,43 @@
          </div>
       </footer>
       <!-- Footer ends-->
+      <!--Modal starts-->
+      <div class="modal">
+         <!--Modal window starts-->
+         -<div class="modal__body" id="modal-1">
+            <a class="modal__close" href="#" data-close-button>&times;</a>
+            <form type="submit" class="modal__content">
+               <div class="modal__item">
+                  <input type="text" id="login" class="modal__input" placeholder="Login">
+                  <lable class="modal__label" for="login">Login</lable>
+               </div>
+               <div class="modal__item">
+                  <input type="text" id="password" class="modal__input" placeholder="Password">
+                  <lable class="modal__label" for="login">Password</lable>
+               </div>
+               <button class="modal__btn">Submit</button>
+            </form>
+         </div>
+         <!--Modal window ends-->
+
+         <!--Modal window starts-->
+         <!--<div class="modal__body" id="modal-2">
+      <a class="modal__close" href="#" data-close-button>&times;</a>
+      <div class="modal__img">
+         <picture><source srcset="./img/cards/2.webp" type="image/webp"><img src="./img/cards/2.jpg" alt=""></picture>
+      </div>
+      <div class="modal__content">
+         <h3 class="heading-3">Some Website</h3>
+         <p class="modal__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatum provident
+            ad vero, tenetur nesciunt quis error voluptate esse exercitationem ex sit fugit illum rem labore quod ea
+            reprehenderit unde?</p>
+         <a href="#" class="modal__btn">Check this Out</a>
+      </div>
+   </div> -->
+         <!--Modal window ends-->
+         <div class="modal__overlay"></div>
+      </div>
+      <!--Modal ends-->
    </div>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/script.min.js"></script>

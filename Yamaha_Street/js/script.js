@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    }
 
-   //function which changes an active class of a vavigation while scrolling to a specific section
+   //function which changes an active class of a navigation while scrolling to a specific section
     function changeActiveClassOnScroll() {
        const navigation = document.querySelectorAll(".navigation__link");
        const sections = document.querySelectorAll(".section");
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
 
    //call functions
-   //runModal();
+   runModal();
    // runPreloader();
    fixedHeader();
    runTabsFilter();
