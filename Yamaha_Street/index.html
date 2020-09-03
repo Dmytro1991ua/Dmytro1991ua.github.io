@@ -159,17 +159,17 @@
                            <source srcset="img/about/1.webp" type="image/webp"><img src="img/about/1.png"
                               alt="Yamaha motorcycle YZF‑R1"></picture>
                      </a>
-                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--1">
+                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--1" data-modal-target="#modal-4">
                         <svg class="about__motorcycle-icon">
                            <use xlink:href="img/icons/icons.svg#plus"></use>
                         </svg>
                      </div>
-                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--2">
+                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--2" data-modal-target="#modal-3">
                         <svg class="about__motorcycle-icon">
                            <use xlink:href="img/icons/icons.svg#plus"></use>
                         </svg>
                      </div>
-                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--3">
+                     <div class="about__motorcycle-icon-box about__motorcycle-icon-box--3" data-modal-target="#modal-2">
                         <svg class="about__motorcycle-icon">
                            <use xlink:href="img/icons/icons.svg#plus"></use>
                         </svg>
@@ -866,19 +866,19 @@
          </div>
       </footer>
       <!-- Footer ends-->
-      <!--Modal starts-->
+      <!--Modal header starts-->
       <div class="modal">
          <!--Modal window starts-->
-         -<div class="modal__body" id="modal-1">
+         <div class="modal__body scaled" id="modal-1">
             <a class="modal__close" href="#" data-close-button>&times;</a>
             <form type="submit" class="modal__content">
                <div class="modal__item">
                   <input type="text" id="login" class="modal__input" placeholder="Login">
-                  <lable class="modal__label" for="login">Login</lable>
+                  <label class="modal__label" for="login">Login</label>
                </div>
                <div class="modal__item">
                   <input type="text" id="password" class="modal__input" placeholder="Password">
-                  <lable class="modal__label" for="login">Password</lable>
+                  <label class="modal__label" for="login">Password</label>
                </div>
                <button class="modal__btn">Submit</button>
             </form>
@@ -903,6 +903,78 @@
          <div class="modal__overlay"></div>
       </div>
       <!--Modal ends-->
+      <!--Modal Section About starts-->
+      <div class="modal-about">
+         <div class="modal-about__body scaled" id="modal-2">
+            <a class="modal-about__close" href="#" data-close-button>&times;</a>
+            <div class="modal-about__img">
+               <picture>
+                  <source srcset="img/about/modal/1.webp" type="image/webp"><img src="img/about/modal/1.jpg"
+                     alt="YZF‑R1 wheel"></picture>
+            </div>
+            <div class="modal-about__content">
+               <h3 class="modal-about__title">YZF‑R1 wheels</h3>
+               <p class="modal-about__info">Excellent feel, especially on the front end, which now feels impossibly
+                  planted to
+                  the road. No doubt helped by the
+                  amazing anti-wheelie system – LIF, which can be dialled back from 3 (you won’t get the front more than
+                  an
+                  inch off the
+                  deck) back through 2 and 1, then OFF.</p>
+               <div class="modal-about__btn-box">
+                  <a href="https://www.yamaha.com/" class="modal-about__btn">find out more</a>
+               </div>
+            </div>
+         </div>
+         <div class="modal__overlay"></div>
+      </div>
+      <div class="modal-about">
+         <div class="modal-about__body scaled" id="modal-3">
+            <a class="modal-about__close" href="#" data-close-button>&times;</a>
+            <div class="modal-about__img">
+               <picture>
+                  <source srcset="img/about/modal/2.webp" type="image/webp"><img src="img/about/modal/2.jpg"
+                     alt="YZF‑R1 engine"></picture>
+            </div>
+            <div class="modal-about__content">
+               <h3 class="modal-about__title">YZF‑R1 engine</h3>
+               <p class="modal-about__info">For the racers out there, the Launch Control settings are also updated, with
+                  LCS1
+                  now launching at a higher engine speed
+                  – 9,000 rpm vs. 8,000 rpm – due to the throttle valve angle staying put at 41º instead of the previous
+                  38º.
+                  LCS2 remains
+                  the same as before.</p>
+               <div class="modal-about__btn-box">
+                  <a href="https://www.yamaha.com/" class="modal-about__btn">find out more</a>
+               </div>
+            </div>
+         </div>
+         <div class="modal__overlay"></div>
+      </div>
+      <div class="modal-about">
+         <div class="modal-about__body scaled" id="modal-4">
+            <a class="modal-about__close" href="#" data-close-button>&times;</a>
+            <div class="modal-about__img">
+               <picture>
+                  <source srcset="img/about/modal/3.webp" type="image/webp"><img src="img/about/modal/3.png"
+                     alt="YZF‑R1 exhaust pipe"></picture>
+            </div>
+            <div class="modal-about__content">
+               <h3 class="modal-about__title">YZF‑R1 exhaust pipe</h3>
+               <p class="modal-about__info">Yoshimura has introduced the Alpha-T, their latest and lightest 3/4 race
+                  system for the Yamaha R1. Developed using
+                  feedback from racers around the world including the Westby Yamalube team, the Yoshimura Alpha-T 3/4
+                  titanium race system
+                  weighs in at a claimed 5.7 pounds (8 pounds for stainless steel).</p>
+               <div class="modal-about__btn-box">
+                  <a href="https://www.yamaha.com/" class="modal-about__btn">find out more</a>
+               </div>
+            </div>
+         </div>
+         <div class="modal__overlay"></div>
+      </div>
+      <!--Modal Section About starts-->
    </div>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/script.min.js"></script>

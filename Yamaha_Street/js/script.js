@@ -131,14 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
        closeModalButtons.forEach(btn => {
           btn.addEventListener("click", (event) => {
              event.preventDefault();
-             const modal = btn.closest(".modal__body");
+             const modal = btn.closest(".scaled");
              closeModal(modal);
           })
        });
  
        //remove overlay by clcking outside modal window
        overlay.addEventListener("click", () => {
-          const openModals = document.querySelectorAll(".modal__body.active");
+          const openModals = document.querySelectorAll(".scaled.active");
           openModals.forEach(modal => {
              closeModal(modal);
           });
