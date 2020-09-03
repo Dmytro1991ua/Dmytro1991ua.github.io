@@ -2293,9 +2293,9 @@ main {
   width: 100%;
   z-index: 3;
   padding: .8rem 0;
-  -webkit-transition: all .3s ease-in;
-  -o-transition: all .3s ease-in;
-  transition: all .3s ease-in;
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in;
   background-color: #ee3b33;
   padding: 0.8rem 1.6rem;
   border-bottom: 1px solid #dadfe6;
@@ -2513,7 +2513,7 @@ main {
 }
 
 .header.sticky {
-  background-color: #adacaa;
+  background-color: rgba(56, 55, 53, 0.95);
   -webkit-transition: all .4s ease;
   -o-transition: all .4s ease;
   transition: all .4s ease;
@@ -2528,6 +2528,30 @@ main {
 
 .header.sticky .header__search-icon {
   fill: #ffffff;
+}
+
+.header.sticky .header__search-input {
+  border-bottom: 2px solid #ffffff;
+}
+
+.header.sticky .header__search-input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.header.sticky .header__search-input::-moz-placeholder {
+  color: #ffffff;
+}
+
+.header.sticky .header__search-input:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.header.sticky .header__search-input::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.header.sticky .header__search-input::placeholder {
+  color: #ffffff;
 }
 
 .header__info.show {
