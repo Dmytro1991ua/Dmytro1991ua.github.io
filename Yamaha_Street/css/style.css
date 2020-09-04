@@ -1771,55 +1771,73 @@ main {
     }
 } */
 
-/*.scroll-up-btn {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    cursor: pointer;
-    opacity: 0;
-    color: #dcdcdc;
-    width: 50px;
-    height: 50px;
-    visibility: hidden;
-    transition: all .4s ease-in-out;
-    box-shadow: inset 0 0 0 4px #dcdcdc;
-    transform: translateY(25px);
-    z-index: 100;
-    cursor: pointer;
-    border-radius: 50%;
-    animation: pulse 1s ease-out 1s infinite;
+.scroll-up-btn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  color: #dcdcdc;
+  width: 5rem;
+  height: 5rem;
+  visibility: hidden;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: inset 0 0 0 4px #dcdcdc;
+          box-shadow: inset 0 0 0 4px #dcdcdc;
+  -webkit-transform: translateY(2.5rem);
+      -ms-transform: translateY(2.5rem);
+          transform: translateY(2.5rem);
+  z-index: 100;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-animation: pulse 1s ease-out 1s infinite;
+          animation: pulse 1s ease-out 1s infinite;
 }
 
 .scroll-up-btn:hover {
-    color: orange;
+  color: #0318ff;
 }
 
 .scroll-up-btn::before {
-    content: "↑";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
+  content: "↑";
+  position: absolute;
+  top: -7%;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 3rem;
+  color: #0318ff;
 }
 
 .scroll-up-btn.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .scroll-up-btn__svg-path {
-    box-sizing: border-box;
-    fill: none;
-    stroke: orange;
-    stroke-width: 4px;
-    transition: all .3s ease-in-out;
-} */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  fill: none;
+  stroke: #ee3b33;
+  stroke-width: 4px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
 
 .about {
   padding: 4rem 0;

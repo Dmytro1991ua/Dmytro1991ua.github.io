@@ -82,13 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
    //handle different independent tabs on one page
    function runTabsFilter() {
-      const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // оборачиваем табы и контент табов в обвертку, для того чтобы в JS работать с ней, и чтобы в конечсном счёте табы были независимы друг отдруга (Чтобы они работали независимо друг от друга, надо их обернуть в отдельные дивы и работать уже с каждой конкретной обёрткой:)
+      const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // select wrappers that hold tabs btns and content
       tabsWrapper.forEach((wrapper) => {
          const tabsFilterBtns = wrapper.querySelectorAll(".tab-filters");
          const tabsContent = wrapper.querySelectorAll(".tabs-content");
          for (let i = 0; i < tabsFilterBtns.length; i++) {
-           // tabsFilterBtns[0].click(); // можем выбирать какая кнопка актинка для всех кнопок(tab filter btn -- элемент с индексом 1). Допустим у нас есть 2 разных таба на странице, активный класс для кнопки таба будет одинаковый для обоих табов
-            
+          
             tabsFilterBtns[i].onclick = function () {
                tabsFilterBtns.forEach((tablink) => {
                   tablink.classList.remove("active");
@@ -232,5 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
    runTabsFilter();
    runToggleBtn();
    showInputSearch();
-   // runScrollToTopBtn();
+   runScrollToTopBtn();
 }); 
