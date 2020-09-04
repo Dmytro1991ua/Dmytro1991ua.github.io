@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    //call functions
    runModal();
-   // runPreloader();
+   runPreloader();
    fixedHeader();
    runTabsFilter();
    runToggleBtn();
