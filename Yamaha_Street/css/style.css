@@ -1445,6 +1445,64 @@ main {
           filter: none;
 }
 
+/* Modal for a Gallery */
+
+.modal-gallery__body {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  width: 28rem;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  z-index: 6;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.modal-gallery__close {
+  position: absolute;
+  top: -32%;
+  right: -4%;
+  font-size: 6rem;
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-gallery__close:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.modal-gallery__img {
+  overflow: hidden;
+}
+
+.modal-gallery__img:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.modal-gallery__big-pic,
+.modal-gallery__small-pic {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
 .navigation {
   position: fixed;
   top: 7.6rem;
@@ -1808,7 +1866,7 @@ main {
   -webkit-transform: translateY(2.5rem);
       -ms-transform: translateY(2.5rem);
           transform: translateY(2.5rem);
-  z-index: 100;
+  z-index: 4;
   cursor: pointer;
   border-radius: 50%;
   -webkit-animation: pulse 1s ease-out 1s infinite;
@@ -2855,6 +2913,10 @@ main {
 }
 
 @media only screen and (min-width: 38.75em) {
+  .modal-gallery__body {
+    width: 43rem;
+  }
+
   .timeline__body {
     text-align: left;
   }
@@ -3230,6 +3292,25 @@ main {
     width: 37rem;
   }
 
+  .modal-gallery__body {
+    width: 63rem;
+  }
+
+  .modal-gallery__close {
+    top: -18%;
+    right: -10%;
+    font-size: 11rem;
+  }
+
+  .modal-gallery__big-pic {
+    width: 100rem;
+  }
+
+  .modal-gallery__small-pic {
+    width: 54rem;
+    margin: auto;
+  }
+
   .navigation {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
@@ -3560,6 +3641,10 @@ main {
     margin-right: 0;
   }
 
+  .modal-gallery__small-pic {
+    width: 60rem;
+  }
+
   .navigation {
     padding-left: 1rem;
   }
@@ -3851,6 +3936,25 @@ main {
 @media (min-width: 1340px) {
   .about__motorcycle::before {
     top: 4%;
+  }
+}
+
+@media (min-width: 90em) {
+  .modal-gallery__body {
+    width: 114rem;
+  }
+
+  .modal-gallery__close {
+    top: -15%;
+    font-size: 15rem;
+  }
+
+  .modal-gallery__big-pic {
+    width: 120rem;
+  }
+
+  .modal-gallery__small-pic {
+    width: 87rem;
   }
 }
 
