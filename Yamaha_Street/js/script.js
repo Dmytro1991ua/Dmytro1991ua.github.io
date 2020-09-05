@@ -1,5 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+   // AOS animation library initialization
+
+   AOS.init({
+      offset: 200,
+      duration: 600,
+      once: true,
+      easing: 'ease-in-sine',
+      delay: 100,
+   });
+
    //Sticky header section on scroll down
    function fixedHeader() {
       window.onscroll = function () {
@@ -48,38 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
-   // tabs buttons to open a specific card on click
-   /*function runTabsFilter() {
-      const tabsFilter = document.querySelectorAll(".tabs");
-      const tabsContent = document.querySelectorAll(".tabs-content");
-
-      //loop through each tab (filter) btn
-      for (let i = 0; i < tabsFilter.length; i++) {
-         tabsFilter[i].addEventListener("click", function () {
-            //remove active class from other btn which are not clicked at the moment
-            for (let j = 0; j < tabsFilter.length; j++) {
-               tabsFilter[j].classList.remove("active");
-            }
-            //add active class to a clicked btn
-            this.classList.add("active");
-            const target = this.getAttribute("data-target"); // get a certain value from data-target attribute
-            
-            //loop through children elements of gallery_row
-            for (let k = 0; k < tabsContent.length; k++) {
-               //galleryItems[k].style.display = "none";
-
-               if (target === tabsContent[k].getAttribute("data-category")) {
-                  tabsContent[k].classList.remove("hide");
-                  tabsContent[k].classList.add("show");
-               } else {
-                  tabsContent[k].classList.add("hide");
-                  tabsContent[k].classList.remove("show");
-               }
-            }
-         });
-      }
-   } */
-
    //handle different independent tabs on one page
    function runTabsFilter() {
       const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // select wrappers that hold tabs btns and content
@@ -87,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
          const tabsFilterBtns = wrapper.querySelectorAll(".tab-filters");
          const tabsContent = wrapper.querySelectorAll(".tabs-content");
          for (let i = 0; i < tabsFilterBtns.length; i++) {
-          
+
             tabsFilterBtns[i].onclick = function () {
                tabsFilterBtns.forEach((tablink) => {
                   tablink.classList.remove("active");
