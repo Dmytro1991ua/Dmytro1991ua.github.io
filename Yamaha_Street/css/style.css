@@ -1579,13 +1579,13 @@ main {
   cursor: pointer;
 }
 
-.about__modal-years span {
+.about__modal-years-span {
   color: #ee3b33;
   margin-right: 1.3rem;
   position: relative;
 }
 
-.about__modal-years span::before {
+.about__modal-years-span::before {
   content: "|";
   position: absolute;
   right: -28%;

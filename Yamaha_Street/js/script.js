@@ -201,21 +201,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   // function to change active class and images on click to a button
    function changeImgOnClick() {
       const colorBtns = document.querySelectorAll(".about__modal-colors");
       const images = document.querySelectorAll(".images");
 
-      colorBtns.forEach(btn => {
-         btn.addEventListener("click", function (event) {
-            console.log(event.target);
-            colorBtns.forEach(button => {
-               button.classList.remove("active");
+      for (let i = 0; i < colorBtns.length; i++) {
+         colorBtns[i].onclick = function () {
+            colorBtns.forEach(btn => {
+               btn.classList.remove("active");
             });
-            this.classList.add("active");
-         });
-
-        
-      });
+            images.forEach(img => {
+               img.classList.remove("show");
+               img.classList.add("hide");
+            });
+            colorBtns[i].classList.add("active");
+            images[i].classList.add("show");
+            images[i].classList.remove("hide");
+         }
+      }
    }
    //call functions
    runModal();
