@@ -201,7 +201,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   function changeImgOnClick() {
+      const colorBtns = document.querySelectorAll(".about__modal-colors");
+      const images = document.querySelectorAll(".images");
 
+      colorBtns.forEach(btn => {
+         btn.addEventListener("click", function (event) {
+            console.log(event.target);
+            colorBtns.forEach(button => {
+               button.classList.remove("active");
+            });
+            this.classList.add("active");
+         });
+
+        
+      });
+   }
    //call functions
    runModal();
    runPreloader();
@@ -210,4 +225,5 @@ document.addEventListener("DOMContentLoaded", () => {
    runToggleBtn();
    showInputSearch();
    runScrollToTopBtn();
+   changeImgOnClick()
 }); 
