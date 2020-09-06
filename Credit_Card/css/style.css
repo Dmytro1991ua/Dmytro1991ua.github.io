@@ -1800,42 +1800,6 @@ main {
   top: 0;
 }
 
-/*.media-links {
-    &__link:link,
-    &__link:visited { // <a>
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        height: 100%;
-
-        &:not(:last-child) {
-            margin-right: 1.2rem;
-        }
-    }
-
-    &__span { // <span>
-        display: inline-block;
-        height: 100%;
-        transition: all .4s;
-        padding: 1rem;
-        //background-color: $color-tomato;
-        border-radius: 50%;
-    }
-
-    &__icon {
-        width: 2.4rem;
-        height: 2.4rem;
-        position: relative;
-        z-index: 1;
-        fill: $color-white;
-        transition: all .3s ease-in-out;
-    }
-
-    &__span:hover &__icon {
-        fill: $color-black;
-    }
-} */
-
 .benefits {
   min-height: 100vh;
   width: 100%;
