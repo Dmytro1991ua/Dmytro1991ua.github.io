@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-arrow-right-dims { width: 512px; height: 512px; }
+	.svg-clock-dims { width: 42px; height: 45px; }
+	.svg-double-right-dims { width: 248px; height: 448px; }
+	.svg-email-dims { width: 512px; height: 512px; }
+	.svg-eye-dims { width: 38px; height: 20px; }
+	.svg-facebook-dims { width: 32px; height: 32px; }
+	.svg-footer-dims { width: 25px; height: 21px; }
+	.svg-google-2-dims { width: 19px; height: 19px; }
+	.svg-google-plus-dims { width: 512px; height: 512px; }
+	.svg-input-footer-dims { width: 28px; height: 18px; }
+	.svg-instagram-dims { width: 384px; height: 448px; }
+	.svg-linkedin-dims { width: 32px; height: 32px; }
+	.svg-location-dims { width: 23px; height: 32px; }
+	.svg-long-arrow-right-dims { width: 432px; height: 448px; }
+	.svg-phone-dims { width: 512.01px; height: 512.01px; }
+	.svg-quotes-right-dims { width: 512px; height: 512px; }
+	.svg-twitter-dims { width: 32px; height: 32px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+			
+<!--
+	
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.  
+
+-->
+
+			<ul>
+				
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<img src="../icons/icons.svg#arrow-right" class="svg-arrow-right-dims" alt="arrow-right"/>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="clock">
+					<div class="icon-box">
+						
+						<!-- clock -->
+						<img src="../icons/icons.svg#clock" class="svg-clock-dims" alt="clock"/>
+						
+					</div>
+					<h2>clock</h2>
+				</li>
+				<li title="double-right">
+					<div class="icon-box">
+						
+						<!-- double-right -->
+						<img src="../icons/icons.svg#double-right" class="svg-double-right-dims" alt="double-right"/>
+						
+					</div>
+					<h2>double-right</h2>
+				</li>
+				<li title="email">
+					<div class="icon-box">
+						
+						<!-- email -->
+						<img src="../icons/icons.svg#email" class="svg-email-dims" alt="email"/>
+						
+					</div>
+					<h2>email</h2>
+				</li>
+				<li title="eye">
+					<div class="icon-box">
+						
+						<!-- eye -->
+						<img src="../icons/icons.svg#eye" class="svg-eye-dims" alt="eye"/>
+						
+					</div>
+					<h2>eye</h2>
+				</li>
+				<li title="facebook">
+					<div class="icon-box">
+						
+						<!-- facebook -->
+						<img src="../icons/icons.svg#facebook" class="svg-facebook-dims" alt="facebook"/>
+						
+					</div>
+					<h2>facebook</h2>
+				</li>
+				<li title="footer">
+					<div class="icon-box">
+						
+						<!-- footer -->
+						<img src="../icons/icons.svg#footer" class="svg-footer-dims" alt="footer"/>
+						
+					</div>
+					<h2>footer</h2>
+				</li>
+				<li title="google-2">
+					<div class="icon-box">
+						
+						<!-- google-2 -->
+						<img src="../icons/icons.svg#google-2" class="svg-google-2-dims" alt="google-2"/>
+						
+					</div>
+					<h2>google-2</h2>
+				</li>
+				<li title="google-plus">
+					<div class="icon-box">
+						
+						<!-- google-plus -->
+						<img src="../icons/icons.svg#google-plus" class="svg-google-plus-dims" alt="google-plus"/>
+						
+					</div>
+					<h2>google-plus</h2>
+				</li>
+				<li title="input-footer">
+					<div class="icon-box">
+						
+						<!-- input-footer -->
+						<img src="../icons/icons.svg#input-footer" class="svg-input-footer-dims" alt="input-footer"/>
+						
+					</div>
+					<h2>input-footer</h2>
+				</li>
+				<li title="instagram">
+					<div class="icon-box">
+						
+						<!-- instagram -->
+						<img src="../icons/icons.svg#instagram" class="svg-instagram-dims" alt="instagram"/>
+						
+					</div>
+					<h2>instagram</h2>
+				</li>
+				<li title="linkedin">
+					<div class="icon-box">
+						
+						<!-- linkedin -->
+						<img src="../icons/icons.svg#linkedin" class="svg-linkedin-dims" alt="linkedin"/>
+						
+					</div>
+					<h2>linkedin</h2>
+				</li>
+				<li title="location">
+					<div class="icon-box">
+						
+						<!-- location -->
+						<img src="../icons/icons.svg#location" class="svg-location-dims" alt="location"/>
+						
+					</div>
+					<h2>location</h2>
+				</li>
+				<li title="long-arrow-right">
+					<div class="icon-box">
+						
+						<!-- long-arrow-right -->
+						<img src="../icons/icons.svg#long-arrow-right" class="svg-long-arrow-right-dims" alt="long-arrow-right"/>
+						
+					</div>
+					<h2>long-arrow-right</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+						
+						<!-- phone -->
+						<img src="../icons/icons.svg#phone" class="svg-phone-dims" alt="phone"/>
+						
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="quotes-right">
+					<div class="icon-box">
+						
+						<!-- quotes-right -->
+						<img src="../icons/icons.svg#quotes-right" class="svg-quotes-right-dims" alt="quotes-right"/>
+						
+					</div>
+					<h2>quotes-right</h2>
+				</li>
+				<li title="twitter">
+					<div class="icon-box">
+						
+						<!-- twitter -->
+						<img src="../icons/icons.svg#twitter" class="svg-twitter-dims" alt="twitter"/>
+						
+					</div>
+					<h2>twitter</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Thu, 24 Sep 2020 15:31:41 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

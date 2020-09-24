@@ -535,6 +535,7 @@ body {
   font-weight: 400;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
 body.lock {
@@ -1038,24 +1039,19 @@ main {
     }
 } */
 
-/*.logo {
-    flex: 0 0 8rem;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-
-    @include respond(phone) {
-        z-index: 2;
-        flex: 0 0 5.6rem;
-    }
-
-
-    &__img {
-        max-width: 100%;
-        display: block;
-        height: auto;
-    }
-} */
+.logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 8rem;
+          flex: 0 0 8rem;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  -ms-flex: 0 0 7.6rem;
+      flex: 0 0 7.6rem;
+}
 
 /*.modal {
     &__body {
@@ -1330,107 +1326,110 @@ main {
     }
 } */
 
-/*.toggle {
-    display: none;
-    position: relative;
-    z-index: 5;
-    padding: 1.7rem 2rem 1.2rem 2rem;
-    border: 2px solid $color-gray;
-    background-color: $color-silver;
-    border-radius: 10px;
-    cursor: pointer;
-
-    @include respond(phone) {
-        display: block;
-    }
-
-
-    &__btn {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        //@include flex(row, center, center);
-
-        &,
-        &::before,
-        &::after {
-            width: 3rem;
-            height: 2px;
-            background-color: $color-black;
-            display: inline-block;
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            transition: all 0.3s;
-        }
-
-        &::before {
-            top: -.8rem;
-        }
-
-        &::after {
-            top: .8rem;
-        }
-    }
+.toggle {
+  display: block;
+  position: relative;
+  z-index: 5;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1.4rem;
+  margin-right: 5rem;
 }
 
-//style .show in order to hide or show nav on click to toggle button
+.toggle__btn {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.toggle__btn,
+.toggle__btn::before,
+.toggle__btn::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #ffffff;
+  display: inline-block;
+}
+
+.toggle__btn::before,
+.toggle__btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.toggle__btn::before {
+  top: -.8rem;
+}
+
+.toggle__btn::after {
+  top: .8rem;
+}
 
 .toggle__btn.active {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .toggle__btn.active::before {
-    transform: rotate(135deg);
-    top: 0;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 0;
 }
 
 .toggle__btn.active::after {
-    transform: rotate(-135deg);
-    top: 0;
-} */
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  top: 0;
+}
 
-/*.media-links {
-    &__link:link,
-    &__link:visited { // <a>
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        height: 100%;
+.media-links {
+  display: none;
+}
 
-        &:not(:last-child) {
-            margin-right: 1.2rem;
-        }
-    }
+.media-links__link:link,
+.media-links__link:visited {
+  display: none;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
 
-    &__span { // <span>
-        display: inline-block;
-        height: 100%;
-        transition: all .4s;
-        padding: 1rem;
-        //background-color: $color-tomato;
-        border-radius: 50%;
-    }
+.media-links__link:link:not(:last-child),
+.media-links__link:visited:not(:last-child) {
+  margin-right: 1.2rem;
+}
 
-    &__icon {
-        width: 2.4rem;
-        height: 2.4rem;
-        position: relative;
-        z-index: 1;
-        fill: $color-white;
-        transition: all .3s ease-in-out;
-    }
+.media-links__span {
+  height: 100%;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+  padding: 1rem;
+  border-radius: 50%;
+}
 
-    &__span:hover &__icon {
-        fill: $color-black;
-    }
-} */
+.media-links__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  position: relative;
+  z-index: 1;
+  fill: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.media-links__span:hover .media-links__icon {
+  fill: #000000;
+}
 
 /*.scroll-up-btn {
     position: fixed;
@@ -1482,38 +1481,108 @@ main {
     transition: all .3s ease-in-out;
 } */
 
-/*.header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
-    z-index: 3;
-    padding: .8rem 2rem;
-    transition: all .3s ease-in;
-
-    @include respond(phone) {
-        background-color: rgba($color-tomato, 0.7);
-    }
-
-
-    &__row {
-        @include flex(row, center, space-between);
-
-        position: relative;
-    }
-
-    &__logo {}
-
-    &__navigation {}
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 3;
+  padding: 2.1rem 0rem;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  background-color: rgba(21, 60, 107, 0.7);
+  /* Header -bottom */
 }
 
-//styles for sticky class for header while scrolling down
+.header-top__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-top__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: #7ac142;
+}
+
+.header-top__contact {
+  margin-right: 2rem;
+  -webkit-animation: pulse 1.5s ease-out 1s infinite;
+          animation: pulse 1.5s ease-out 1s infinite;
+}
+
+.header-top__contact:last-child {
+  margin-right: 0;
+}
+
+.header-top__contact-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-top__contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+
+.header-top__contact-title {
+  font-size: calc(17px + -2 * ((100vw - 320px) / 1600));
+  font-weight: 700;
+  color: #002341;
+}
+
+.header-top__contact-link {
+  font-size: calc(16px + -1 * ((100vw - 320px) / 1600));
+  color: #010101;
+}
+
 .header.sticky {
-    background-color: rgba($color-tomato, 0.7);
-    transition: all .4s ease;
-    box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-}  */
+  background-color: rgba(144, 238, 144, 0.7);
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+}
 
 /*.hero {
     min-height: 100vh;
@@ -1547,6 +1616,12 @@ main {
   padding: 0 1.6rem;
 }
 
+@media only screen and (min-width: 32.5em) {
+  .toggle {
+    margin-right: 10rem;
+  }
+}
+
 @media only screen and (min-width: 103.2em) {
   .container {
     max-width: 117rem;
@@ -1560,6 +1635,37 @@ main {
 }
 
 @media only screen and (min-width: 75em) {
+  .logo {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .media-links__link:link,
+  .media-links__link:visited {
+    display: inline-block;
+  }
+
+  .header-top__icon {
+    width: 2.2rem;
+    height: 1.6rem;
+  }
+
+  .header-top__contact {
+    -webkit-animation: none;
+            animation: none;
+  }
+
+  .header-top__contact-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .container {
     max-width: 97rem;
   }
