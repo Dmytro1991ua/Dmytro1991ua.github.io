@@ -27,3 +27,13 @@ Stack of technologies which were used to develop a particular project:
 #### HTML/HTML5, CSS3, SCSS, BEM, JS, Gulp, Responsive Web Design, Mobile First Approach.
 
 A link on GitHub Pages - https://dmytro1991ua.github.io/Yamaha_Street/
+
+#  Podiatrist_Project
+
+### A project of a health clinic which specialize in a different variety of body treatment with the best facilities in the city and definitely the best doctors. Feel free to reach a clinic by phone or email to get a detail information on a specific treatment and get an appointment.
+
+Stack of technologies which were used to develop a particular project: 
+#### HTML/HTML5, CSS3, SCSS, BEM, JS, Gulp, Responsive Web Design, Mobile First Approach.
+
+A link on GitHub Pages - https://dmytro1991ua.github.io/Podiatrist_Project/
+
