@@ -1,8 +1,8 @@
 
-/*document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
    // run accordion
-   function runAccordion() {
+  /* function runAccordion() {
       const accordions = document.querySelectorAll(".accordion__button");
       const accordionContents = document.querySelectorAll(".accordion__content");
 
@@ -180,6 +180,31 @@
    }
 
    //handle different independent tabs on one page
+function runTabsFilter2() {
+   const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // обворачиваем табы и контент табов в обвертку (можно назвать tab-wrapper), для того чтобы в JS работать с ней, и чтобы в конечном счёте табы были независимы друг от друга (Чтобы они работали независимо друг от друга, надо их обернуть в отдельные дивы и работать уже с каждой конкретной обёрткой:)
+   tabsWrapper.forEach((wrapper) => { // итерируем по каждой обвертке, которая содержит табы и контент табов
+      const tabsFilterBtns = wrapper.querySelectorAll(".tab-filters"); // для того чтобы работать с разными табами, нужно дать им один класс (например tab-filters для кнопок, tabs-content - для самого контента )
+      const tabsContent = wrapper.querySelectorAll(".tabs-content");
+      for (let i = 0; i < tabsFilterBtns.length; i++) {
+         // tabsFilterBtns[0].click(); // можем выбирать какая кнопка актинка для всех кнопок(tab filter btn -- элемент с индексом 1). Допустим у нас есть 2 разных таба на странице, активный класс для кнопки таба будет одинаковый для обоих табов
+
+         tabsFilterBtns[i].onclick = function () {
+            tabsFilterBtns.forEach((tablink) => {
+               tablink.classList.remove("active");
+            })
+            tabsContent.forEach((tabContent) => {
+               tabContent.classList.remove("show");
+               tabContent.classList.add("hide");
+            })
+            tabsFilterBtns[i].classList.add("active");
+            tabsContent[i].classList.remove("hide");
+            tabsContent[i].classList.add("show");
+         }
+      }
+   });
+}
+
+   //handle different independent tabs on one page
    function runTabsFilter2() {
       const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // обворачиваем табы и контент табов в обвертку (можно назвать tab-wrapper), для того чтобы в JS работать с ней, и чтобы в конечном счёте табы были независимы друг от друга (Чтобы они работали независимо друг от друга, надо их обернуть в отдельные дивы и работать уже с каждой конкретной обёрткой:)
       tabsWrapper.forEach((wrapper) => { // итерируем по каждой обвертке, которая содержит табы и контент табов
@@ -317,47 +342,41 @@ window.addEventListener("scroll", changeActiveClassOnScroll);
       inputIcon.addEventListener("click", () => {
          inputField.classList.toggle("active");
       });
-   }
+   } */
 
+   //open and close toggle btn on click
+   function runToggleBtn() {
+      //open  and close (toggle) on click
+      const toggleBtn = document.querySelector(".toggle__btn");
+      toggleBtn.addEventListener("click", () => {
+         document.querySelector(".navigation").classList.toggle("show");
+         document.querySelector(".toggle__btn").classList.toggle("active");
+         document.querySelector("body").classList.toggle("lock");
+      });
+      //close a navigation on specific link
+      const links = document.querySelectorAll(".navigation__link");
 
+      links.forEach(link => {
+         link.addEventListener("click", () => {
+            document.querySelector(".navigation").classList.remove("show");
+            document.querySelector(".toggle__btn").classList.toggle("active");
+            document.querySelector("body").classList.remove("lock");
+         });
+      });
+   };
 
  //call functions
-   /*runAccordion();
-   runCounter();
-   runModal();
-   runPreloader();
-   fixedHeader();
-   runTabsFilter();
+   //runAccordion();
+   //runCounter();
+   //runModal();
+   //runPreloader();
+   //fixedHeader();
+   //runTabsFilter();
+   //runTabsFilter2();
    runToggleBtn();
-   runScrollToTopBtn();
-   ibg();
-   resetForm();
-   showInputSearch();
-}); */
+   //runScrollToTopBtn();
+   //ibg();
+   //resetForm();
+   //showInputSearch();
+}); 
 
-//handle different independent tabs on one page
-function runTabsFilter2() {
-   const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // обворачиваем табы и контент табов в обвертку (можно назвать tab-wrapper), для того чтобы в JS работать с ней, и чтобы в конечном счёте табы были независимы друг от друга (Чтобы они работали независимо друг от друга, надо их обернуть в отдельные дивы и работать уже с каждой конкретной обёрткой:)
-   tabsWrapper.forEach((wrapper) => { // итерируем по каждой обвертке, которая содержит табы и контент табов
-      const tabsFilterBtns = wrapper.querySelectorAll(".tab-filters"); // для того чтобы работать с разными табами, нужно дать им один класс (например tab-filters для кнопок, tabs-content - для самого контента )
-      const tabsContent = wrapper.querySelectorAll(".tabs-content");
-      for (let i = 0; i < tabsFilterBtns.length; i++) {
-         // tabsFilterBtns[0].click(); // можем выбирать какая кнопка актинка для всех кнопок(tab filter btn -- элемент с индексом 1). Допустим у нас есть 2 разных таба на странице, активный класс для кнопки таба будет одинаковый для обоих табов
-
-         tabsFilterBtns[i].onclick = function () {
-            tabsFilterBtns.forEach((tablink) => {
-               tablink.classList.remove("active");
-            })
-            tabsContent.forEach((tabContent) => {
-               tabContent.classList.remove("show");
-               tabContent.classList.add("hide");
-            })
-            tabsFilterBtns[i].classList.add("active");
-            tabsContent[i].classList.remove("hide");
-            tabsContent[i].classList.add("show");
-         }
-      }
-   });
-}
-
-runTabsFilter2();
