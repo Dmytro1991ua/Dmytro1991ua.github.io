@@ -1206,12 +1206,17 @@ main {
 
 .navigation__list {
   list-style: none;
+  margin-bottom: 1.4rem;
+}
+
+.navigation__list:last-child {
+  margin-bottom: 0rem;
 }
 
 .navigation__link:link,
 .navigation__link:visited {
   display: inline-block;
-  font-size: calc(18px + -2 * ((100vw - 320px) / 1600));
+  font-size: calc(18px + 2 * ((100vw - 320px) / 1600));
   color: #ffffff;
   text-decoration: none;
   -webkit-transition: all .3s ease-in-out;
@@ -1224,9 +1229,7 @@ main {
 
 .navigation__link:link:hover,
 .navigation__link:visited:hover {
-  background-color: #000000;
-  -webkit-box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.5);
+  color: #7ac142;
 }
 
 .navigation__link:link::after,
@@ -1700,28 +1703,33 @@ main {
             justify-content: center;
     background-color: #153c6b;
     margin-top: -4rem;
-    padding: 2rem 4.5rem;
+    padding: 0rem 4.5rem;
     border-radius: 3.3rem;
+    min-height: 6.6rem;
   }
 
   .navigation__list {
     padding-right: 3.4rem;
     position: relative;
+    margin-bottom: 0rem;
   }
 
   .navigation__list:last-child {
     padding-right: 0em;
   }
 
-  .navigation__link:link::before,
-  .navigation__link:visited::before {
+  .navigation__list::before {
     content: "";
     position: absolute;
     top: -100%;
-    right: -1.4rem;
-    height: 5.8rem;
+    right: 1.2rem;
+    height: 6.5rem;
     width: 1px;
     background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .navigation__list:last-child::before {
+    background-color: transparent;
   }
 
   .toggle {
