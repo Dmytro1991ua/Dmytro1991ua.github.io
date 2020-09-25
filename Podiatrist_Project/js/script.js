@@ -365,12 +365,27 @@ window.addEventListener("scroll", changeActiveClassOnScroll);
       });
    };
 
+   //Sticky header section on scroll down
+   function fixedHeader() {
+      window.onscroll = function () {
+         const scrollTop = document.documentElement.scrollTop;
+         if (window.innerWidth > 1200) {
+            if (scrollTop > 70) {
+               document.querySelector(".header").classList.add("sticky");
+
+            } else {
+               document.querySelector(".header").classList.remove("sticky");
+            }
+         }
+      }
+   }
+
  //call functions
    //runAccordion();
    //runCounter();
    //runModal();
    //runPreloader();
-   //fixedHeader();
+   fixedHeader();
    //runTabsFilter();
    //runTabsFilter2();
    runToggleBtn();
