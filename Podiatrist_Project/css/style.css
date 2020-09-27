@@ -720,6 +720,16 @@ main {
           filter: drop-shadow(0 0 0.75rem #000000);
 }
 
+.btn-main--smaller {
+  color: #000000;
+  font-weight: 600;
+  padding: 1.2rem 3rem;
+}
+
+.btn-main--smaller:hover {
+  color: #ffffff;
+}
+
 .btn-secondary {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1115,6 +1125,8 @@ main {
   transition: all 0.3s ease-in-out;
   margin-top: .45rem;
 }
+
+/*Gallery in gallery section */
 
 /*.ibg {
     background-position: center;
@@ -1687,19 +1699,6 @@ main {
 
 .about {
   background-color: #f7f7f7;
-  /*@include respond(small-phone) {
-        padding-bottom: 6rem;
-    }
-
-
-    @include respond(small-desktop) {
-        padding-bottom: 8rem;
-    }
-
-
-    @include respond(big-desktop) {
-        padding-bottom: 10rem;
-    } */
 }
 
 .about__body {
@@ -1934,6 +1933,30 @@ main {
   padding: 0 1.6rem;
 }
 
+.photogallery {
+  padding: 2rem 0;
+}
+
+.photogallery__header-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.photogallery__decoration {
+  display: none;
+}
+
 .services {
   padding: 2rem 0rem;
 }
@@ -2076,12 +2099,20 @@ main {
     margin-bottom: 3.3rem;
   }
 
+  .photogallery {
+    padding: 6rem 0rem;
+  }
+
   .services {
     padding: 6rem 0rem;
   }
 }
 
 @media only screen and (min-width: 62em) {
+  .btn-main--smaller {
+    padding: 1.4rem 4.6rem;
+  }
+
   .gallery-service__item-inner:hover {
     -webkit-filter: drop-shadow(0 0 0.75rem #373737);
             filter: drop-shadow(0 0 0.75rem #373737);
@@ -2122,6 +2153,14 @@ main {
 
   .container {
     max-width: 85rem;
+  }
+
+  .photogallery__title {
+    margin-bottom: .8rem;
+  }
+
+  .photogallery__decoration {
+    display: block;
   }
 
   .services__title {
@@ -2270,6 +2309,10 @@ main {
     padding: 0;
   }
 
+  .photogallery {
+    padding: 8rem 0rem;
+  }
+
   .services {
     padding: 8rem 0rem;
   }
@@ -2291,6 +2334,10 @@ main {
 
   .section-title__side-lines::before {
     right: -12.1rem;
+  }
+
+  .photogallery {
+    padding: 10rem 0rem;
   }
 
   .services {
