@@ -1128,6 +1128,111 @@ main {
 
 /*Gallery in gallery section */
 
+.gallery__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gallery__item {
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.gallery__item.hide {
+  display: none;
+}
+
+.gallery__item.show {
+  display: block;
+  -webkit-animation: showItem .5s ease;
+          animation: showItem .5s ease;
+}
+
+.gallery__item-inner {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery__item-inner:hover .gallery__overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery__img {
+  overflow: hidden;
+}
+
+.gallery__pic {
+  margin: 0 auto;
+}
+
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery__icon-shape {
+  width: 9rem;
+  height: 9rem;
+  background-color: #002341;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery__icon {
+  width: 5rem;
+  height: 7rem;
+  fill: #ffffff;
+}
+
 /*.ibg {
     background-position: center;
     background-size: cover;
@@ -1937,6 +2042,10 @@ main {
   padding: 2rem 0;
 }
 
+.photogallery__header {
+  margin-bottom: 4rem;
+}
+
 .photogallery__header-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1994,6 +2103,25 @@ main {
     font-size: 1.6rem;
   }
 
+  .gallery {
+    margin: 0rem -1.5rem;
+  }
+
+  .gallery__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    max-width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0rem 1.5rem;
+  }
+
+  .gallery__item:last-child {
+    margin-bottom: 0rem;
+  }
+
   .toggle {
     margin-right: 7rem;
   }
@@ -2030,6 +2158,13 @@ main {
   .gallery-service__title {
     min-width: 17.5rem;
     font-size: 1.3rem;
+  }
+
+  .gallery__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.3333%;
+            flex: 0 1 33.3333%;
+    max-width: 33.3333%;
   }
 
   .section-title__side-lines::after,
@@ -2100,7 +2235,7 @@ main {
   }
 
   .photogallery {
-    padding: 6rem 0rem;
+    padding: 4rem 0rem;
   }
 
   .services {
@@ -2139,6 +2274,21 @@ main {
     visibility: hidden;
   }
 
+  .gallery__overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .gallery__icon-shape {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .gallery__icon {
+    width: 4.2rem;
+    height: 4rem;
+  }
+
   .about__info {
     margin-right: 5rem;
   }
@@ -2153,6 +2303,10 @@ main {
 
   .container {
     max-width: 85rem;
+  }
+
+  .photogallery__header {
+    margin-bottom: 7.6rem;
   }
 
   .photogallery__title {
@@ -2310,7 +2464,7 @@ main {
   }
 
   .photogallery {
-    padding: 8rem 0rem;
+    padding: 6rem 0rem;
   }
 
   .services {
@@ -2337,7 +2491,7 @@ main {
   }
 
   .photogallery {
-    padding: 10rem 0rem;
+    padding: 8rem 0rem;
   }
 
   .services {
