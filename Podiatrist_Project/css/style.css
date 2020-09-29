@@ -2066,7 +2066,31 @@ main {
   display: none;
 }
 
-.swiper-slide {
+.team {
+  background-color: #f8f8f8;
+}
+
+.team__container {
+  padding: 0;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.team__section-title {
+  margin-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.team__title {
+  margin-bottom: .4rem;
+}
+
+.team__items {
+  padding-bottom: 3rem;
+}
+
+.team__member {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2080,6 +2104,24 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.team__member-info {
+  text-align: center;
+  line-height: 2.2rem;
+  padding: 2.4rem 2rem;
+}
+
+.team__member-title {
+  font-size: calc(20px + 2 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  color: #000000;
+}
+
+.team__member-subtitle {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-weight: 400;
 }
 
 .services {
@@ -2140,16 +2182,6 @@ main {
 
   .toggle {
     margin-right: 7rem;
-  }
-}
-
-@media only screen and (min-width: 103.2em) {
-  .hero__body {
-    max-width: 117rem;
-  }
-
-  .container {
-    max-width: 117rem;
   }
 }
 
@@ -2333,6 +2365,19 @@ main {
     display: block;
   }
 
+  .team__section-title {
+    margin-bottom: 4.9rem;
+    padding-top: 6.5rem;
+  }
+
+  .team__title {
+    margin-bottom: 1rem;
+  }
+
+  .team__items {
+    padding-bottom: 6.5rem;
+  }
+
   .services__title {
     margin-bottom: 1.2rem;
   }
@@ -2483,6 +2528,29 @@ main {
     padding: 6rem 0rem;
   }
 
+  .team__section-title {
+    padding-top: 10rem;
+  }
+
+  .team__items {
+    padding-bottom: 10rem;
+  }
+
+  .team__member {
+    border: 2px solid transparent;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+
+  .team__member:hover {
+    border: 2px solid #7ac142;
+  }
+
+  .team__member-info {
+    padding: 2.4rem 2rem;
+  }
+
   .services {
     padding: 8rem 0rem;
   }
@@ -2522,6 +2590,16 @@ main {
 @media (min-width: 97em) {
   .about__info-title {
     font-size: calc(23px + 25 * ((100vw - 320px) / 1600));
+  }
+}
+
+@media only screen and (min-width: 103em) {
+  .hero__body {
+    max-width: 117rem;
+  }
+
+  .container {
+    max-width: 117rem;
   }
 }
 

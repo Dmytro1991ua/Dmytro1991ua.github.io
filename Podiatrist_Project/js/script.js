@@ -390,6 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
       grabCursor: true,
       slidesPerView: 1,
       spaceBetween: 10,
+      watchOverflow: true,
       lazy: {
          loadPrevNext: true,
       },
