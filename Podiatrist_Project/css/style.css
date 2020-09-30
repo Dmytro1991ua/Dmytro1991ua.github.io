@@ -604,6 +604,7 @@ main {
   font-family: 'Rubik', sans-serif;
   line-height: 4.8rem;
   color: #000000;
+  margin-bottom: .4rem;
 }
 
 .heading-3 {
@@ -760,6 +761,7 @@ main {
 
 .btn-secondary__title {
   font-size: calc(17px + -3 * ((100vw - 320px) / 1600));
+  font-weight: 700;
   color: #7ac142;
   line-height: 2.6rem;
   margin-right: .4rem;
@@ -777,89 +779,125 @@ main {
   transition: all .3s ease-in-out;
 }
 
-/*.cards {
-   
-    &__row { //используем отрицательные марджины для того чтобы сделать отступ между каточками (раздвигаем flex container)
-        margin: 0 -1.5rem; // на половину отступа по макету (если отступ 30px  то margin-left и margin-right будут -15px)
+.cards {
+  /* card info */
+  /* btn */
+}
 
-        @include respond(phone) {
-            margin: -1.5rem 0;
-            justify-content: center;
-        }
-    }
+.cards__row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 -1.5rem;
+}
 
-    &__item {
-        flex: 0 1 33.333%;
-        max-width: 33.3333%;
-        display: flex;
-        padding: 0 1.5rem; //сами колонки (флекс элементы ) сдвигаем при помощи padding на половину отспута по макету
+.cards__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
-        @include respond(phone) {
-            flex: 0 1 50%;
-            max-width: 50%;
-            padding: 1.5rem 1.5rem;
-        }
+.cards__item:last-child {
+  margin-bottom: 0;
+}
 
+.cards__item-inner {
+  overflow: hidden;
+  border: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 
-        @include respond(tiny-phone) {
-            flex: 0 1 100%;
-            max-width: 100%;
-            padding: 1.5rem 0;
-        }
-    }
+.cards__item-inner:hover .cards__pic {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
 
-    &__item-inner {
-        overflow: hidden;
-        border: 1rem;
-        border: 1px solid $color-grey;
-        cursor: pointer;
+.cards__item-inner:hover .cards__link .cards__btn-title {
+  color: #7ac142;
+}
 
-        //background-color: $color-white;
+.cards__item-inner:hover .cards__link .cards__btn-icon {
+  fill: #7ac142;
+}
 
-        @include flex(column, stretch, flex-start);
-    }
+.cards__img {
+  position: relative;
+  overflow: hidden;
+}
 
-    &__item-inner:hover &__pic {
-        transform: scale(1.1);
-    }
+.cards__pic {
+  width: 100% !important;
+  height: auto;
+  display: block;
+  -webkit-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
 
-    &__img {
-        position: relative;
-        overflow: hidden;
-    }
+.cards__info {
+  padding: 1rem 0.2rem;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
 
-    &__pic {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: all .2s ease-in;
-    }
+.cards__title {
+  font-size: calc(18px + 3 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  color: #1c1c1c;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
 
-    &__info {
-        padding: 1rem 1.2rem;
-        text-align: center;
-        flex: 1 1 auto;
-    }
+.cards__subtitle {
+  font-size: calc(15px + 3 * ((100vw - 320px) / 1600));
+  line-height: 2rem;
+  color: #090c1b;
+}
 
-    &__text {
-        @include adaptiv-font(16, 14);
+.cards__btn {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
 
-        line-height: 2rem;
-    }
+.cards__link:link,
+.cards__link:visited {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: inline-block;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 1600));
+  font-weight: 700;
+}
 
-    &__btn {
-        text-align: center;
-    }
+.cards__btn-title {
+  color: #000000;
+}
 
-    &__link:link,
-    &__link:visited {
-        align-self: center;
-        display: inline-block;
-        text-align: none;
-
-        @include adaptiv-font(16, 14);
-    }
-} */
+.cards__btn-icon {
+  fill: #000000;
+}
 
 /*.counters {
     &__row {
@@ -1789,6 +1827,10 @@ main {
   top: .7rem;
 }
 
+.section-padding {
+  padding: 2rem 0;
+}
+
 .media-links {
   display: none;
 }
@@ -1950,16 +1992,8 @@ main {
           justify-content: center;
 }
 
-.advantages {
-  padding: 2rem 0;
-}
-
 .advantages__section-title {
   margin-bottom: 3rem;
-}
-
-.advantages__title {
-  margin-bottom: .4rem;
 }
 
 .header {
@@ -2142,8 +2176,12 @@ main {
   padding: 0 1.6rem;
 }
 
-.photogallery {
-  padding: 2rem 0;
+.news {
+  background-color: #f1ffe6;
+}
+
+.news__section-title {
+  margin-bottom: 2rem;
 }
 
 .photogallery__header {
@@ -2183,15 +2221,6 @@ main {
 
 .team__section-title {
   margin-bottom: 2rem;
-  padding-top: 3rem;
-}
-
-.team__title {
-  margin-bottom: .4rem;
-}
-
-.team__items {
-  padding-bottom: 3rem;
 }
 
 .team__member {
@@ -2228,19 +2257,18 @@ main {
   font-weight: 400;
 }
 
-.services {
-  padding: 2rem 0rem;
-}
-
 .services__section-title {
   margin-bottom: 3rem;
 }
 
-.services__title {
-  margin-bottom: .2rem;
-}
-
 @media only screen and (min-width: 32.5em) {
+  .cards__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    max-width: 50%;
+  }
+
   .features__img-box {
     margin-bottom: 1.6rem;
   }
@@ -2311,6 +2339,18 @@ main {
 }
 
 @media only screen and (min-width: 48em) {
+  .cards__info {
+    padding: 1.6rem 1.6rem;
+  }
+
+  .cards__title {
+    margin-bottom: 2rem;
+  }
+
+  .cards__btn {
+    margin-bottom: 3rem;
+  }
+
   .features__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2377,6 +2417,10 @@ main {
     right: -8.2rem;
   }
 
+  .section-padding {
+    padding: 6rem 0rem;
+  }
+
   .about__body {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
@@ -2426,27 +2470,31 @@ main {
             justify-content: flex-start;
   }
 
-  .advantages {
-    padding: 6rem 0rem;
-  }
-
   .hero__info {
     line-height: 4.8rem;
     margin-bottom: 3.3rem;
   }
 
-  .photogallery {
-    padding: 4rem 0rem;
-  }
-
-  .services {
-    padding: 6rem 0rem;
+  .news__section-title {
+    margin-bottom: 4rem;
   }
 }
 
 @media only screen and (min-width: 62em) {
+  .heading-2 {
+    margin-bottom: 1rem;
+  }
+
   .btn-main--smaller {
     padding: 1.4rem 4.6rem;
+  }
+
+  .cards__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.333%;
+            flex: 0 1 33.333%;
+    max-width: 33.3333%;
+    margin-bottom: 0rem;
   }
 
   .gallery-service__item-inner:hover {
@@ -2502,10 +2550,6 @@ main {
     margin-bottom: 7rem;
   }
 
-  .advantages__title {
-    margin-bottom: 1rem;
-  }
-
   .hero__body {
     max-width: 85rem;
   }
@@ -2518,29 +2562,8 @@ main {
     margin-bottom: 7.6rem;
   }
 
-  .photogallery__title {
-    margin-bottom: .8rem;
-  }
-
   .photogallery__decoration {
     display: block;
-  }
-
-  .team__section-title {
-    margin-bottom: 4.9rem;
-    padding-top: 6.5rem;
-  }
-
-  .team__title {
-    margin-bottom: 1rem;
-  }
-
-  .team__items {
-    padding-bottom: 6.5rem;
-  }
-
-  .services__title {
-    margin-bottom: 1.2rem;
   }
 }
 
@@ -2717,16 +2740,16 @@ main {
     right: -11.3rem;
   }
 
+  .section-padding {
+    padding: 8rem 0rem;
+  }
+
   .media-links {
     display: block;
   }
 
   .about__info {
     margin-right: 10rem;
-  }
-
-  .advantages {
-    padding: 8rem 0rem;
   }
 
   .advantages__section-title {
@@ -2774,16 +2797,8 @@ main {
     padding: 0;
   }
 
-  .photogallery {
-    padding: 6rem 0rem;
-  }
-
-  .team__section-title {
-    padding-top: 10rem;
-  }
-
-  .team__items {
-    padding-bottom: 10rem;
+  .news__section-title {
+    margin-bottom: 8rem;
   }
 
   .team__member {
@@ -2800,10 +2815,6 @@ main {
 
   .team__member-info {
     padding: 2.4rem 2rem;
-  }
-
-  .services {
-    padding: 8rem 0rem;
   }
 
   .services__section-title {
@@ -2825,15 +2836,7 @@ main {
     right: -12.1rem;
   }
 
-  .advantages {
-    padding: 10rem 0rem;
-  }
-
-  .photogallery {
-    padding: 8rem 0rem;
-  }
-
-  .services {
+  .section-padding {
     padding: 10rem 0rem;
   }
 
