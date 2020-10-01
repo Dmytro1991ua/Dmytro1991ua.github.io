@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lazy: {
          loadPrevNext: true,
       },
-   
+
       breakpoints: {
          550: {
             slidesPerView: 2,
@@ -410,6 +410,22 @@ document.addEventListener("DOMContentLoaded", () => {
          },
       }
    });
+
+   var swiper = new Swiper('.swiper-container.slider-2', {
+      autoplay: {
+         delay: 4000,
+         disableOnInteraction: false
+      },
+      loop: true,
+      speed: 700,
+      grabCursor: true,
+      watchOverflow: true,
+      lazy: {
+         loadPrevNext: true,
+      },
+   });
+
+
 
    //call functions
    //runAccordion();
