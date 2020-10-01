@@ -812,6 +812,7 @@ main {
   border: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -841,6 +842,10 @@ main {
   fill: #7ac142;
 }
 
+.cards__item-inner:hover .cards__date {
+  background-color: #000000;
+}
+
 .cards__img {
   position: relative;
   overflow: hidden;
@@ -863,11 +868,97 @@ main {
           flex: 1 1 auto;
 }
 
+.cards__date {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.2rem 1.8rem;
+  background-color: #7ac142;
+  border-bottom-left-radius: 3.5rem;
+  border-bottom-right-radius: 3.5rem;
+  color: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.cards__date-top {
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.cards__date-top::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: -2.1rem;
+  width: 6.2rem;
+  border-bottom: 1px dashed #ffffff;
+}
+
+.cards__date-top,
+.cards__date-bottom {
+  font-size: calc(16px + 4 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+.cards__header {
+  margin-bottom: .8rem;
+}
+
+.cards__header-person {
+  margin-right: 3rem;
+  position: relative;
+}
+
+.cards__header-person::before {
+  left: -5rem;
+}
+
+.cards__header-person,
+.cards__header-comment {
+  font-size: calc(14px + 0 * ((100vw - 320px) / 1600));
+  line-height: 2.8rem;
+  color: #1c1c1c;
+}
+
+.cards__header-person::before,
+.cards__header-comment::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 1px;
+  background-color: #7ac142;
+}
+
+.cards__header-comment {
+  position: relative;
+}
+
+.cards__header-comment::after {
+  right: -5rem;
+}
+
 .cards__title {
   font-size: calc(18px + 3 * ((100vw - 320px) / 1600));
   font-family: 'Rubik', sans-serif;
+  font-weight: 600;
   color: #1c1c1c;
-  line-height: 1.4;
   margin-bottom: 1.2rem;
 }
 
@@ -2110,7 +2201,7 @@ main {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2340,7 +2431,28 @@ main {
 
 @media only screen and (min-width: 48em) {
   .cards__info {
-    padding: 1.6rem 1.6rem;
+    padding: 1.6rem .4rem;
+  }
+
+  .cards__date-top::before {
+    width: 6.4rem;
+  }
+
+  .cards__header {
+    margin-bottom: 2rem;
+  }
+
+  .cards__header-person::before {
+    left: -6.5rem;
+  }
+
+  .cards__header-person::before,
+  .cards__header-comment::after {
+    width: 5rem;
+  }
+
+  .cards__header-comment::after {
+    right: -6.5rem;
   }
 
   .cards__title {
@@ -2470,6 +2582,10 @@ main {
             justify-content: flex-start;
   }
 
+  .hero {
+    min-height: 74vh;
+  }
+
   .hero__info {
     line-height: 4.8rem;
     margin-bottom: 3.3rem;
@@ -2550,12 +2666,16 @@ main {
     margin-bottom: 7rem;
   }
 
+  .hero {
+    min-height: 100vh;
+  }
+
   .hero__body {
     max-width: 85rem;
   }
 
   .container {
-    max-width: 85rem;
+    max-width: 90rem;
   }
 
   .photogallery__header {
@@ -2639,11 +2759,11 @@ main {
     position: absolute;
     top: 0;
     right: -7rem;
-    width: 20rem;
+    width: 16.8rem;
     border-bottom: 1px dashed #7ac142;
-    -webkit-transform: rotate(-59deg) translateX(8.5rem);
-        -ms-transform: rotate(-59deg) translateX(8.5rem);
-            transform: rotate(-59deg) translateX(8.5rem);
+    -webkit-transform: rotate(-59deg) translateX(7rem);
+        -ms-transform: rotate(-59deg) translateX(7rem);
+            transform: rotate(-59deg) translateX(7rem);
   }
 
   .features__img-box--4,
@@ -2694,7 +2814,7 @@ main {
             justify-content: center;
     background-color: #153c6b;
     margin-top: -4rem;
-    padding: 0rem 4.5rem;
+    padding: 0 6.5rem;
     border-radius: 3.3rem;
     min-height: 6.6rem;
   }
@@ -2793,7 +2913,7 @@ main {
   }
 
   .container {
-    max-width: 97rem;
+    max-width: 110rem;
     padding: 0;
   }
 
@@ -2852,12 +2972,16 @@ main {
 }
 
 @media only screen and (min-width: 103em) {
+  .cards__title {
+    width: 34rem;
+  }
+
   .hero__body {
     max-width: 117rem;
   }
 
   .container {
-    max-width: 117rem;
+    max-width: 117.5rem;
   }
 }
 
