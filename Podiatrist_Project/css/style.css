@@ -2083,6 +2083,147 @@ main {
           justify-content: center;
 }
 
+.contacts {
+  background-color: #002341;
+  /* Subscribe block */
+}
+
+.contacts__subscribe-info {
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  line-height: 2.2rem;
+}
+
+.contacts__subscribe-title {
+  font-size: calc(20px + 6 * ((100vw - 320px) / 1600));
+  font-weight: 500;
+}
+
+.contacts__subscribe-subtitle {
+  font-size: calc(15px + 3 * ((100vw - 320px) / 1600));
+  font-weight: 400;
+}
+
+.contacts__subscribe-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts__subscribe-email-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts__subscribe-email {
+  width: 25rem;
+  padding: 1.3rem 0 1.3rem 2.3rem;
+  border-radius: 28px;
+  margin-bottom: .7rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.contacts__subscribe-email.placeholder {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  line-height: 52px;
+  color: #000000;
+}
+
+.contacts__subscribe-email:-moz-placeholder {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  line-height: 52px;
+  color: #000000;
+}
+
+.contacts__subscribe-email::-moz-placeholder {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  line-height: 52px;
+  color: #000000;
+}
+
+.contacts__subscribe-email:-ms-input-placeholder {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  line-height: 52px;
+  color: #000000;
+}
+
+.contacts__subscribe-email::-webkit-input-placeholder {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  line-height: 52px;
+  color: #000000;
+}
+
+.contacts__subscribe-email:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+  border: 2px solid #90ee90;
+  background-color: #93969a;
+}
+
+.contacts__subscribe-email:focus:invalid {
+  border: 1px solid rgba(255, 119, 48, 0.8);
+}
+
+.contacts__subscribe-email:-moz-placeholder-shown + .contacts__subscribe-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.contacts__subscribe-email:-ms-input-placeholder + .contacts__subscribe-label {
+  opacity: 0;
+  visibility: hidden;
+  -ms-transform: translateY(-4rem);
+      transform: translateY(-4rem);
+}
+
+.contacts__subscribe-email:placeholder-shown + .contacts__subscribe-label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+      -ms-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.contacts__subscribe-label {
+  font-size: calc(14px + 1 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+  padding-left: 2.6rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
 .advantages__section-title {
   margin-bottom: 3rem;
 }
@@ -2761,6 +2902,10 @@ main {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+
+  .contacts__subscribe-info {
+    line-height: 3rem;
   }
 
   .hero {

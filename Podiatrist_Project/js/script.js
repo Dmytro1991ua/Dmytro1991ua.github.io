@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    }
 
-   const swiper1 = new Swiper('.swiper-container.slider-1', {
+   const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
          delay: 4000,
          disableOnInteraction: false
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
-   const swiper2 = new Swiper('.swiper-container.slider-2', {
+   const swiper2 = new Swiper('.swiper-container.slider-2', { // Reviews Section
       loop: true,
       speed: 700,
       grabCursor: true,
@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
    });
 
-   const swiper3 = new Swiper('.swiper-container.slider-3', {
+   const swiper3 = new Swiper('.swiper-container.slider-3', { // Partners Section
       autoplay: {
          delay: 4000,
          disableOnInteraction: false
