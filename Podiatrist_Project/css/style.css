@@ -2301,6 +2301,7 @@ main {
 
 .reviews {
   /* Images */
+  /* Reviews */
 }
 
 .reviews__img-body {
@@ -2352,6 +2353,89 @@ main {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.reviews__comment-body {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.reviews__comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews__comment-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.reviews__comment-text {
+  font-size: calc(16px + 2 * ((100vw - 320px) / 1600));
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  max-width: 66rem;
+}
+
+.reviews__comment-person {
+  text-align: center;
+}
+
+.reviews__comment-person span {
+  display: block;
+}
+
+.reviews__comment-person--main {
+  font-size: calc(20px + 3 * ((100vw - 320px) / 1600));
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  color: #7ac142;
+}
+
+.reviews__comment-person--sub {
+  font-size: calc(16px + 1 * ((100vw - 320px) / 1600));
+  font-weight: 400;
+  color: #1c1c1c;
+}
+
+.reviews__comment-icon {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 16rem;
+  height: 16rem;
+  fill: rgba(0, 0, 0, 0.07);
+  z-index: -1;
 }
 
 .team {
@@ -2744,6 +2828,10 @@ main {
   .photogallery__decoration {
     display: block;
   }
+
+  .reviews__comment-text {
+    margin-bottom: 1.9rem;
+  }
 }
 
 @media only screen and (min-width: 75em) {
@@ -2817,12 +2905,12 @@ main {
     content: "";
     position: absolute;
     top: 0;
-    right: -7rem;
-    width: 16.8rem;
+    right: -10rem;
+    width: 19rem;
     border-bottom: 1px dashed #7ac142;
-    -webkit-transform: rotate(-59deg) translateX(7rem);
-        -ms-transform: rotate(-59deg) translateX(7rem);
-            transform: rotate(-59deg) translateX(7rem);
+    -webkit-transform: rotate(-59deg) translateX(6.8rem);
+        -ms-transform: rotate(-59deg) translateX(6.8rem);
+            transform: rotate(-59deg) translateX(6.8rem);
   }
 
   .features__img-box--4,
@@ -2998,6 +3086,14 @@ main {
 
   .services__section-title {
     margin-bottom: 5rem;
+  }
+}
+
+@media only screen and (min-width: 75em) and (min-width: 103em) {
+  .features__img-box--4::before,
+  .features__img-box--5::before {
+    right: -12rem;
+    width: 21rem;
   }
 }
 
