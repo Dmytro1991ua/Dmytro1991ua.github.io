@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    }
 
-   var swiper = new Swiper('.swiper-container.slider-1', {
+   const swiper1 = new Swiper('.swiper-container.slider-1', {
       autoplay: {
          delay: 4000,
          disableOnInteraction: false
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
-   var swiper = new Swiper('.swiper-container.slider-2', {
+   const swiper2 = new Swiper('.swiper-container.slider-2', {
       loop: true,
       speed: 700,
       grabCursor: true,
@@ -419,6 +419,46 @@ document.addEventListener("DOMContentLoaded", () => {
       lazy: {
          loadPrevNext: true,
       },
+   });
+
+   const swiper3 = new Swiper('.swiper-container.slider-3', {
+      autoplay: {
+         delay: 4000,
+         disableOnInteraction: false
+      },
+      loop: true,
+      speed: 700,
+      grabCursor: true,
+      watchOverflow: true,
+      slidesPerView: 2,
+      spaceBetween: 15,
+      lazy: {
+         loadPrevNext: true,
+      },
+      breakpoints: {
+         520: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+         },
+         768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+         },
+         992: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+         },
+
+         1200: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+         },
+
+         1450: {
+            slidesPerView: 6,
+            spaceBetween: 50,
+         }
+      }
    });
 
 

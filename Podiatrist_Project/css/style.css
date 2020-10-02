@@ -2275,6 +2275,48 @@ main {
   margin-bottom: 2rem;
 }
 
+.partners {
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.partners__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.partners__partner {
+  padding: .4rem .5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-height: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .photogallery__header {
   margin-bottom: 4rem;
 }
@@ -2734,6 +2776,10 @@ main {
     margin-bottom: 4rem;
   }
 
+  .partners {
+    padding-bottom: 6rem;
+  }
+
   .reviews__img {
     margin-right: 1.5rem;
   }
@@ -3068,6 +3114,10 @@ main {
     margin-bottom: 8rem;
   }
 
+  .partners {
+    padding-bottom: 8rem;
+  }
+
   .team__member {
     border: 2px solid transparent;
     -webkit-transition: all .3s ease-in-out;
@@ -3115,8 +3165,61 @@ main {
     padding: 10rem 0rem;
   }
 
+  .partners {
+    padding-bottom: 10rem;
+  }
+
+  .partners::after,
+  .partners::before {
+    content: "";
+    position: absolute;
+    top: 18%;
+    width: 15rem;
+    height: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .partners::before {
+    left: 0;
+    background-image: url(../img/partners/Rectangle-left.png);
+  }
+
+  .partners::after {
+    right: 0;
+    background-image: url(../img/partners/Rectangle-right.png);
+  }
+
   .services__section-title {
     margin-bottom: 8.3rem;
+  }
+}
+
+@media only screen and (min-width: 91em) and (min-width: 95em) {
+  .partners::after,
+  .partners::before {
+    top: 10%;
+    width: 20rem;
+    height: 5.9rem;
+  }
+}
+
+@media only screen and (min-width: 91em) and (min-width: 110em) {
+  .partners::after,
+  .partners::before {
+    top: 5%;
+    width: 28rem;
+    height: 8rem;
+  }
+}
+
+@media only screen and (min-width: 91em) and (min-width: 128em) {
+  .partners::after,
+  .partners::before {
+    top: -3%;
+    width: 40rem;
+    height: 11rem;
   }
 }
 
