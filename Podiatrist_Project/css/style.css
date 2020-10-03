@@ -2084,15 +2084,31 @@ main {
 }
 
 .contacts {
-  background-color: #002341;
+  background-color: #7ac142;
   /* Subscribe block */
+}
+
+.contacts__subscribe {
+  padding: 1rem 2rem;
+  background-color: #002341;
+  border-radius: 1rem;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.contacts__subscribe:hover {
+  -webkit-filter: drop-shadow(0 0 0.75rem #373737);
+          filter: drop-shadow(0 0 0.75rem #373737);
 }
 
 .contacts__subscribe-info {
   color: #ffffff;
   text-align: center;
   font-family: 'Rubik', sans-serif;
-  line-height: 2.2rem;
+  line-height: 2.7rem;
+  margin-bottom: 2rem;
 }
 
 .contacts__subscribe-title {
@@ -2109,16 +2125,18 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
 .contacts__subscribe-email-box {
@@ -2135,11 +2153,12 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: .7rem;
 }
 
 .contacts__subscribe-email {
-  width: 25rem;
-  padding: 1.3rem 0 1.3rem 2.3rem;
+  width: 100%;
+  padding: 1.5rem 0 1.5rem 2.3rem;
   border-radius: 28px;
   margin-bottom: .7rem;
   -webkit-transition: all .3s ease-in-out;
@@ -2222,6 +2241,19 @@ main {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.contacts__subscribe-btn {
+  width: 100%;
+  height: 5.2rem;
+  font-size: calc(18px + 2 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  line-height: 3rem;
+  color: #ffffff;
+  border-radius: 2.8rem;
+  border: none;
+  background-color: green;
 }
 
 .advantages__section-title {
@@ -2417,7 +2449,7 @@ main {
 }
 
 .partners {
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   position: relative;
 }
 
@@ -2904,8 +2936,36 @@ main {
             justify-content: flex-start;
   }
 
+  .contacts__subscribe {
+    padding: 3rem 3rem;
+  }
+
+  .contacts__subscribe-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   .contacts__subscribe-info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 70%;
+            flex: 0 1 70%;
     line-height: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .contacts__subscribe-form {
+    width: 60%;
   }
 
   .hero {
@@ -2922,7 +2982,7 @@ main {
   }
 
   .partners {
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
   }
 
   .reviews__img {
@@ -3210,6 +3270,78 @@ main {
     margin-right: 10rem;
   }
 
+  .contacts__subscribe {
+    padding: 4rem 4rem;
+    -webkit-transform: translateY(-16rem);
+        -ms-transform: translateY(-16rem);
+            transform: translateY(-16rem);
+  }
+
+  .contacts__subscribe-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .contacts__subscribe-info {
+    text-align: left;
+  }
+
+  .contacts__subscribe-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .contacts__subscribe-email-box {
+    margin-bottom: 0;
+    -webkit-transform: translateX(11rem);
+        -ms-transform: translateX(11rem);
+            transform: translateX(11rem);
+  }
+
+  .contacts__subscribe-email {
+    width: 51rem;
+    margin-bottom: 0rem;
+  }
+
+  .contacts__subscribe-label {
+    margin-top: .7rem;
+  }
+
+  .contacts__subscribe-btn {
+    width: 13rem;
+    height: 5.3rem;
+    background-color: transparent;
+    background-image: url(../img/contact-us/btn-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transform: translateX(1rem);
+        -ms-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+
   .advantages__section-title {
     margin-bottom: 12rem;
   }
@@ -3260,7 +3392,7 @@ main {
   }
 
   .partners {
-    padding-bottom: 8rem;
+    padding-bottom: 15rem;
   }
 
   .team__member {
@@ -3310,8 +3442,28 @@ main {
     padding: 10rem 0rem;
   }
 
+  .contacts__subscribe {
+    padding: 6.5rem 3.1rem;
+    -webkit-transform: translateY(-20rem);
+        -ms-transform: translateY(-20rem);
+            transform: translateY(-20rem);
+  }
+
+  .contacts__subscribe-email-box {
+    margin-bottom: 0;
+    -webkit-transform: translateX(4.5rem);
+        -ms-transform: translateX(4.5rem);
+            transform: translateX(4.5rem);
+  }
+
+  .contacts__subscribe-btn {
+    -webkit-transform: translateX(-2rem);
+        -ms-transform: translateX(-2rem);
+            transform: translateX(-2rem);
+  }
+
   .partners {
-    padding-bottom: 10rem;
+    padding-bottom: 19.5rem;
   }
 
   .partners::after,
