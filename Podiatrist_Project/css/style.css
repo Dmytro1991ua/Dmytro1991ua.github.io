@@ -1926,6 +1926,10 @@ main {
   display: none;
 }
 
+.media-links--visible {
+  display: block;
+}
+
 .media-links__link:link,
 .media-links__link:visited {
   position: relative;
@@ -1945,13 +1949,22 @@ main {
   margin-right: 1.2rem;
 }
 
-.media-links__link:link:hover,
-.media-links__link:visited:hover {
+.media-links__link:link--adjust,
+.media-links__link:visited--adjust {
+  border: none;
+}
+
+.media-links__link:link--adjust:hover,
+.media-links__link:visited--adjust:hover {
   background-color: #90ee90;
 }
 
 .media-links__link:hover .media-links__icon {
   fill: #000000;
+}
+
+.media-links__link--adjust:hover .media-links__icon--white {
+  fill: #002341;
 }
 
 .media-links__span {
@@ -1975,6 +1988,10 @@ main {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.media-links__icon--white {
+  fill: #ffffff;
 }
 
 /*.scroll-up-btn {
@@ -2084,8 +2101,12 @@ main {
 }
 
 .contacts {
-  background-color: #7ac142;
+  background: url(../img/contact-us/bg-contact-us.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   /* Subscribe block */
+  /* Contacts */
 }
 
 .contacts__subscribe {
@@ -2096,6 +2117,7 @@ main {
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  margin-bottom: 2rem;
 }
 
 .contacts__subscribe:hover {
@@ -2254,6 +2276,126 @@ main {
   border-radius: 2.8rem;
   border: none;
   background-color: green;
+}
+
+.contacts__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts__item-inner--2 {
+  border: 4px solid #002341;
+  border-radius: 1rem;
+}
+
+.contacts__title {
+  font-size: calc(22px + 4 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  line-height: 2.6rem;
+  letter-spacing: 0.26px;
+  color: #fffefe;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contacts__contact-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.contacts__contact-box:last-child {
+  margin-bottom: 3rem;
+}
+
+.contacts__contact-icon {
+  width: 2.3rem;
+  height: 3.2rem;
+  fill: #002341;
+  margin-right: 2rem;
+}
+
+.contacts__contact-details {
+  font-size: calc(16px + 2 * ((100vw - 320px) / 1600));
+  line-height: 2.6rem;
+  color: #002341;
+}
+
+.contacts__contact-details--bigger {
+  font-size: calc(18px + 4 * ((100vw - 320px) / 1600));
+  font-weight: 700;
+}
+
+.contacts__timing-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #002341;
+  padding: .5rem 0;
+}
+
+.contacts__timing-icon {
+  width: 4.2rem;
+  height: 4.6rem;
+  fill: #ffffff;
+  margin-right: 2.8rem;
+}
+
+.contacts__timing-title {
+  font-size: calc(20px + 10 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+  color: #fffefe;
+  letter-spacing: 0.3px;
+}
+
+.contacts__timing-box {
+  padding: 3.2rem .22rem;
+  line-height: 3.2rem;
+}
+
+@supports (-webkit-appearance: none) {
+  .contacts {
+    background: url(../img/contact-us/bg-contact-us.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .advantages__section-title {
@@ -3054,6 +3196,14 @@ main {
 
   .about__info-title {
     margin-bottom: 4.8rem;
+  }
+
+  .contacts__title {
+    margin-bottom: 2.9rem;
+  }
+
+  .contacts__contact-box {
+    margin-bottom: 2.6rem;
   }
 
   .advantages__section-title {
