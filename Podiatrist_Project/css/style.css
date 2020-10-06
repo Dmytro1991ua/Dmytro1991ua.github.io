@@ -1688,6 +1688,19 @@ main {
   opacity: 1;
   visibility: visible;
   background-color: #153c6b;
+  border-top: 1px solid #7ac142;
+}
+
+.navigation__items.sticky {
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-filter: drop-shadow(0 0 0.75rem #373737);
+          filter: drop-shadow(0 0 0.75rem #373737);
+  border-radius: initial;
 }
 
 /*.preloader-container {
@@ -2703,14 +2716,6 @@ main {
 .header-top__contact-link {
   font-size: calc(16px + -1 * ((100vw - 320px) / 1600));
   color: #010101;
-}
-
-.header.sticky {
-  -webkit-transition: all .4s ease;
-  -o-transition: all .4s ease;
-  transition: all .4s ease;
-  -webkit-box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .hero {

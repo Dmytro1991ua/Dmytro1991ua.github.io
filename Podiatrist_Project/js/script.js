@@ -371,10 +371,10 @@ document.addEventListener("DOMContentLoaded", () => {
          const scrollTop = document.documentElement.scrollTop;
          if (window.innerWidth > 1200) {
             if (scrollTop > 70) {
-               document.querySelector(".header").classList.add("sticky");
+               document.querySelector(".navigation__items").classList.add("sticky");
 
             } else {
-               document.querySelector(".header").classList.remove("sticky");
+               document.querySelector(".navigation__items").classList.remove("sticky");
             }
          }
       }
