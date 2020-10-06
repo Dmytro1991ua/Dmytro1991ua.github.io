@@ -380,6 +380,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    }
 
+   //function which changes an active class of a navigation while scrolling to a specific section
+   function changeActiveClassOnScroll() {
+      const navigation = document.querySelectorAll(".navigation__link");
+      const sections = document.querySelectorAll(".section");
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      navigation.forEach((link, index) => {
+         const activeSection = sections[index];
+         const compare = activeSection.offsetTop <= scrollPosition && (activeSection.offsetTop + activeSection.offsetHeight > scrollPosition);
+
+         if (scrollPosition > 70) {
+            compare ? link.classList.add("active") : link.classList.remove("active");
+         }
+      });
+   }
+
+   window.addEventListener("scroll", changeActiveClassOnScroll);
+
    const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
          delay: 4000,
