@@ -204,31 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
  }
  
-    //handle different independent tabs on one page
-    function runTabsFilter2() {
-       const tabsWrapper = document.querySelectorAll(".tab-wrapper"); // обворачиваем табы и контент табов в обвертку (можно назвать tab-wrapper), для того чтобы в JS работать с ней, и чтобы в конечном счёте табы были независимы друг от друга (Чтобы они работали независимо друг от друга, надо их обернуть в отдельные дивы и работать уже с каждой конкретной обёрткой:)
-       tabsWrapper.forEach((wrapper) => { // итерируем по каждой обвертке, которая содержит табы и контент табов
-          const tabsFilterBtns = wrapper.querySelectorAll(".tab-filters"); // для того чтобы работать с разными табами, нужно дать им один класс (например tab-filters для кнопок, tabs-content - для самого контента )
-          const tabsContent = wrapper.querySelectorAll(".tabs-content");
-          for (let i = 0; i < tabsFilterBtns.length; i++) {
-            // tabsFilterBtns[0].click(); // можем выбирать какая кнопка актинка для всех кнопок(tab filter btn -- элемент с индексом 1). Допустим у нас есть 2 разных таба на странице, активный класс для кнопки таба будет одинаковый для обоих табов
- 
-             tabsFilterBtns[i].onclick = function () {
-                tabsFilterBtns.forEach((tablink) => {
-                   tablink.classList.remove("active");
-                })
-                tabsContent.forEach((tabContent) => {
-                   tabContent.classList.remove("show");
-                   tabContent.classList.add("hide");
-                })
-                tabsFilterBtns[i].classList.add("active");
-                tabsContent[i].classList.remove("hide");
-                tabsContent[i].classList.add("show");
-             }
-          }
-       });
-    }
- 
+  
     //open and close toggle btn on click
     function runToggleBtn() {
        //open  and close (toggle) on click
@@ -398,6 +374,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
    window.addEventListener("scroll", changeActiveClassOnScroll);
 
+   function runScrollToTopBtn() {
+      const offset = 100; //indecator after which a button will be shown or be hidden
+      const scrollUpBtn = document.querySelector(".scroll-up-btn");
+      const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
+      const pathLength = scrollUpSvgPath.getTotalLength();
+
+      //styles for SVG icon
+      scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
+
+      //function return a value of element while window is scrollung
+      const getTop = () => {
+         return window.pageYOffset || document.documentElement.sccollTop;
+      };
+
+      //function is in charge of pressing and running a scroll up btn
+      const updateDashoffset = () => {
+         const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
+         const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
+         scrollUpSvgPath.style.strokeDashoffset = dashoffset;
+      };
+
+      // toggle active class
+      window.addEventListener("scroll", (e) => {
+         updateDashoffset();
+         if (getTop() > offset) {
+            scrollUpBtn.classList.add("active");
+         } else {
+            scrollUpBtn.classList.remove("active");
+         }
+      });
+
+      scrollUpBtn.addEventListener("click", () => {
+         window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+         });
+      });
+   }
+
+   function runScrollToTopBtn() {
+    const offset = 100; //indecator after which a button will be shown or be hidden
+    const scrollUpBtn = document.querySelector(".scroll-up-btn");
+    const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
+    const pathLength = scrollUpSvgPath.getTotalLength();
+ 
+    //styles for SVG icon
+    scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
+    scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
+ 
+    //function return a value of element while window is scrollung
+    const getTop = () => {
+       return window.pageYOffset || document.documentElement.sccollTop;
+    };
+ 
+    //function is in charge of pressing and running a scroll up btn
+    const updateDashoffset = () => {
+       const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
+       const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
+       scrollUpSvgPath.style.strokeDashoffset = dashoffset;
+    };
+ 
+    // toggle active class
+    window.addEventListener("scroll", (e) => {
+       updateDashoffset();
+       if (getTop() > offset) {
+          scrollUpBtn.classList.add("active");
+       } else {
+          scrollUpBtn.classList.remove("active");
+       }
+    });
+ 
+    scrollUpBtn.addEventListener("click", () => {
+       window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+       });
+    });
+ }
+
+   //Run preloader
+   function runPreloader() {
+      const preloader = document.querySelector(".preloader");
+      preloader.classList.add("opacity-0");
+      setTimeout(function () {
+         preloader.style.display = "none";
+      }, 1000)
+
+   }
+
+
+   window.addEventListener("load", runPreloader);
    const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
          delay: 4000,
@@ -485,12 +553,12 @@ document.addEventListener("DOMContentLoaded", () => {
    //runAccordion();
    //runCounter();
    //runModal();
-   //runPreloader();
+   runPreloader();
    fixedHeader();
    //runTabsFilter();
    //runTabsFilter2();
    runToggleBtn();
-   //runScrollToTopBtn();
+   runScrollToTopBtn();
    //ibg();
    //resetForm();
    //showInputSearch();

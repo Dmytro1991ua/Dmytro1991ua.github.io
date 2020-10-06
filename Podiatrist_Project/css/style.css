@@ -466,6 +466,30 @@ template {
   }
 }
 
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 /* 
     Usage of input-placeholder mixin
 
@@ -1703,52 +1727,88 @@ main {
   border-radius: initial;
 }
 
-/*.preloader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $color-silver;
-    z-index: 100;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    transition: all 1s ease;
-
-    &__loader {
-        width: 90px;
-        height: 90px;
-        border: 10px solid $color-white;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-radius: 50%;
-        -webkit-animation: spin 1s linear infinite;
-        animation: spin 1s linear infinite;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: $color-white;
-            margin: -10px 0 0 -10px;
-        }
-    }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #102626;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
-.preloader-container.opacity-0 {
-    opacity: 0;
-} */
+.preloader__container {
+  -webkit-box-reflect: below 1px linear-gradient(#0001, #0004);
+}
+
+.preloader__container-loader {
+  position: relative;
+  width: 16.5rem;
+  height: 16.5rem;
+  border-radius: 50%;
+  background-color: #0d2323;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+}
+
+.preloader__container-loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(rgba(0, 255, 249, 0.4)));
+  background: -o-linear-gradient(bottom, transparent, rgba(0, 255, 249, 0.4));
+  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));
+  background-size: 10rem 18rem;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+}
+
+.preloader__container-loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: #00fff9;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 1rem #00fff9, 0 0 2rem #00fff9, 0 0 3rem #00fff9, 0 0 4rem #00fff9, 0 0 5rem;
+          box-shadow: 0 0 1rem #00fff9, 0 0 2rem #00fff9, 0 0 3rem #00fff9, 0 0 4rem #00fff9, 0 0 5rem;
+}
+
+.preloader__container-loader-span {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: #102626;
+  border-radius: 50%;
+}
+
+.preloader.opacity-0 {
+  opacity: 0;
+}
 
 /*.tabs-filter {
     flex: 0 1 100%;
@@ -2007,55 +2067,72 @@ main {
   fill: #ffffff;
 }
 
-/*.scroll-up-btn {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    cursor: pointer;
-    opacity: 0;
-    color: #dcdcdc;
-    width: 50px;
-    height: 50px;
-    visibility: hidden;
-    transition: all .4s ease-in-out;
-    box-shadow: inset 0 0 0 4px #dcdcdc;
-    transform: translateY(25px);
-    z-index: 100;
-    cursor: pointer;
-    border-radius: 50%;
-    animation: pulse 1s ease-out 1s infinite;
+.scroll-up-btn {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 3rem;
+  cursor: pointer;
+  opacity: 0;
+  color: #153c6b;
+  width: 5rem;
+  height: 5rem;
+  visibility: hidden;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: inset 0 0 0 4px #90ee90;
+          box-shadow: inset 0 0 0 4px #90ee90;
+  -webkit-transform: translateY(25px);
+      -ms-transform: translateY(25px);
+          transform: translateY(25px);
+  z-index: 5;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-animation: pulse 1s ease-out 1s infinite;
+          animation: pulse 1s ease-out 1s infinite;
 }
 
 .scroll-up-btn:hover {
-    color: orange;
+  color: rgba(255, 119, 48, 0.8);
 }
 
 .scroll-up-btn::before {
-    content: "↑";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
+  content: "↑";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
 }
 
 .scroll-up-btn.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .scroll-up-btn__svg-path {
-    box-sizing: border-box;
-    fill: none;
-    stroke: orange;
-    stroke-width: 4px;
-    transition: all .3s ease-in-out;
-} */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  fill: none;
+  stroke: #153c6b;
+  stroke-width: 4px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
 
 .about {
   background-color: #f7f7f7;
