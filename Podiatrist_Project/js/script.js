@@ -464,8 +464,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
    }
 
-
    window.addEventListener("load", runPreloader);
+
+   //run modal (pop-up)
+   function runModal() {
+      const openModalButtons = document.querySelectorAll("[data-modal-target]");
+      const closeModalButtons = document.querySelectorAll("[data-close-button]");
+      const overlay = document.querySelector(".modal-overlay");
+
+      //open modal
+      function openModal(modal) {
+         if (modal === null) return;
+         modal.classList.add("active");
+         overlay.classList.add("active");
+         document.querySelector("body").classList.add("lock");
+      }
+
+      //close modal
+      function closeModal(modal) {
+         if (modal === null) return;
+         modal.classList.remove("active");
+         overlay.classList.remove("active");
+         document.querySelector("body").classList.remove("lock");
+      }
+
+      openModalButtons.forEach(btn => {
+         btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const modal = document.querySelector(btn.dataset.modalTarget);
+            openModal(modal);
+         })
+      });
+
+      closeModalButtons.forEach(btn => {
+         btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const modal = btn.closest(".scaled");
+            closeModal(modal);
+         })
+      });
+
+      //remove overlay by clcking outside modal window
+      overlay.addEventListener("click", () => {
+         const openModals = document.querySelectorAll(".scaled.active");
+         openModals.forEach(modal => {
+            closeModal(modal);
+         });
+      });
+   }
+
+   
+
    const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
          delay: 4000,
@@ -552,13 +601,14 @@ document.addEventListener("DOMContentLoaded", () => {
    //call functions
    //runAccordion();
    //runCounter();
-   //runModal();
+   runModal();
    runPreloader();
    fixedHeader();
    //runTabsFilter();
    //runTabsFilter2();
    runToggleBtn();
    runScrollToTopBtn();
+   handlePreventDefailt();
    //ibg();
    //resetForm();
    //showInputSearch();

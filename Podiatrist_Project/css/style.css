@@ -1512,15 +1512,15 @@ main {
   transition: all .3s ease-in-out;
 }
 
-/*.modal {
-    &__body {
+.modal {
+  /*&__body {
         position: fixed;
         top: 50%;
         left: 50%;
         max-width: 100%;
         height: auto;
         transform: translate(-50%, -50%) scale(0);
-        background-color: $color-tomato;
+        background-color: $color-light-green;
         padding: 2rem 3rem;
         border-radius: 7px;
         transition: 200ms ease-in-out;
@@ -1560,7 +1560,6 @@ main {
             display: block;
             transition: all .3s ease-in-out;
 
-         
             @include respond(tiny-phone) {
                 max-width: 100%;
             }
@@ -1596,35 +1595,216 @@ main {
         color: $color-black;
 
         @include adaptiv-font(16, 14);
-    }
-
-    &__overlay {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color-black, .6);
-        display: block;
-        transition: 200ms ease-in-out;
-        z-index: 5;
-        opacity: 0;
-        visibility: hidden;
-        overflow: auto;
-    }
+    }*/
 }
 
-.modal__overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
 }
 
-.modal__body.active {
-    transform: translate(-50%, -50%) scale(1);
-} */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.scaled {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  z-index: 10;
+}
+
+.scaled.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal for Hero section */
+
+.modal-hero__body {
+  width: 90%;
+  padding: 3rem 2rem 2rem;
+  background-color: #002341;
+  border-radius: 15px;
+}
+
+.modal-hero__body:hover {
+  -webkit-filter: drop-shadow(0 0 0.75rem #373737);
+          filter: drop-shadow(0 0 0.75rem #373737);
+  cursor: pointer;
+}
+
+.modal-hero__close {
+  position: absolute;
+  top: -.1rem;
+  right: 1rem;
+  font-size: 3rem;
+  color: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-hero__close:hover {
+  color: #5a803d;
+  -webkit-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.modal-hero__item {
+  margin-bottom: 1.7rem;
+}
+
+.modal-hero__item:nth-child(5) {
+  margin-bottom: 2rem;
+}
+
+.modal-hero__input {
+  width: 100%;
+  min-height: 5rem;
+  padding: 1rem;
+  margin-bottom: .8rem;
+}
+
+.modal-hero__input:last-child {
+  margin-bottom: 0;
+}
+
+.modal-hero__input,
+.modal-hero__textarea {
+  background-color: transparent !important;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid #7ac142;
+  color: #ffffff;
+  padding: 1rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-hero__input.placeholder,
+.modal-hero__textarea.placeholder {
+  font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+}
+
+.modal-hero__input:-moz-placeholder,
+.modal-hero__textarea:-moz-placeholder {
+  font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+}
+
+.modal-hero__input::-moz-placeholder,
+.modal-hero__textarea::-moz-placeholder {
+  font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+}
+
+.modal-hero__input:-ms-input-placeholder,
+.modal-hero__textarea:-ms-input-placeholder {
+  font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+}
+
+.modal-hero__input::-webkit-input-placeholder,
+.modal-hero__textarea::-webkit-input-placeholder {
+  font-size: calc(16px + 0 * ((100vw - 320px) / 1600));
+  color: #ffffff;
+}
+
+.modal-hero__input:focus,
+.modal-hero__textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.modal-hero__input:focus:invalid,
+.modal-hero__textarea:focus:invalid {
+  border-bottom: 1px solid rgba(255, 119, 48, 0.8);
+}
+
+.modal-hero__label {
+  font-size: calc(13px + 2 * ((100vw - 320px) / 1600));
+  font-family: 'Rubik', sans-serif;
+  color: #7ac142;
+  font-weight: 300;
+  margin-left: 1rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-hero__textarea {
+  resize: vertical;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.modal-hero__input:-moz-placeholder-shown + .modal-hero__label, .modal-hero__textarea:-moz-placeholder-shown + .modal-hero__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.modal-hero__input:-ms-input-placeholder + .modal-hero__label, .modal-hero__textarea:-ms-input-placeholder + .modal-hero__label {
+  opacity: 0;
+  visibility: hidden;
+  -ms-transform: translateY(-4rem);
+      transform: translateY(-4rem);
+}
+
+.modal-hero__input:placeholder-shown + .modal-hero__label,
+.modal-hero__textarea:placeholder-shown + .modal-hero__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+      -ms-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.modal-hero__btn {
+  width: 100%;
+  padding: 1.2rem 2.3rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #7ac142;
+  color: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-hero__btn:hover {
+  background-color: #5a803d;
+}
 
 .navigation {
   position: fixed;
@@ -2437,6 +2617,7 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  cursor: pointer;
   margin-bottom: 1.2rem;
 }
 
@@ -2444,11 +2625,19 @@ main {
   margin-bottom: 3rem;
 }
 
+.contacts__contact-box:hover .contacts__contact-icon {
+  fill: #ffffff;
+  cursor: pointer;
+}
+
 .contacts__contact-icon {
   width: 2.3rem;
   height: 3.2rem;
   fill: #002341;
   margin-right: 2rem;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .contacts__contact-details {
@@ -3181,6 +3370,12 @@ main {
 
   .gallery__item:last-child {
     margin-bottom: 0rem;
+  }
+
+  .modal-hero__body {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .toggle {

@@ -162,7 +162,7 @@
                   <h1 class="heading-1">Nunc placerat nulla semper</h1>
                   <p class="hero__subtitle">placerat purus ullam sem nec mi ornare</p>
                </div>
-               <a href="#" class="btn-main">Appointment</a>
+               <a href="#" class="btn-main" data-modal-target="#modal-1">Appointment</a>
             </div>
          </section>
          <!--Hero section ends-->
@@ -1128,6 +1128,76 @@
          </svg>
       </div>
       <!--Scroll to top button ends-->
+      <!--Modal for a hero sections starts-->
+      <div class="modal-hero">
+         <div class="modal-hero__body scaled" id="modal-1">
+            <a class="modal-hero__close" href="#" data-close-button>&times;</a>
+            <form class="modal-hero__form" action="#">
+               <div class="modal-hero__item">
+                  <input type="text" class="modal-hero__input" id="name" placeholder="Enter Your Name" required>
+                  <label for="name" class="modal-hero__label">Name</label>
+               </div>
+               <div class="modal-hero__item">
+                  <input type="text" class="modal-hero__input" id="surname" placeholder="Enter Your Surname" required>
+                  <label for="surname" class="modal-hero__label">Surname</label>
+               </div>
+               <div class="modal-hero__item">
+                  <input type="text" class="modal-hero__input" id="subject" placeholder="Enter Your Subject">
+                  <label for="subject" class="modal-hero__label">Subject</label>
+               </div>
+               <div class="modal-hero__item">
+                  <input type="email" class="modal-hero__input" id="email-2" placeholder="Enter Your Email"
+                     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                     required>
+                  <label for="email-2" class="modal-hero__label">Email</label>
+               </div>
+               <div class="modal-hero__item">
+                  <textarea class="modal-hero__textarea" id="textarea" placeholder="Enter Your Message"></textarea>
+                  <label for="textarea" class="modal-hero__label">Enter Your Message</label>
+               </div>
+               <button class="modal-hero__btn">Submit</button>
+            </form>
+         </div>
+         <div class="modal-overlay"></div>
+      </div>
+      <!--Modal for a hero sections ends-->
+
+      <!--Modal starts-->
+      <!--<div class="modal"> -->
+      <!--Modal window starts-->
+      <!--<div class="modal__body" id="modal-1">
+      <a class="modal__close" href="#" data-close-button>&times;</a>
+      <div class="modal__img">
+         <picture><source srcset="./img/cards/1.webp" type="image/webp"><img src="./img/cards/1.jpg" alt=""></picture>
+      </div>
+      <div class="modal__content">
+         <h3 class="heading-3">Some Website</h3>
+         <p class="modal__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatum provident
+            ad vero, tenetur nesciunt quis error voluptate esse exercitationem ex sit fugit illum rem labore quod ea
+            reprehenderit unde?</p>
+         <a href="#" class="modal__btn">Check this Out</a>
+      </div>
+   </div> -->
+      <!--Modal window ends-->
+
+      <!--Modal window starts-->
+      <!--<div class="modal__body" id="modal-2">
+      <a class="modal__close" href="#" data-close-button>&times;</a>
+      <div class="modal__img">
+         <picture><source srcset="./img/cards/2.webp" type="image/webp"><img src="./img/cards/2.jpg" alt=""></picture>
+      </div>
+      <div class="modal__content">
+         <h3 class="heading-3">Some Website</h3>
+         <p class="modal__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatum provident
+            ad vero, tenetur nesciunt quis error voluptate esse exercitationem ex sit fugit illum rem labore quod ea
+            reprehenderit unde?</p>
+         <a href="#" class="modal__btn">Check this Out</a>
+      </div>
+   </div> -->
+      <!--Modal window ends-->
+      <!--<div class="modal__overlay"></div> 
+</div>-->
+      <!--Modal ends-->
    </div>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/script.min.js"></script>
