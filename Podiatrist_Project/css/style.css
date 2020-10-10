@@ -1648,7 +1648,7 @@ main {
 
 .modal-hero__body {
   width: 90%;
-  padding: 3rem 2rem 2rem;
+  padding: 1.5rem 1.5rem 1.5rem;
   background-color: #002341;
   border-radius: 15px;
 }
@@ -1804,6 +1804,138 @@ main {
 
 .modal-hero__btn:hover {
   background-color: #5a803d;
+}
+
+/* Modal for Service Section */
+
+.modal-services {
+  position: relative;
+}
+
+.modal-services__body {
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  z-index: 8;
+}
+
+.modal-services__close {
+  position: absolute;
+  right: 0;
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+.modal-services__pic {
+  max-width: 30rem;
+  padding: 4rem 0 3rem 0;
+}
+
+.modal-services__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  font-size: calc(16px + 2 * ((100vw - 320px) / 1600));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-services__icon-link {
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-color: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-services__icon-link:hover {
+  -webkit-transform: scale(1.03) translateY(-0.1rem);
+      -ms-transform: scale(1.03) translateY(-0.1rem);
+          transform: scale(1.03) translateY(-0.1rem);
+}
+
+.modal-services__icon-link:focus {
+  -webkit-transform: scale(1.03) translateY(0rem);
+      -ms-transform: scale(1.03) translateY(0rem);
+          transform: scale(1.03) translateY(0rem);
+}
+
+.modal-services__icon-link--prev {
+  left: 0;
+}
+
+.modal-services__icon-link--next {
+  right: 0;
+}
+
+.modal-services__prev-icon,
+.modal-services__next-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: #7ac142;
+}
+
+.modal-services__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  z-index: 5;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-services__overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal-services__body.open {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 .navigation {
@@ -3510,6 +3642,14 @@ main {
         -ms-flex: 0 1 33.3333%;
             flex: 0 1 33.3333%;
     max-width: 33.3333%;
+  }
+
+  .modal-hero__body {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .modal-services__pic {
+    max-width: 100%;
   }
 
   .section-title__side-lines::after,

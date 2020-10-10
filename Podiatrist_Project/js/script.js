@@ -415,44 +415,44 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    function runScrollToTopBtn() {
-    const offset = 100; //indecator after which a button will be shown or be hidden
-    const scrollUpBtn = document.querySelector(".scroll-up-btn");
-    const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
-    const pathLength = scrollUpSvgPath.getTotalLength();
- 
-    //styles for SVG icon
-    scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
- 
-    //function return a value of element while window is scrollung
-    const getTop = () => {
-       return window.pageYOffset || document.documentElement.sccollTop;
-    };
- 
-    //function is in charge of pressing and running a scroll up btn
-    const updateDashoffset = () => {
-       const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
-       const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
-       scrollUpSvgPath.style.strokeDashoffset = dashoffset;
-    };
- 
-    // toggle active class
-    window.addEventListener("scroll", (e) => {
-       updateDashoffset();
-       if (getTop() > offset) {
-          scrollUpBtn.classList.add("active");
-       } else {
-          scrollUpBtn.classList.remove("active");
-       }
-    });
- 
-    scrollUpBtn.addEventListener("click", () => {
-       window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-       });
-    });
- }
+      const offset = 100; //indecator after which a button will be shown or be hidden
+      const scrollUpBtn = document.querySelector(".scroll-up-btn");
+      const scrollUpSvgPath = document.querySelector(".scroll-up-btn__svg-path");
+      const pathLength = scrollUpSvgPath.getTotalLength();
+
+      //styles for SVG icon
+      scrollUpBtn.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      scrollUpBtn.style.transition = 'stroke-dashoffset 500ms';
+
+      //function return a value of element while window is scrollung
+      const getTop = () => {
+         return window.pageYOffset || document.documentElement.sccollTop;
+      };
+
+      //function is in charge of pressing and running a scroll up btn
+      const updateDashoffset = () => {
+         const scrollheight = document.documentElement.scrollHeight - window.innerHeight; // calculate difference between scroll height
+         const dashoffset = pathLength - (getTop() * pathLength / scrollheight);
+         scrollUpSvgPath.style.strokeDashoffset = dashoffset;
+      };
+
+      // toggle active class
+      window.addEventListener("scroll", (e) => {
+         updateDashoffset();
+         if (getTop() > offset) {
+            scrollUpBtn.classList.add("active");
+         } else {
+            scrollUpBtn.classList.remove("active");
+         }
+      });
+
+      scrollUpBtn.addEventListener("click", () => {
+         window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+         });
+      });
+   }
 
    //Run preloader
    function runPreloader() {
@@ -513,7 +513,79 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
-   
+   //slider inside a modal dialog
+   function sliderModal() {
+      const overlay = document.querySelector(".modal-services__overlay");
+      const overlayBody = document.querySelector(".modal-services__body");
+      const btnClose = document.querySelector(".modal-services__close");
+      const modalImg = document.querySelector(".modal-services__pic");
+      const prevBtn = document.querySelector(".modal-services__icon-link--prev");
+      const nextBtn = document.querySelector(".modal-services__icon-link--next");
+      const slideTitle = document.querySelector(".modal-services__info-title");
+      const slideCounter = document.querySelector(".modal-services__info-counter");
+      const galleryItem = document.querySelectorAll(".gallery-service__item");
+      const galleryItemLength = galleryItem.length;
+     
+    
+
+      let galleryItemIndex = 0; // specify an index of gallery Item
+
+      for (let i = 0; i < galleryItemLength; i++) {
+         galleryItem[i].addEventListener("click", () => {
+            galleryItemIndex = i;
+            toggleOverlay();
+            changeImgSrc();
+         });
+      }
+
+      const toggleOverlay = () => {
+         overlay.classList.toggle("open");
+         overlayBody.classList.toggle("open");
+         document.body.classList.toggle("lock");
+      }
+
+      const changeImgSrc = () => { // change image, title and counter depend on clicking gallery item
+         imgSrc = galleryItem[galleryItemIndex].querySelector(".gallery-service__pic").getAttribute("src");// get src of img when click to a certain gallery item
+         imgAlt = galleryItem[galleryItemIndex].querySelector(".gallery-service__pic").getAttribute("alt"); // get value of alt attribute for each pic
+
+         modalImg.src = imgSrc;
+         modalImg.alt = imgAlt;
+
+         slideTitle.innerHTML = galleryItem[galleryItemIndex].querySelector(".gallery-service__title").textContent; // get a text value of <h3> in gallery item
+         slideCounter.innerHTML = `${galleryItemIndex + 1} of ${galleryItemLength}`; // get a slider counter
+
+      };
+
+      prevBtn.addEventListener("click", (event) => {
+         event.preventDefault();
+         if (galleryItemIndex === 0) {
+            galleryItemIndex === galleryItemLength - 1;
+         } else {
+            galleryItemIndex--;
+         }
+         changeImgSrc();
+      });
+
+      nextBtn.addEventListener("click", (event) => {
+         event.preventDefault();
+         if (galleryItemIndex === galleryItemLength - 1) {
+            galleryItemIndex === 0;
+         } else {
+            galleryItemIndex++;
+         }
+         changeImgSrc();
+      });
+
+      overlay.addEventListener("click", (event) => { // close modal dilog on clicking outside it
+         const target = event.target;
+      
+         if (!target.closest(".modal-services__body") || target.closest(".modal-services__close")) {
+            event.preventDefault();
+            toggleOverlay();
+         }
+      });
+   }
+
 
    const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
@@ -604,6 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
    runModal();
    runPreloader();
    fixedHeader();
+   sliderModal();
    //runTabsFilter();
    //runTabsFilter2();
    runToggleBtn();
