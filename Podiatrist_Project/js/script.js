@@ -517,7 +517,6 @@ document.addEventListener("DOMContentLoaded", () => {
    function sliderModal() {
       const overlay = document.querySelector(".modal-services__overlay");
       const overlayBody = document.querySelector(".modal-services__body");
-      const btnClose = document.querySelector(".modal-services__close");
       const modalImg = document.querySelector(".modal-services__pic");
       const prevBtn = document.querySelector(".modal-services__icon-link--prev");
       const nextBtn = document.querySelector(".modal-services__icon-link--next");
@@ -681,7 +680,6 @@ document.addEventListener("DOMContentLoaded", () => {
    //runTabsFilter2();
    runToggleBtn();
    runScrollToTopBtn();
-   handlePreventDefailt();
    //ibg();
    //resetForm();
    //showInputSearch();
