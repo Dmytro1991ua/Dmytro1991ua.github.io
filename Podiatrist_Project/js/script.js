@@ -524,8 +524,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const slideCounter = document.querySelector(".modal-services__info-counter");
       const galleryItem = document.querySelectorAll(".gallery-service__item");
       const galleryItemLength = galleryItem.length;
-     
-    
+
+
 
       let galleryItemIndex = 0; // specify an index of gallery Item
 
@@ -577,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       overlay.addEventListener("click", (event) => { // close modal dilog on clicking outside it
          const target = event.target;
-      
+
          if (!target.closest(".modal-services__body") || target.closest(".modal-services__close")) {
             event.preventDefault();
             toggleOverlay();
@@ -667,7 +667,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 
-
+   const swiper = new Swiper('.swiper-container.slider-4', { // modal dilog for photogallery section
+      autoplay: {
+         delay: 4000,
+         disableOnInteraction: false
+      },
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 8,
+      loop: true,
+      lazy: {
+         loadPrevNext: true,
+      },
+      navigation: {
+         nextEl: '.swiper-button-next-custom',
+         prevEl: '.swiper-button-prev-custom',
+      },
+      breakpoints: {
+         640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+         },
+         992: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+         },
+         1200: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+         },
+      }
+   });
 
    //call functions
    //runAccordion();
