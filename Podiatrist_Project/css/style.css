@@ -490,6 +490,12 @@ template {
   }
 }
 
+@-webkit-keyframes animateScrollBar {
+}
+
+@keyframes animateScrollBar {
+}
+
 /* 
     Usage of input-placeholder mixin
 
@@ -2699,6 +2705,51 @@ main {
 
 .media-links__icon--white {
   fill: #ffffff;
+}
+
+.progressbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 0%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#7ac142), to(#5a803d));
+  background: -o-linear-gradient(bottom, #7ac142, #5a803d);
+  background: linear-gradient(to top, #7ac142, #5a803d);
+  z-index: 100;
+}
+
+.progressbar ::before,
+.progressbar ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#7ac142), to(#5a803d));
+  background: -o-linear-gradient(bottom, #7ac142, #5a803d);
+  background: linear-gradient(to top, #7ac142, #5a803d);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.progressbar ::after {
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+}
+
+.scrollpath {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .scroll-up-btn {

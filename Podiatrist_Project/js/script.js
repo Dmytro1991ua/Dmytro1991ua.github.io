@@ -585,6 +585,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   // run custom scrollbar
+   const runCustomScrollbar = () => {
+      const progressbar = document.querySelector(".progressbar");
+
+      let totaHeight = document.body.scrollHeight - window.innerHeight;
+    
+      window.onscroll = function () {
+         let progress = (window.pageYOffset / totaHeight) * 100;
+         progressbar.style.height = progress + "%";
+      }
+
+   };
 
    const swiper1 = new Swiper('.swiper-container.slider-1', { // Team Section
       autoplay: {
@@ -702,18 +714,12 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    //call functions
-   //runAccordion();
-   //runCounter();
    runModal();
    runPreloader();
    fixedHeader();
    sliderModal();
-   //runTabsFilter();
-   //runTabsFilter2();
+   runCustomScrollbar();
    runToggleBtn();
    runScrollToTopBtn();
-   //ibg();
-   //resetForm();
-   //showInputSearch();
 });
 
