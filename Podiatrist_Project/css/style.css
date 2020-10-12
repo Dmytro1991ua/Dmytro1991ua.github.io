@@ -2662,22 +2662,8 @@ main {
   margin-right: 1.2rem;
 }
 
-.media-links__link:link--adjust,
-.media-links__link:visited--adjust {
-  border: none;
-}
-
-.media-links__link:link--adjust:hover,
-.media-links__link:visited--adjust:hover {
-  background-color: #90ee90;
-}
-
 .media-links__link:hover .media-links__icon {
   fill: #000000;
-}
-
-.media-links__link--adjust:hover .media-links__icon--white {
-  fill: #002341;
 }
 
 .media-links__span {
@@ -2876,7 +2862,7 @@ main {
 }
 
 .contacts {
-  background: url(../img/contact-us/bg-contact-us.jpg);
+  background: url(../img/contact-us/bg-contact-us-small.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2885,6 +2871,15 @@ main {
   padding-bottom: 2.2rem;
   /* Contacts */
   /* Footer */
+}
+
+@supports (-webkit-appearance: none) {
+  .contacts {
+    background: url(../img/contact-us/bg-contact-us-big.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .contacts__wrapper::before {
@@ -3264,9 +3259,9 @@ main {
   font-size: calc(16px + 1 * ((100vw - 320px) / 1600));
   min-width: 9rem;
   color: #002341;
-  -webkit-transition: all .3sease-in-out;
-  -o-transition: all .3sease-in-out;
-  transition: all .3sease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .contacts__media-link:hover .contacts__media-icon {
@@ -3369,15 +3364,6 @@ main {
 
 .contacts__footer-link:hover {
   color: #ffffff;
-}
-
-@supports (-webkit-appearance: none) {
-  .contacts {
-    background: url(../img/contact-us/bg-contact-us.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
 }
 
 .advantages__section-title {
@@ -3494,11 +3480,20 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url(../img/hero/1.jpg);
+  background: url(../img/hero/1-small.jpg);
   background-position: 36% 0%;
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 8.8rem;
+}
+
+@supports (-webkit-appearance: none) {
+  .hero {
+    background: url(../img/hero/1-big.webp);
+    background-position: 36% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero__body {
@@ -3540,15 +3535,6 @@ main {
   text-align: center;
   color: #ffffff;
   font-size: calc(14px + 16 * ((100vw - 320px) / 1600));
-}
-
-@supports (-webkit-appearance: none) {
-  .hero {
-    background: url(../img/hero/1.webp);
-    background-position: 36% 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
 }
 
 .container {
@@ -3911,6 +3897,22 @@ main {
 @media (min-width: 37.5em) {
   .modal-news__body {
     width: 60%;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
+  .contacts {
+    background-image: url(../img/contact-us/bg-contact-us-big.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero {
+    background-image: url(../img/hero/1-big.jpg);
+    background-position: 36% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
