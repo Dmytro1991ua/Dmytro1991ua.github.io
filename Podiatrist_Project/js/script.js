@@ -1,5 +1,5 @@
 const runPageScript = () => {
-   
+
    //open and close toggle btn on click
    function runToggleBtn() {
       //open  and close (toggle) on click
@@ -391,6 +391,14 @@ const runPageScript = () => {
             spaceBetween: 25,
          },
       }
+   });
+
+/* AOS animation*/
+   
+   AOS.init({
+      offset: 200,
+      duration: 600,
+      once: true,
    });
 
    //call functions
