@@ -8,7 +8,43 @@ document.addEventListener("DOMContentLoaded", function () {
     once: true,
     easing: 'ease-in-sine',
     delay: 100
-  }); //Sticky header section on scroll down
+  }); // Swiper Slider(header-bottom section)
+
+  var slider = function slider() {
+    var swiper = document.querySelector(".header-bottom");
+    var mySwiper;
+
+    function mobileSlider() {
+      if (window.innerWidth <= 600 && swiper.dataset.mobile === "false") {
+        mySwiper = new Swiper(swiper, {
+          slidesPerView: "auto",
+          spaceBetween: 10,
+          centeredSlides: true,
+          loop: true,
+          slideClass: "header-bottom__item",
+          autoplay: {
+            delay: 3200,
+            disableOnInteraction: false
+          }
+        });
+        swiper.dataset.mobile = "true";
+      }
+
+      if (window.innerWidth > 600) {
+        swiper.dataset.mobile = "false";
+
+        if (swiper.classList.contains('swiper-container-initialized')) {
+          mySwiper.destroy();
+        }
+      }
+    }
+
+    mobileSlider();
+    window.addEventListener("resize", function () {
+      mobileSlider();
+    });
+  }; //Sticky header section on scroll down
+
 
   function fixedHeader() {
     window.onscroll = function () {
@@ -232,4 +268,5 @@ document.addEventListener("DOMContentLoaded", function () {
   showInputSearch();
   runScrollToTopBtn();
   changeImgOnClick();
+  slider();
 });
