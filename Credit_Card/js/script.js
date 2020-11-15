@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     lazyLoading: true,
     spaceBetween: 10,
+    centeredSlides: true,
     //init: false,
     navigation: {
       nextEl: '.swiper-button-next-custom',
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 15
+        spaceBetween: 25
       },
       992: {
         slidesPerView: 3,
@@ -85,9 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       1600: {
         slidesPerView: 4,
-        spaceBetween: 50
+        spaceBetween: 50,
+        centeredSlides: true
       },
-      1920: {
+      1900: {
         slidesPerView: 4,
         spaceBetween: 70
       }

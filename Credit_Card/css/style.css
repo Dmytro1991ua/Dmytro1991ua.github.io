@@ -2031,6 +2031,19 @@ main {
   right: 23%;
 }
 
+.slider-2 .swiper-slide {
+  opacity: 0.5;
+}
+
+.slider-2 .swiper-slide-active,
+.slider-2 .swiper-slide-prev,
+.slider-2 .swiper-slide-next {
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
 .fag {
   padding-top: 19rem;
   padding-bottom: 15rem;
@@ -2843,6 +2856,18 @@ main {
     margin: 0 auto;
   }
 
+  .slider-2__icon {
+    top: 64%;
+  }
+
+  .slider-2__icon--prev {
+    left: 31%;
+  }
+
+  .slider-2__icon--next {
+    right: 31%;
+  }
+
   .footer__column--1 {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 39%;
@@ -3030,6 +3055,10 @@ main {
     right: 31%;
   }
 
+  .slider-2 .swiper-slide {
+    opacity: 1;
+  }
+
   .fag {
     padding-top: 12rem;
     padding-bottom: 9rem;
@@ -3196,7 +3225,7 @@ main {
   }
 
   .slider-2__icon {
-    top: 46%;
+    top: 65%;
   }
 
   .slider-2__icon--prev {
@@ -3649,9 +3678,17 @@ main {
   }
 
   .slider-2__icon {
-    top: 60%;
+    top: 64%;
     width: 4.6rem;
     height: 3.5rem;
+  }
+
+  .slider-2__icon--prev {
+    left: 31%;
+  }
+
+  .slider-2__icon--next {
+    right: 31%;
   }
 
   .fag {
@@ -4089,6 +4126,10 @@ main {
 
   .slider-2__icon--next {
     right: 31%;
+  }
+
+  .slider-2 .swiper-slide {
+    opacity: 1;
   }
 
   .hero__icon--dollar {
