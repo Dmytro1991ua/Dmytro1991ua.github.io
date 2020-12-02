@@ -37,3 +37,10 @@ Stack of technologies which were used to develop a particular project:
 
 A link on GitHub Pages - https://dmytro1991ua.github.io/Podiatrist_Project/
 
+# Test_Task
+
+A test task to develop a part of the website as a part of a recruitment process.
+
+https://dmytro1991ua.github.io/Test_Task/
+
+
