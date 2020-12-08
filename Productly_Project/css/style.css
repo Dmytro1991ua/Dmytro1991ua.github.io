@@ -1178,8 +1178,8 @@ main {
 
 .navigation {
   position: fixed;
-  top: 5.6rem;
-  left: 0;
+  top: 6.4rem;
+  left: -100%;
   width: 100%;
   height: 100%;
   background-color: #FF9900;
@@ -1244,7 +1244,7 @@ main {
 
 .navigation__link:link:hover,
 .navigation__link:visited:hover {
-  color: #000000;
+  color: #FF9900;
 }
 
 .navigation.show {
@@ -1593,48 +1593,56 @@ main {
           box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
 }
 
-/*.hero {
-    min-height: 100vh;
-    display: flex;
-    padding: 0 2rem;
-    background-image: url(../img/1-small.jpg);
+.hero {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 2rem;
+  background-image: url();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@supports (-webkit-appearance: none) {
+  .hero {
+    background-image: url();
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+}
 
-    @supports (-webkit-appearance: none) {
-        background-image: url(../img/1-big.webp);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+.hero__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 114rem;
+  margin: 0 auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
-    @media only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (min-width: 125em) {
-        background-image: url(../img/1-big.jpg);
-        background-position: 36% 0%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-
-    &__body {
-        flex: 1 1 auto;
-        max-width: 114rem; //не используем контейнер а устанавливаем ширину макету в hero__body
-        margin: 0 auto;
-        width: 100%; //для корректнго изображения в Internet explorer
-
-        @include flex(column, center, center);
-    }
-
-    &__subtitle {
-        max-width: 75rem;
-        text-align: center;
-
-        @include adaptiv-font(20, 16);
-    }
-} */
+.hero__subtitle {
+  max-width: 75rem;
+  text-align: center;
+  font-size: calc(16px + 4 * ((100vw - 320px) / 820));
+}
 
 .container {
   max-width: 115.6rem;
@@ -1689,6 +1697,16 @@ main {
             flex: 0 1 100%;
     max-width: 100%;
     padding: 1.5rem 0;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
+  .hero {
+    background-image: url();
+    background-position: 36% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
