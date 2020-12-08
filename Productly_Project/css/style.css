@@ -688,6 +688,64 @@ main {
     }
 }*/
 
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #ffffff;
+  padding: 1rem 1.3rem;
+  background-color: #FF9900;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 1px solid #173A56;
+  color: #544837;
+}
+
+.btn--watch {
+  border: none;
+  background-color: transparent;
+  color: #FF9900;
+  text-decoration: underline;
+  margin-left: 0.8rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn--watch:hover {
+  border: none;
+}
+
+.btn--watch::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/hero/triangle.svg);
+}
+
+.btn__icon {
+  width: 1rem;
+  height: 1.4rem;
+  margin-right: .9rem;
+  fill: #FF9900;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn:hover .btn__icon {
+  fill: #544837;
+}
+
 .cards__row {
   margin: 0 -1.5rem;
 }
@@ -1594,35 +1652,11 @@ main {
 }
 
 .hero {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 2rem;
-  background-image: url();
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-@supports (-webkit-appearance: none) {
-  .hero {
-    background-image: url();
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+  padding-top: 12rem;
+  padding-bottom: 2rem;
 }
 
 .hero__body {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  max-width: 114rem;
-  margin: 0 auto;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1638,10 +1672,50 @@ main {
           justify-content: center;
 }
 
-.hero__subtitle {
-  max-width: 75rem;
+.hero__details {
   text-align: center;
-  font-size: calc(16px + 4 * ((100vw - 320px) / 820));
+  margin-bottom: 2rem;
+}
+
+.hero__details-title {
+  font-size: calc(26px + 18 * ((100vw - 320px) / 820));
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2F281E;
+}
+
+.hero__details-subtitle {
+  font-size: calc(15px + 3 * ((100vw - 320px) / 820));
+  line-height: 2.8rem;
+  color: #544837;
+  margin-bottom: 2rem;
+}
+
+.hero__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__img-box {
+  width: 27rem;
+  height: auto;
+}
+
+.hero__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container {
@@ -1698,19 +1772,18 @@ main {
     max-width: 100%;
     padding: 1.5rem 0;
   }
-}
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
-  .hero {
-    background-image: url();
-    background-position: 36% 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  .hero__img-box {
+    width: 32rem;
   }
 }
 
 @media only screen and (min-width: 48em) {
+  .btn__icon {
+    width: 1.7rem;
+    height: 2rem;
+  }
+
   .logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 15rem;
@@ -1782,9 +1855,69 @@ main {
   .header__get-started-btn:last-child {
     margin-right: 0;
   }
+
+  .hero {
+    padding-top: 11rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .hero__details {
+    text-align: left;
+    margin-bottom: 0rem;
+    margin-right: 1rem;
+  }
+
+  .hero__details-title {
+    max-width: 52rem;
+  }
+
+  .hero__details-subtitle {
+    max-width: 46rem;
+  }
+
+  .hero__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .hero__img-box {
+    width: 42rem;
+  }
 }
 
 @media only screen and (min-width: 62em) {
+  .btn {
+    padding: 1.4rem 4.4rem;
+    font-size: 1.6rem;
+  }
+
   .logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 20rem;
@@ -1799,11 +1932,58 @@ main {
     padding: 1.1rem 2.2rem;
     margin-right: 1.4rem;
   }
+
+  .hero {
+    padding-top: 13rem;
+    padding-bottom: 9rem;
+  }
+
+  .hero__details-title {
+    margin-bottom: 3rem;
+  }
+
+  .hero__details-subtitle {
+    margin-bottom: 4.5rem;
+  }
+
+  .hero__img-box {
+    width: 60.2rem;
+  }
 }
 
 @media only screen and (min-width: 75em) {
   .header {
     background-color: transparent;
     padding: 2.4rem 0;
+  }
+
+  .hero {
+    padding-bottom: 11rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .hero__details-title {
+    max-width: 57rem;
+  }
+}
+
+@media only screen and (min-width: 91em) {
+  .container {
+    max-width: 120.6rem;
+  }
+}
+
+@media only screen and (min-width: 103em) {
+  .hero__details-title {
+    max-width: 60rem;
+  }
+
+  .hero__img-box {
+    max-width: 73rem;
+  }
+
+  .container {
+    max-width: 130.6rem;
   }
 }
