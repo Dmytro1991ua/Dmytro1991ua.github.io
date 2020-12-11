@@ -1107,6 +1107,8 @@ main {
   width: 27rem;
   height: auto;
   overflow: hidden;
+  -webkit-filter: drop-shadow(14px 10px 4px #544837);
+          filter: drop-shadow(14px 10px 4px #544837);
 }
 
 .img-component__img {
@@ -1553,7 +1555,7 @@ main {
   font-size: calc(15px + 1 * ((100vw - 320px) / 820));
   font-weight: 500;
   color: #544837;
-  margin-bottom: .3rem;
+  margin-bottom: .8rem;
 }
 
 /*.progressbar {
@@ -1872,6 +1874,71 @@ main {
   padding: 0 1.6rem;
 }
 
+.managers {
+  padding-bottom: 2rem;
+}
+
+.managers__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.managers__header {
+  margin-bottom: 1.5rem;
+}
+
+.managers__info-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1.3rem;
+}
+
+.managers__info-item:last-child {
+  margin-bottom: 2rem;
+}
+
+.managers__info-icon-box {
+  display: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #FF9900;
+  border-radius: 13.8542px;
+}
+
+.managers__info-icon {
+  width: 1.2rem;
+  height: 1.6rem;
+}
+
+.managers__info-info {
+  font-size: calc(13px + 3 * ((100vw - 320px) / 820));
+  font-weight: 500;
+  line-height: 2rem;
+  color: #544837;
+}
+
 .professionals {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2105,6 +2172,43 @@ main {
             justify-content: flex-start;
   }
 
+  .managers {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .managers__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .managers__img {
+    margin-right: 1.5rem;
+  }
+
+  .managers__info-item {
+    margin-bottom: 2rem;
+  }
+
+  .managers__info-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .managers__info-info {
+    max-width: 37rem;
+  }
+
   .professionals {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -2127,6 +2231,13 @@ main {
   }
 }
 
+@media (min-width: 53em) {
+  .managers__info-icon-box {
+    display: block;
+    margin-right: 1.5rem;
+  }
+}
+
 @media only screen and (min-width: 62em) {
   .btn {
     padding: 1.4rem 4.4rem;
@@ -2138,7 +2249,7 @@ main {
   }
 
   .img-component--different {
-    width: 46.2rem;
+    width: 50.2rem;
   }
 
   .logo {
@@ -2158,6 +2269,10 @@ main {
 
   .section-details__info-subtitle {
     margin-bottom: 2.5rem;
+  }
+
+  .section-title__subtitle {
+    margin-bottom: 2rem;
   }
 
   .features__title {
@@ -2193,6 +2308,26 @@ main {
 
   .hero__details-subtitle {
     margin-bottom: 4.5rem;
+  }
+
+  .managers {
+    padding-bottom: 8rem;
+  }
+
+  .managers__header {
+    margin-bottom: 2.2rem;
+  }
+
+  .managers__info-item {
+    margin-bottom: 3rem;
+  }
+
+  .managers__info-icon-box {
+    margin-right: 3rem;
+  }
+
+  .managers__info-info {
+    line-height: 2.6rem;
   }
 
   .professionals {
@@ -2254,6 +2389,10 @@ main {
     padding-bottom: 11rem;
   }
 
+  .managers {
+    padding-bottom: 10.4rem;
+  }
+
   .professionals {
     padding-top: 11.7rem;
     padding-bottom: 10.4rem;
@@ -2286,7 +2425,7 @@ main {
   }
 
   .img-component--different {
-    width: 47.2rem;
+    width: 51.2rem;
   }
 
   .hero__details-title {
