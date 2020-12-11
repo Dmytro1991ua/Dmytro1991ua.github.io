@@ -1106,12 +1106,23 @@ main {
 .img-component {
   width: 27rem;
   height: auto;
+  overflow: hidden;
 }
 
 .img-component__img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.img-component__img:hover {
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+  cursor: pointer;
 }
 
 .logo {
@@ -1498,6 +1509,35 @@ main {
     }
 } */
 
+.section-details__introduction {
+  font-size: calc(14px + 2 * ((100vw - 320px) / 820));
+  font-weight: 500;
+  line-height: 2.2rem;
+  color: #544837;
+  max-width: 49rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-details__info-item {
+  max-width: 49rem;
+}
+
+.section-details__info-title {
+  font-size: calc(14px + 2 * ((100vw - 320px) / 820));
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: #2F281E;
+  margin-bottom: 1.2rem;
+}
+
+.section-details__info-subtitle {
+  font-size: calc(14px + 2 * ((100vw - 320px) / 820));
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: #544837;
+  margin-bottom: 1.2rem;
+}
+
 .section-title__title {
   font-size: calc(22px + 14 * ((100vw - 320px) / 820));
   font-weight: 700;
@@ -1513,6 +1553,7 @@ main {
   font-size: calc(15px + 1 * ((100vw - 320px) / 820));
   font-weight: 500;
   color: #544837;
+  margin-bottom: .3rem;
 }
 
 /*.progressbar {
@@ -1831,6 +1872,31 @@ main {
   padding: 0 1.6rem;
 }
 
+.professionals {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.professionals__header {
+  margin-bottom: 1.2rem;
+}
+
+.professionals__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @font-face {
   font-family: "ag_foreigner_italicmedium";
   font-display: swap;
@@ -1949,6 +2015,10 @@ main {
     display: none;
   }
 
+  .section-details__info-subtitle {
+    margin-bottom: 0;
+  }
+
   .features__title {
     margin-bottom: 3.3rem;
   }
@@ -2034,6 +2104,27 @@ main {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+
+  .professionals {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .professionals__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media only screen and (min-width: 62em) {
@@ -2046,6 +2137,10 @@ main {
     width: 60.2rem;
   }
 
+  .img-component--different {
+    width: 46.2rem;
+  }
+
   .logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 20rem;
@@ -2054,6 +2149,15 @@ main {
 
   .navigation {
     width: 32%;
+  }
+
+  .section-details__introduction {
+    line-height: 2.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-details__info-subtitle {
+    margin-bottom: 2.5rem;
   }
 
   .features__title {
@@ -2090,9 +2194,22 @@ main {
   .hero__details-subtitle {
     margin-bottom: 4.5rem;
   }
+
+  .professionals {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .professionals__header {
+    margin-bottom: 1.8rem;
+  }
 }
 
 @media only screen and (min-width: 75em) {
+  .section-details__info-item {
+    max-width: 53rem;
+  }
+
   .features__body {
     padding: 0 1.6rem;
     margin-bottom: 5.4rem;
@@ -2136,6 +2253,15 @@ main {
   .hero {
     padding-bottom: 11rem;
   }
+
+  .professionals {
+    padding-top: 11.7rem;
+    padding-bottom: 10.4rem;
+  }
+
+  .professionals__header {
+    margin-bottom: 2.2rem;
+  }
 }
 
 @media (min-width: 90em) {
@@ -2157,6 +2283,10 @@ main {
 @media only screen and (min-width: 103em) {
   .img-component {
     max-width: 73rem;
+  }
+
+  .img-component--different {
+    width: 47.2rem;
   }
 
   .hero__details-title {
