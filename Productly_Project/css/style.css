@@ -1522,6 +1522,7 @@ main {
 
 .section-details__info-item {
   max-width: 49rem;
+  margin-bottom: 1.2rem;
 }
 
 .section-details__info-title {
@@ -1538,6 +1539,10 @@ main {
   line-height: 2.6rem;
   color: #544837;
   margin-bottom: 1.2rem;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
 }
 
 .section-title__title {
@@ -1894,10 +1899,6 @@ main {
           justify-content: center;
 }
 
-.managers__header {
-  margin-bottom: 1.5rem;
-}
-
 .managers__info-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1912,11 +1913,21 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  cursor: pointer;
   margin-bottom: 1.3rem;
 }
 
 .managers__info-item:last-child {
   margin-bottom: 2rem;
+}
+
+.managers__info-item:hover .managers__info-icon-box {
+  background-color: transparent;
+  border: 1px solid #BCD0E5;
+}
+
+.managers__info-item:hover .managers__info-icon {
+  fill: #2F281E;
 }
 
 .managers__info-icon-box {
@@ -1925,11 +1936,23 @@ main {
   height: 3.5rem;
   background-color: #FF9900;
   border-radius: 13.8542px;
+  border: 1px solid transparent;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.managers__info-icon-box:hover {
+  border: 1px solid #BCD0E5;
 }
 
 .managers__info-icon {
   width: 1.2rem;
   height: 1.6rem;
+  fill: #ffffff;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .managers__info-info {
@@ -1939,13 +1962,29 @@ main {
   color: #544837;
 }
 
+.marketers {
+  padding-bottom: 3rem;
+}
+
+.marketers__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .professionals {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.professionals__header {
-  margin-bottom: 1.2rem;
 }
 
 .professionals__body {
@@ -2194,7 +2233,7 @@ main {
   }
 
   .managers__img {
-    margin-right: 1.5rem;
+    margin-right: 1.7rem;
   }
 
   .managers__info-item {
@@ -2207,6 +2246,26 @@ main {
 
   .managers__info-info {
     max-width: 37rem;
+  }
+
+  .marketers {
+    padding-bottom: 6rem;
+  }
+
+  .marketers__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .professionals {
@@ -2233,7 +2292,19 @@ main {
 
 @media (min-width: 53em) {
   .managers__info-icon-box {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-right: 1.5rem;
   }
 }
@@ -2269,6 +2340,10 @@ main {
 
   .section-details__info-subtitle {
     margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    margin-bottom: 2.2rem;
   }
 
   .section-title__subtitle {
@@ -2314,10 +2389,6 @@ main {
     padding-bottom: 8rem;
   }
 
-  .managers__header {
-    margin-bottom: 2.2rem;
-  }
-
   .managers__info-item {
     margin-bottom: 3rem;
   }
@@ -2330,19 +2401,20 @@ main {
     line-height: 2.6rem;
   }
 
+  .marketers {
+    padding-bottom: 12rem;
+  }
+
   .professionals {
     padding-top: 8rem;
     padding-bottom: 8rem;
-  }
-
-  .professionals__header {
-    margin-bottom: 1.8rem;
   }
 }
 
 @media only screen and (min-width: 75em) {
   .section-details__info-item {
     max-width: 53rem;
+    margin-bottom: 2.5rem;
   }
 
   .features__body {
@@ -2393,13 +2465,13 @@ main {
     padding-bottom: 10.4rem;
   }
 
+  .marketers {
+    padding-bottom: 15.7rem;
+  }
+
   .professionals {
     padding-top: 11.7rem;
     padding-bottom: 10.4rem;
-  }
-
-  .professionals__header {
-    margin-bottom: 2.2rem;
   }
 }
 
