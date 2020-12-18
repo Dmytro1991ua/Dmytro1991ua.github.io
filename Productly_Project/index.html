@@ -69,8 +69,9 @@
                </nav>
                <!--Navigation ends-->
                <div class="header__get-started">
-                  <a href="#" class="header__get-started-btn">Sign In</a>
-                  <a href="#" class="header__get-started-btn header__get-started-btn--colored">Sign Up</a>
+                  <a href="#" class="header__get-started-btn" data-modal-target="#modal-2">Sign In</a>
+                  <a href="#" class="header__get-started-btn header__get-started-btn--colored"
+                     data-modal-target="#modal-1">Sign Up</a>
                </div>
             </div>
          </div>
@@ -164,7 +165,7 @@
                   </div>
                </div>
                <div class="features__btn-box">
-                  <a href="#" class="btn features__btn">SIGN UP NOW</a>
+                  <a href="#" class="btn features__btn" data-modal-target="#modal-1">SIGN UP NOW</a>
                </div>
             </div>
          </section>
@@ -565,6 +566,59 @@
          </svg>
       </div>
       <!--Scroll to top button ends-->
+      <!--Modal for a Sign Up starts-->
+      <div class="modal-sign-up">
+         <div class="modal-sign-up__body scaled" id="modal-1">
+            <a class="modal-sign-up__close" href="#" data-close-button>&times;</a>
+            <form class="modal-sign-up__form" action="#">
+               <div class="modal-sign-up__item">
+                  <input type="text" class="modal-sign-up__input" id="name" placeholder="Enter Your Name" required>
+                  <label for="name" class="modal-sign-up__label">Name</label>
+               </div>
+               <div class="modal-sign-up__item">
+                  <input type="text" class="modal-sign-up__input" id="surname" placeholder="Enter Your Surname"
+                     required>
+                  <label for="surname" class="modal-sign-up__label">Surname</label>
+               </div>
+               <div class="modal-sign-up__item">
+                  <input type="text" class="modal-sign-up__input" id="subject" placeholder="Enter Your Subject">
+                  <label for="subject" class="modal-sign-up__label">Subject</label>
+               </div>
+               <div class="modal-sign-up__item">
+                  <input type="email" class="modal-sign-up__input" id="email-2" placeholder="Enter Your Email"
+                     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                     required>
+                  <label for="email-2" class="modal-sign-up__label">Email</label>
+               </div>
+               <div class="modal-sign-up__item">
+                  <textarea class="modal-sign-up__textarea" id="textarea" placeholder="Enter Your Message"></textarea>
+                  <label for="textarea" class="modal-sign-up__label">Enter Your Message</label>
+               </div>
+               <button class="modal-sign-up__btn">Submit</button>
+            </form>
+         </div>
+         <div class="modal-overlay"></div>
+      </div>
+      <!--Modal for a Sign Up ends-->
+      <!--Modal Sign In starts-->
+      <div class="modal-sign-in">
+         <div class="modal-sign-in__body scaled" id="modal-2">
+            <a class="modal-sign-in__close" href="#" data-close-button>&times;</a>
+            <form class="modal-sign-in__content">
+               <div class="modal-sign-in__item">
+                  <input type="text" id="login" class="modal-sign-in__input" placeholder="Login">
+                  <label class="modal-sign-in__label" for="login">Login</label>
+               </div>
+               <div class="modal-sign-in__item">
+                  <input type="text" id="password" class="modal-sign-in__input" placeholder="Password">
+                  <label class="modal-sign-in__label" for="login">Password</label>
+               </div>
+               <button class="modal-sign-in__btn">Submit</button>
+            </form>
+         </div>
+         <div class="modal-overlay"></div>
+      </div>
+      <!--Modal Sign In ends-->
    </div>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/script.min.js"></script>
