@@ -1522,9 +1522,197 @@ main {
   cursor: pointer;
 }
 
+/* Modal for Contact Team*/
+
+.modal-contact-team__body {
+  width: 94%;
+  padding: 1.5rem 1.5rem 1.5rem;
+  background-color: #567592;
+  border-radius: 12px;
+  border: 2px solid #FF9900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-contact-team__body:hover {
+  -webkit-filter: drop-shadow(0 0 0.75rem #567592);
+          filter: drop-shadow(0 0 0.75rem #567592);
+  cursor: pointer;
+}
+
+.modal-contact-team__close {
+  position: absolute;
+  top: -1%;
+  right: 4%;
+  font-size: 5rem;
+  text-decoration: none;
+  color: #FF9900;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal-contact-team__close:hover {
+  -webkit-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+          transform: scale(1.03);
+  color: #ffffff;
+}
+
+.modal-contact-team__form {
+  width: 100%;
+}
+
+.modal-contact-team__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 3rem;
+  color: #2F281E;
+}
+
+.modal-contact-team__item:last-child {
+  margin-bottom: 5rem;
+}
+
+.modal-contact-team__input,
+.modal-contact-team__textarea {
+  width: 100%;
+  height: 4rem;
+  border: none;
+  font-family: inherit;
+  background-color: transparent;
+  border-radius: 5px;
+  border-bottom: 2px solid #FF9900;
+  margin-bottom: 1rem;
+}
+
+.modal-contact-team__input.placeholder,
+.modal-contact-team__textarea.placeholder {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 820));
+  font-family: inherit;
+  color: #2F281E;
+}
+
+.modal-contact-team__input:-moz-placeholder,
+.modal-contact-team__textarea:-moz-placeholder {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 820));
+  font-family: inherit;
+  color: #2F281E;
+}
+
+.modal-contact-team__input::-moz-placeholder,
+.modal-contact-team__textarea::-moz-placeholder {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 820));
+  font-family: inherit;
+  color: #2F281E;
+}
+
+.modal-contact-team__input:-ms-input-placeholder,
+.modal-contact-team__textarea:-ms-input-placeholder {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 820));
+  font-family: inherit;
+  color: #2F281E;
+}
+
+.modal-contact-team__input::-webkit-input-placeholder,
+.modal-contact-team__textarea::-webkit-input-placeholder {
+  font-size: calc(15px + 2 * ((100vw - 320px) / 820));
+  font-family: inherit;
+  color: #2F281E;
+}
+
+.modal-contact-team__input:focus,
+.modal-contact-team__textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #90ee90;
+}
+
+.modal-contact-team__input:focus:invalid,
+.modal-contact-team__textarea:focus:invalid {
+  border-bottom: 1px solid rgba(255, 119, 48, 0.8);
+}
+
+.modal-contact-team__input:-moz-placeholder-shown + .modal-contact-team__label, .modal-contact-team__textarea:-moz-placeholder-shown + .modal-contact-team__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.modal-contact-team__input:-ms-input-placeholder + .modal-contact-team__label, .modal-contact-team__textarea:-ms-input-placeholder + .modal-contact-team__label {
+  opacity: 0;
+  visibility: hidden;
+  -ms-transform: translateY(-4rem);
+      transform: translateY(-4rem);
+}
+
+.modal-contact-team__input:placeholder-shown + .modal-contact-team__label,
+.modal-contact-team__textarea:placeholder-shown + .modal-contact-team__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+      -ms-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.modal-contact-team__label {
+  font-size: calc(13px + 2 * ((100vw - 320px) / 820));
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.modal-contact-team__textarea {
+  resize: vertical;
+}
+
+.modal-contact-team__btn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 1.4rem 3.4rem;
+  background-color: #2F281E;
+  border-radius: 12px;
+  color: #ffffff;
+  border: 2px solid transparent;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-size: calc(14px + 3 * ((100vw - 320px) / 820));
+}
+
+.modal-contact-team__btn:hover {
+  background-color: transparent;
+  border: 2px solid #FF9900;
+  color: #FF9900;
+  cursor: pointer;
+}
+
 .navigation {
   position: fixed;
-  top: 6.4rem;
+  top: 5.8rem;
   left: -100%;
   width: 100%;
   height: 100%;
@@ -2020,6 +2208,15 @@ main {
   background-size: cover;
 }
 
+@supports (-webkit-appearance: none) {
+  .features {
+    background-image: url(../img/features/bg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 .features__title {
   max-width: 54rem;
   margin: 0 auto 2.3rem;
@@ -2320,20 +2517,6 @@ main {
   color: #2F281E;
 }
 
-.header.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 229, 152, 0.9)), to(rgba(255, 244, 229, 0.9)));
-  background-image: -o-linear-gradient(top left, rgba(255, 229, 152, 0.9), rgba(255, 244, 229, 0.9));
-  background-image: linear-gradient(to bottom right, rgba(255, 229, 152, 0.9), rgba(255, 244, 229, 0.9));
-  -webkit-animation: smoothScroll .6s forwards;
-          animation: smoothScroll .6s forwards;
-  -webkit-box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
-}
-
 .hero {
   padding-top: 9rem;
   padding-bottom: 3rem;
@@ -2527,6 +2710,15 @@ main {
   background-size: cover;
   padding-bottom: 1.5rem;
   position: relative;
+}
+
+@supports (-webkit-appearance: none) {
+  .team {
+    background-image: url(../img/team/bg.webp);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .team__body {
@@ -2803,8 +2995,31 @@ main {
     width: fit-content;
   }
 
+  .modal-contact-team__body {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 44rem;
+  }
+
   .footer__list-item:last-child {
     margin-bottom: 3.2rem;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
+  .features {
+    background-image: url(../img/features/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .team {
+    background-image: url(../img/team/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
@@ -2825,6 +3040,10 @@ main {
   }
 
   .modal-sign-up__body {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .modal-contact-team__body {
     padding: 3rem 2rem 2rem;
   }
 
@@ -2979,6 +3198,20 @@ main {
 
   .header__get-started-btn:last-child {
     margin-right: 0;
+  }
+
+  .header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 229, 152, 0.9)), to(rgba(255, 244, 229, 0.9)));
+    background-image: -o-linear-gradient(top left, rgba(255, 229, 152, 0.9), rgba(255, 244, 229, 0.9));
+    background-image: linear-gradient(to bottom right, rgba(255, 229, 152, 0.9), rgba(255, 244, 229, 0.9));
+    -webkit-animation: smoothScroll .6s forwards;
+            animation: smoothScroll .6s forwards;
+    -webkit-box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
   }
 
   .hero {

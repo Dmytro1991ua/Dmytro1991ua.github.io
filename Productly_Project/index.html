@@ -327,7 +327,7 @@
                         prototyping, marketing strategy, landing page, Ux/UI?
                      </p>
                   </div>
-                  <a href="#" class="btn">Contact our expert</a>
+                  <a href="#" class="btn" data-modal-target="#modal-3">Contact our expert</a>
                </div>
                <div class="team__members">
                   <div class="team__members-body">
@@ -606,11 +606,11 @@
             <a class="modal-sign-in__close" href="#" data-close-button>&times;</a>
             <form class="modal-sign-in__content">
                <div class="modal-sign-in__item">
-                  <input type="text" id="login" class="modal-sign-in__input" placeholder="Login">
+                  <input type="text" id="login" class="modal-sign-in__input" placeholder="Login" required>
                   <label class="modal-sign-in__label" for="login">Login</label>
                </div>
                <div class="modal-sign-in__item">
-                  <input type="text" id="password" class="modal-sign-in__input" placeholder="Password">
+                  <input type="text" id="password" class="modal-sign-in__input" placeholder="Password" required>
                   <label class="modal-sign-in__label" for="login">Password</label>
                </div>
                <button class="modal-sign-in__btn">Submit</button>
@@ -619,6 +619,32 @@
          <div class="modal-overlay"></div>
       </div>
       <!--Modal Sign In ends-->
+      <!--Modal Contact team starts-->
+      <div class="modal-contact-team">
+         <div class="modal-contact-team__body scaled" id="modal-3">
+            <a class="modal-contact-team__close" href="#" data-close-button>&times;</a>
+            <form class="modal-contact-team__form" action="#">
+               <div class="modal-contact-team__item">
+                  <input type="text" class="modal-contact-team__input" id="name" placeholder="Enter Your Name" required>
+                  <label for="name" class="modal-contact-team__label">Name</label>
+               </div>
+               <div class="modal-contact-team__item">
+                  <input type="email" class="modal-contact-team__input" id="email-2" placeholder="Enter Your Email"
+                     pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                     required>
+                  <label for="email-2" class="modal-contact-team__label">Email</label>
+               </div>
+               <div class="modal-contact-team__item">
+                  <textarea class="modal-contact-team__textarea" id="textarea"
+                     placeholder="Enter Your Message"></textarea>
+                  <label for="textarea" class="modal-contact-team__label">Enter Your Message</label>
+               </div>
+               <button class="modal-contact-team__btn">Submit</button>
+            </form>
+         </div>
+         <div class="modal-overlay"></div>
+      </div>
+      <!--Modal Contact team ends-->
    </div>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/script.min.js"></script>
