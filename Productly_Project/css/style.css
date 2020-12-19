@@ -2789,17 +2789,17 @@ main {
 
 .team__member--3 {
   left: 10rem;
-  bottom: 5rem;
+  bottom: 2rem;
 }
 
 .team__member--4 {
-  bottom: .3rem;
-  right: 32rem;
+  bottom: -3.7rem;
+  right: 30rem;
 }
 
 .team__member--5 {
   right: 3rem;
-  bottom: 5rem;
+  bottom: 3rem;
 }
 
 .team__member-img-box {
@@ -3345,7 +3345,7 @@ main {
 
   .team__body {
     padding-top: 9rem;
-    padding-bottom: 6rem;
+    padding-bottom: 10rem;
   }
 }
 
@@ -3641,6 +3641,10 @@ main {
   .professionals {
     padding-top: 11.7rem;
     padding-bottom: 10.4rem;
+  }
+
+  .team {
+    padding-bottom: 0rem;
   }
 
   .team__body {
