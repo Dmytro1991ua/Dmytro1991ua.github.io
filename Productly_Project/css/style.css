@@ -3009,7 +3009,7 @@ main {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
   .features {
-    background-image: url(../img/features/bg.png);
+    background-image: url(../img/features/bg.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
