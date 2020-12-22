@@ -2084,6 +2084,65 @@ main {
           justify-content: center;
 }
 
+.hero__video-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 2300;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 0 1rem;
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__video-box.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero__video {
+  position: relative;
+  width: 90rem;
+  max-width: 100%;
+  outline: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 25rem;
+  background-color: #000000;
+}
+
+.hero__video-btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 8rem;
+  color: #ffffff;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
 .container {
   max-width: 115.6rem;
   margin: 0 auto;
@@ -2447,7 +2506,30 @@ main {
   transition: all .3s ease-in-out;
 }
 
-@media only screen and (min-width: 32.5em) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
+  .features {
+    background-image: url(../img/features/bg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .team {
+    background-image: url(../img/team/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 25em) {
+  .hero__video-btn-close {
+    top: 11rem;
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 32em) {
   .img-component {
     width: 32rem;
   }
@@ -2468,21 +2550,14 @@ main {
   .footer__list-item:last-child {
     margin-bottom: 3.2rem;
   }
-}
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.9em), only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 37.9em), only screen and (min-resolution: 192dpi) and (min-width: 37.9em), (min-width: 125em), only screen and (min-width: 125em) {
-  .features {
-    background-image: url(../img/features/bg.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  .hero__video {
+    height: 30rem;
   }
 
-  .team {
-    background-image: url(../img/team/bg.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  .hero__video-btn-close {
+    top: 4rem;
+    font-size: 6rem;
   }
 }
 
@@ -2728,6 +2803,14 @@ main {
             justify-content: flex-start;
   }
 
+  .hero__video {
+    height: 40rem;
+  }
+
+  .hero__video-btn-close {
+    top: 0rem;
+  }
+
   .managers {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -2945,6 +3028,10 @@ main {
     margin-bottom: 4.5rem;
   }
 
+  .hero__video-btn-close {
+    top: .7rem;
+  }
+
   .managers {
     padding-bottom: 8rem;
   }
@@ -3091,6 +3178,15 @@ main {
 
   .hero {
     padding-bottom: 11rem;
+  }
+
+  .hero__video {
+    height: 50rem;
+  }
+
+  .hero__video-btn-close {
+    top: .7rem;
+    right: 5rem;
   }
 
   .managers {
