@@ -37,6 +37,15 @@ Stack of technologies which were used to develop a particular project:
 
 A link on GitHub Pages - https://dmytro1991ua.github.io/Podiatrist_Project/
 
+#  Productly_Project
+
+### A project of a web development agency which has expertise in creating catchy, professional design and develop cool websites.
+
+Stack of technologies which were used to develop a particular project: 
+#### HTML/HTML5, CSS3, SCSS, BEM, JS, Gulp, Responsive Web Design, Mobile First Approach.
+
+A link on GitHub Pages - https://dmytro1991ua.github.io/Productly_Project/
+
 # Test_Task
 
 A test task to develop a part of the website as a part of a recruitment process.
