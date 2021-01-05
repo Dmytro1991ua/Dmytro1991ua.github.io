@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
    const getMovieData = () => {
       axios.get(`${MOVIE_URL}${API_KEY}`)
          .then(response => {
-            console.log(response.data.results);
             renderMovieCard(response.data.results)
          })
          .catch(error => {
