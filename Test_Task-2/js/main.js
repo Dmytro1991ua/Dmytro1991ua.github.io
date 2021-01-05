@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
          })
    };
 
-   getMovieData();
    const renderMovieCard = (movies) => {
       movies.forEach(movie => {
          const movieDeatils = document.createElement("a");
@@ -93,4 +92,5 @@ document.addEventListener("DOMContentLoaded", () => {
    });
    window.addEventListener("load", preloader);
 
+   getMovieData();
 });
