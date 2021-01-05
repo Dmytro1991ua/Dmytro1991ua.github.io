@@ -50,6 +50,11 @@ A link on GitHub Pages - https://dmytro1991ua.github.io/Productly_Project/
 
 A test task to develop a part of the website as a part of a recruitment process.
 
-https://dmytro1991ua.github.io/Test_Task/
+https://dmytro1991ua.github.io/Test_Task
+
+# Test_Task-2
+A test task to develop a part of the website as a part of a recruitment process (Working with API's).
+
+https://dmytro1991ua.github.io/Test_Task-2/
 
 
