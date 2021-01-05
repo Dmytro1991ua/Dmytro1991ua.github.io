@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
    const getMovieData = () => {
       axios.get(`${MOVIE_URL}${API_KEY}`)
          .then(response => {
-            console.log(response.data.results);
             renderMovieCard(response.data.results)
          })
          .catch(error => {
@@ -92,5 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
    });
    window.addEventListener("load", preloader);
 
+<<<<<<< HEAD
    getMovieData();
 });
+=======
+});
+>>>>>>> 44eea62602942cf1fe7441373f1ced467e48bc09
