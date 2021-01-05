@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const getMovieData = () => {
       axios.get(`${MOVIE_URL}${API_KEY}`)
          .then(response => {
+            console.log(response.data.results);
             renderMovieCard(response.data.results)
          })
          .catch(error => {
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const modalBody = document.querySelector(".movie-modal__info");
       const moviePoster = document.querySelector(".movie-modal__img");
       moviePoster.src = IMG_URL + movie.poster_path;
-      
+
       modalBody.innerHTML = `
          <h3 class="movie-modal__name">${movie.title}</h3>
          <p class="movie-modal__movie-info">Description:<span class="movie-modal__movie-info--description">${movie.overview}</span></p>
@@ -91,9 +92,5 @@ document.addEventListener("DOMContentLoaded", () => {
    });
    window.addEventListener("load", preloader);
 
-<<<<<<< HEAD
    getMovieData();
 });
-=======
-});
->>>>>>> 44eea62602942cf1fe7441373f1ced467e48bc09
