@@ -745,6 +745,183 @@ main {
   background-color: #153c6b;
 }
 
+.weather-app__bottom {
+  color: #090c1b;
+  font-weight: 700;
+  padding: 2rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  display: none;
+}
+
+.weather-app__bottom.active {
+  display: block;
+}
+
+.weather-app__bottom-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.weather-app__bottom-heading-2 {
+  font-size: calc(22px + 23 * ((100vw - 320px) / (1920 - 320)));
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+.weather-app__bottom-heading-2--diff {
+  margin: 0.4rem;
+}
+
+.weather-app__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.3rem;
+}
+
+.weather-app__row:last-child {
+  margin-bottom: 0rem;
+}
+
+.weather-app__temperature {
+  font-size: 6rem;
+  margin-right: 5rem;
+}
+
+.weather-app__temperature-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.weather-app__weather-condition {
+  font-size: calc(15px + 15 * ((100vw - 320px) / (1920 - 320)));
+  margin-bottom: .2rem;
+  text-transform: capitalize;
+}
+
+.weather-app__temperature-max {
+  margin-bottom: .2rem;
+  font-size: 2.2rem;
+}
+
+.weather-app__temperature-max::before {
+  content: "\2191";
+  margin-right: .3rem;
+}
+
+.weather-app__temperature-min {
+  font-size: 2.2rem;
+}
+
+.weather-app__temperature-min::before {
+  content: "\2193";
+  margin-right: .3rem;
+}
+
+.weather-app__icon-box {
+  width: 6rem;
+  height: 6rem;
+  border: 4px solid #7ac142;
+  background-color: #5a803d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+}
+
+.weather-app__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.weather-app__temperature-additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.weather-app__temperature-additional-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  margin-right: 5rem;
+}
+
+.weather-app__temperature-additional-box:last-child {
+  margin-right: 0;
+}
+
+.weather-app__temperature-feeling {
+  font-size: 2.8rem;
+  margin-bottom: .4rem;
+}
+
+.weather-app__temperature-additional-title {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
 @media (min-width: 25em) {
   .weather-app__body {
     width: 40rem;
