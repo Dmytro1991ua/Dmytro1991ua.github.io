@@ -576,6 +576,7 @@ main {
           flex: 1 1 auto;
   width: 100%;
   height: 100%;
+  background-color: #153c6b;
 }
 
 .row {
@@ -600,8 +601,6 @@ main {
 
 .weather-app {
   width: 100%;
-  height: 100vh;
-  background-color: #153c6b;
   padding-bottom: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,6 +758,15 @@ main {
   display: block;
 }
 
+.weather-app__geolocation-error {
+  font-size: 1.8rem;
+  text-align: center;
+  background-color: #ff6347;
+  padding: 1.2rem 1rem;
+  text-transform: capitalize;
+  display: none;
+}
+
 .weather-app__bottom-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -857,7 +865,7 @@ main {
   width: 6rem;
   height: 6rem;
   border: 4px solid #7ac142;
-  background-color: #5a803d;
+  background-color: #5f9ea0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
