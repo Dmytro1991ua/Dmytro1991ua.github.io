@@ -44,12 +44,12 @@
                         <source srcset="img/weather-app/header-img.webp" type="image/webp"><img class="weather-app__img"
                            src="img/weather-app/header-img.png" alt="weather img">
                      </picture>
-                     <form class="weather-app__search-input" type="submit">
+                     <form class="weather-app__search-input">
                         <div class="weather-app__search-input-box">
                            <input type="text" class="weather-app__city-search" id="city" placeholder="Enter your city">
                            <label class="weather-app__city-search-label" for="city">Enter your city</label>
                         </div>
-                        <button class="weather-app__search-input-btn">Let's Find Out</button>
+                        <button class="weather-app__search-input-btn" type="submit">Let's Find Out</button>
                      </form>
                      <p class="weather-app__geolocation-error"></p>
                   </figure>
@@ -57,8 +57,8 @@
                   <!--Weather App bottom starts-->
                   <div class="weather-app__bottom">
                      <div class="weather-app__bottom-body">
-                        <h2 class="weather-app__bottom-heading-2"><span
-                              class="weather-app__bottom-heading-2--diff"></span></h2>
+                        <p class="weather-app__bottom-heading-2"><span
+                              class="weather-app__bottom-heading-2--diff"></span></p>
                         <!--First row starts-->
                         <div class="weather-app__row">
                            <span class="weather-app__temperature"></span>
@@ -104,8 +104,8 @@
 
       </main>
    </div>
-   <script src="js/script.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script src="js/script.min.js"></script>
 </body>
 
 </html>
