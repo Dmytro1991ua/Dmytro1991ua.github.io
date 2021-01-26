@@ -57,4 +57,19 @@ A test task to develop a part of the website as a part of a recruitment process 
 
 https://dmytro1991ua.github.io/Test_Task-2/
 
+# test-task-weather-app
+A test task to develop a Weather App as a part of a recruitment process, where right after the browser is loaded a card with weather data based on the current user's location is rendered as well as an opportunity to receive a render card with the weather data of any city based on user input 
+
+#### Main Features of test-task-weather-app:
+* Fully responsive app (Mobile First Approach).
+* Card with weather data based on current user's location right after the browser is loaded.
+* Functionality to search for a certain city and render a card with particular weather data.
+
+##### Stack of technologies which were used to develop a particular project: 
+
+#### HTML/HTML5, CSS3, BEM, JS, Axios, Responsive Web Design, Mobile First Approach, Gulp.
+
+A link on GitHub Pages - https://dmytro1991ua.github.io/test-task-weather-app/
+
+
 
